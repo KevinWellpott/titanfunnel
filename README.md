@@ -1,83 +1,146 @@
-Project Rocket is a starter/boilerplate template with **all engines ready** to quickly build and publish a web application, membership site, course or any other type of online business. Powered by [Outseta](https://www.outseta.com?via=b2b01c), [Chakra UI](https://www.chakra-ui.com/) and [NextJS](https://nextjs.org/).
+# TitanScale
 
-If you like the template, make [use of my Outseta affiliate link](http://www.outseta.com/?via=b2b01c) when setting upa new project, or [use of my Outseta affiliate link](#) to support the development.
+**Die Business-Software für skalierende Experten**
 
-## Philosophy
+TitanScale ist eine vollständige Business-Software-Vorlage, die alle wichtigen Funktionen für den Start und Betrieb eines Online-Businesses enthält. Von der Authentifizierung über Zahlungen bis hin zu E-Mail-Marketing und Support – alles ist bereits integriert und einsatzbereit.
 
-- **Minimal tooling**: Instead of implementing 10 different libraries, this template leverages [Outsetas powerful suite of features](https://www.outseta.com/developer-workflows?via=b2b01c) to cover all key functionality
-- **Ready to go**: Built-in components and pages that give you a headstart and reduce setup time
-- **Quick to configure**: Site config (`config/site.ts`) to configure the app in one place with minimal effort
-- **Easy to theme**: Play around with different colors and fonts to adjust the branding and style of the app  
+Powered by [Outseta](https://www.outseta.com), [Chakra UI](https://www.chakra-ui.com/) und [Next.js](https://nextjs.org/).
 
-## What's included in this template?
+## Was ist TitanScale?
 
+TitanScale ist ein Funnel-System, das Kunden darauf vorbereitet, die TitanScale-Software selbst zu kaufen. Es bietet drei Pakete:
 
-- Theme customization
-- Authentication
-- Payments and subscriptions
-- Billing portal
-- Account management
-- Transactional emails
-- Activity notifications
-- User engagement tracking
-- Customer support
+- **Free**: Einblick in wie die Software funktioniert
+- **Basis** (€44,90/Monat): Einblicke wie unsere Case-Studys arbeiten
+- **Pro** (€99,00/Monat): Vollwertiger Blue Print zu Skalierung
 
-And much more!
+## Was ist enthalten?
 
-## Getting started
+- ✅ **Authentifizierung & User Management** - Vollständiges Auth-System mit Outseta
+- ✅ **Zahlungen & Abonnements** - Einmalzahlungen, Abonnements und Nutzungsbasierte Abrechnung
+- ✅ **Geschützte Inhalte** - Plan-basierte Zugriffskontrolle für Seiten und Komponenten
+- ✅ **E-Mail-Marketing** - Automatische E-Mails, Broadcasts und Drip-Kampagnen
+- ✅ **Support-Desk** - Integriertes Ticket-System für Kundenbetreuung
+- ✅ **Theme-System** - Vollständig anpassbares Design mit Chakra UI
+- ✅ **SEO-Optimierung** - Automatische Meta-Tags und Sitemap-Generierung
+- ✅ **Analytics-Integration** - Google Analytics und Meta Pixel Support
+- ✅ **Supabase-Integration** - Optionale Datenbank-Integration für erweiterte Features
+- ✅ **Cookie-Consent** - DSGVO-konformes Cookie-Banner
 
-### 1. Set up Outseta
-   
-Sign up for a new account at Outseta and go through the setup process.
+## Schnellstart
 
-### 2. Set up codebase
-
-Run the following command on your local environment:
+### 1. Repository klonen
 
 ```bash
-git clone --depth=1 https://github.com/wirtzdan/project-rocket.git my-project-name
-cd my-project-name
+git clone <repository-url> titanscale
+cd titanscale
 npm install
 ```
 
-### 3. Configure app in site config
+### 2. Umgebungsvariablen konfigurieren
 
-Open the codebase and navigate to `config/site.ts`. 
+Erstelle eine `.env.local` Datei im Root-Verzeichnis:
 
-1. Rename the ap by changing the `siteName`, `siteDescription`, and `siteUrl`
-2. Adjust the `theme` settings to customize the visual aspects of your application.
-3. Configure Outseta settings by updating the `outseta` object with your site ID, and other relevant details.
-4. Save the changes to apply the new configuration.
+```bash
+# Outseta Konfiguration
+NEXT_PUBLIC_OUTSETA_DOMAIN=your-domain.outseta.com
 
-## 4. Start the development server
+# Supabase (optional)
+NEXT_PUBLIC_SUPABASE_ENABLED=false
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
-Run the following command on your local environment:
+# Google Analytics (optional)
+NEXT_PUBLIC_GA_ENABLED=false
+NEXT_PUBLIC_GA_MEASUREMENT_ID=
+
+# Meta Pixel (optional)
+NEXT_PUBLIC_META_ADS_ENABLED=false
+NEXT_PUBLIC_META_PIXEL_ID=
+```
+
+### 3. Projekt konfigurieren
+
+Öffne `config/general-config.ts` und passe die allgemeinen Einstellungen an:
+
+```typescript
+export const generalConfig = {
+  name: "TitanScale",
+  title: "TitanScale: Die Business-Software für skalierende Experten",
+  description: "Deine Beschreibung",
+  siteUrl: "https://deine-domain.de",
+  support: {
+    email: "kontakt@deine-domain.de",
+  },
+};
+```
+
+Weitere Konfigurationen findest du im `config/` Verzeichnis:
+- `auth-config.ts` - Plan-Konfiguration
+- `outseta-config.ts` - Outseta-Einstellungen
+- `theme-config.ts` - Theme-Einstellungen
+- `supabase-config.ts` - Supabase-Konfiguration
+- `google-analytics-config.ts` - Google Analytics-Konfiguration
+- `meta-ads-config.ts` - Meta Pixel-Konfiguration
+
+### 4. Entwicklungsserver starten
 
 ```bash
 npm run dev
-or
-yarn dev
 ```
 
-Visit `http://localhost:3000` to see and test the app.
+Besuche `http://localhost:3000` um die App zu sehen und zu testen.
 
-## Project Structure Overview 
+## Projektstruktur
 
 ```
-├── app/ # Next.js app directory
-│ ├── (utility)/ # Utility pages (e.g Thank you page)
-│ ├── (website)/ # Website and marketing pages
-│ ├── (app)/ # App pages and functionality
-│ ├── layout.tsx # Root layout for all pages (Marketing & App)
-├── components/ # React components
-│ ├── auth/ # Auth components (e.g Embeds, locking content)
-│ ├── layout/ # Essential layout components (e.g Navbar, Footer, Section Wrapper)
-│ ├── provider/ # Context providers (e.g Outseta, Chakra )
-│ └── ui/ # UI components
-├── config/ # Configuration files
-└── public/ # Static assets (e.g Logo)
-├── styles/ # Custom CSS (e.g Outseta embeds)
-├── theme/ # Chakra UI theme
-├── utils/ # Utility code snippets
+titanscale/
+├── app/                    # Next.js App Router Seiten
+│   ├── (website)/         # Öffentliche Website-Seiten
+│   ├── (utility)/         # Utility-Seiten (Login, Sign-up, etc.)
+│   └── app/               # Geschützte App-Seiten
+├── components/            # React Komponenten
+│   ├── auth/             # Authentifizierungs-Komponenten
+│   ├── layout/           # Layout-Komponenten (Navbar, Footer)
+│   ├── provider/         # Context Provider
+│   ├── ui/               # Wiederverwendbare UI-Komponenten
+│   └── analytics/        # Analytics-Komponenten
+├── config/               # Projekt-Konfigurationen
+├── theme/                # Theme-Konfiguration
+├── types/                # TypeScript Typdefinitionen
+├── utils/                # Utility-Funktionen und Hooks
+└── styles/               # Globale Styles
 ```
 
+## Dokumentation
+
+Ausführliche Dokumentation findest du im `docs/` Verzeichnis:
+
+- [Übersicht](./docs/00-ÜBERSICHT.md)
+- [Konfiguration](./docs/01-KONFIGURATION.md)
+- [Authentifizierung](./docs/02-AUTHENTIFIZIERUNG.md)
+- [Komponenten](./docs/03-KOMPONENTEN.md)
+- [Utilities](./docs/04-UTILITIES.md)
+- [Theme & Styling](./docs/05-THEME-STYLING.md)
+- [Routing](./docs/06-ROUTING.md)
+- [Analytics & Supabase](./docs/07-ANALYTICS-UND-SUPABASE.md)
+
+## Verfügbare Scripts
+
+- `npm run dev` - Startet den Entwicklungsserver mit Turbo
+- `npm run build` - Erstellt eine Production-Build
+- `npm run start` - Startet den Production-Server
+- `npm run type-check` - Führt TypeScript-Typ-Prüfung durch
+
+## Technologie-Stack
+
+- **Framework**: Next.js 15.0.4 (App Router)
+- **UI Library**: Chakra UI 3.2.2
+- **Styling**: Emotion (CSS-in-JS)
+- **Authentication**: Outseta
+- **Language**: TypeScript 5.6.2
+- **React**: 19.0.0
+
+## Lizenz
+
+MIT
