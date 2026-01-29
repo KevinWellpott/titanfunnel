@@ -6,8 +6,6 @@ import {
   CollapsibleRoot,
   Container,
   HStack,
-  VStack,
-  StackProps,
   Box,
 } from "@chakra-ui/react";
 import { Logo } from "./logo";
@@ -17,16 +15,13 @@ import { UserMenu } from "../ui/user-menu";
 import { Link } from "@/components/ui/link";
 import { SignedIn, SignedOut } from "../auth/protect-content";
 import { Login, SignUp } from "../auth/embed";
-import {
-  MenuContent,
-  MenuItem,
-  MenuItemGroup,
-  MenuRoot,
-  MenuSeparator,
-  MenuTrigger,
-} from "../ui/menu";
 
-export const MenuLink = (props) => {
+interface MenuLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+export const MenuLink = (props: MenuLinkProps) => {
   return (
     <Link href={props.href} w="full">
       <Button
@@ -41,80 +36,15 @@ export const MenuLink = (props) => {
   );
 };
 
-// TODO: Improve nav links
-export const NavbarLinkMenu = (props: StackProps) => {
+export const NavbarLinkMenu = () => {
   return (
     <>
-      <MenuLink href="/docs">Docs</MenuLink>
-      <MenuRoot>
-        <MenuTrigger asChild>
-          <Button
-            colorPalette="gray"
-            width={{ base: "full", md: "auto" }}
-            variant={{ base: "ghost", md: "plain" }}
-            justifyContent={{ base: "flex-start", md: "center" }}
-          >
-            Demo
-          </Button>
-        </MenuTrigger>
-        <MenuContent>
-          <MenuItemGroup title="Seiten">
-            <Link href="/pricing">
-              <MenuItem value="pricing">Preise</MenuItem>
-            </Link>
-            <Link href="/contact">
-              <MenuItem value="contact">Kontakt</MenuItem>
-            </Link>
-            <Link href="/support">
-              <MenuItem value="support">Support</MenuItem>
-            </Link>
-          </MenuItemGroup>
-          <MenuSeparator />
-          <MenuItemGroup title="Utility">
-            <Link href="/thank-you">
-              <MenuItem value="thank-you">Vielen Dank</MenuItem>
-            </Link>
-            <Link href="/not-found">
-              <MenuItem value="not-found">Nicht gefunden</MenuItem>
-            </Link>
-            <Link href="/javascript">
-              <MenuItem value="javascript">JavaScript</MenuItem>
-            </Link>
-            <Link href="/legal/terms-and-conditions">
-              <MenuItem value="terms-and-conditions">
-                AGB
-              </MenuItem>
-            </Link>
-          </MenuItemGroup>
-          <MenuSeparator />
-          <MenuItemGroup title="Authentifizierung">
-            <Link href="/app/free">
-              <MenuItem value="free">Geschützte Seite (Free Plan)</MenuItem>
-            </Link>
-            <Link href="/app/basic">
-              <MenuItem value="basic">Geschützte Seite (Basis Plan)</MenuItem>
-            </Link>
-            <Link href="/app/pro">
-              <MenuItem value="pro">Geschützte Seite (Pro Plan)</MenuItem>
-            </Link>
-          </MenuItemGroup>
-          <MenuSeparator />
-          <MenuItemGroup title="Embeds">
-            <Link href="/embed/login">
-              <MenuItem value="login">Login</MenuItem>
-            </Link>
-            <Link href="/embed/sign-up">
-              <MenuItem value="login">Sign up</MenuItem>
-            </Link>
-            <Link href="/embed/lead-capture">
-              <MenuItem value="lead-capture">Lead Capture</MenuItem>
-            </Link>
-            <Link href="/embed/email-list">
-              <MenuItem value="email-list">Email List</MenuItem>
-            </Link>
-          </MenuItemGroup>
-        </MenuContent>
-      </MenuRoot>
+      <MenuLink href="/pricing">Preise</MenuLink>
+      <MenuLink href="/contact">Kontakt</MenuLink>
+      <MenuLink href="/support">Support</MenuLink>
+      <Link href="#clear-path">
+        <Button size="sm">Starte deine Skalierung</Button>
+      </Link>
     </>
   );
 };
@@ -146,7 +76,6 @@ export const NavbarActionMenu = ({ type }: { type: "website" | "app" }) => {
 };
 
 export const Navbar = ({ type }: { type: "website" | "app" }) => {
-  console.log(type);
   return (
     <Center
       as="header"
@@ -171,11 +100,11 @@ export const Navbar = ({ type }: { type: "website" | "app" }) => {
                 <Logo />
               </Link>
               <HStack justify="flex-end" w="full" hideFrom="md">
-                <NavbarActionMenu type="app" />
+                <NavbarActionMenu type={type} />
               </HStack>
               <HStack gap="2" hideBelow="md">
                 <NavbarLinkMenu />
-                <NavbarActionMenu type="app" />
+                <NavbarActionMenu type={type} />
               </HStack>
             </HStack>
             <CollapsibleContent hideFrom="md" mt={4}>

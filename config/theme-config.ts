@@ -1,7 +1,7 @@
 export const themeConfig = {
   colorMode: "dark",
   neutralColorPalette: "gray",
-  primaryColorPalette: "blue",
+  primaryColorPalette: "linearBlue",
   secondaryColorPalette: "gray",
   headingFont: "Inter",
   bodyFont: "Inter",

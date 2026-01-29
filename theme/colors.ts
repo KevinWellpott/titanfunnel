@@ -197,6 +197,20 @@ export const colorPalettes = {
     900: { value: "#45061f" },
     950: { value: "#2c0514" },
   },
+  /** Linear.app-style accent (#0052FF at 600) */
+  linearBlue: {
+    50: { value: "#e6eeff" },
+    100: { value: "#b3c7ff" },
+    200: { value: "#80a0ff" },
+    300: { value: "#4d79ff" },
+    400: { value: "#1a52ff" },
+    500: { value: "#0052ff" },
+    600: { value: "#0052FF" },
+    700: { value: "#0042cc" },
+    800: { value: "#003199" },
+    900: { value: "#002166" },
+    950: { value: "#001133" },
+  },
 } as const;
 
 // Export types for type safety
