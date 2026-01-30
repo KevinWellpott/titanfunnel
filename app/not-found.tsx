@@ -53,7 +53,22 @@ export default function NotFound() {
           </VStack>
           <Box pt="4">
             <Link href="/">
-              <Button variant="outline" size="sm">
+              <Button
+                variant="outline"
+                size={{ base: "md", md: "lg" }}
+                gap="2"
+                px={{ base: "5", md: "8" }}
+                py={{ base: "3", md: "4" }}
+                fontSize={{ base: "xs", md: "sm" }}
+                fontWeight="600"
+                borderRadius="lg"
+                whiteSpace="normal"
+                _hover={{
+                  boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                  transform: "translateY(-1px)",
+                }}
+                transition="all 0.2s ease"
+              >
                 <ArrowLeft />
                 Zur Startseite
               </Button>

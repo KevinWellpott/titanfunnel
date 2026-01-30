@@ -33,7 +33,25 @@ export default function EmailListEmbedPage() {
         <VStack gap={8}>
           <Heading size="3xl">Popup</Heading>
           <EmailList uid="OW4k4p9g" popup>
-            <Button size="lg">E-Mail-Liste Popup öffnen</Button>
+            <Button
+              size={{ base: "md", md: "lg" }}
+              gap="2"
+              bg="blue"
+              color="white"
+              px={{ base: "5", md: "8" }}
+              py={{ base: "3", md: "4" }}
+              fontSize={{ base: "xs", md: "sm" }}
+              fontWeight="600"
+              borderRadius="lg"
+              whiteSpace="normal"
+              _hover={{
+                boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                transform: "translateY(-1px)",
+              }}
+              transition="all 0.2s ease"
+            >
+              E-Mail-Liste Popup öffnen
+            </Button>
           </EmailList>
           <Heading size="3xl">Auf der Seite</Heading>
           <Box w="full" p={6} borderWidth="1px" borderRadius="lg" bg="bg.muted">

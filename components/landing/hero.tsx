@@ -4,326 +4,205 @@ import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/layout/section";
 import { Link } from "@/components/ui/link";
-import { ArrowRight, Code } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 
-// Motion-wrapped Chakra components
 const MotionBox = motion.create(Box);
 const MotionVStack = motion.create(VStack);
-const MotionStack = motion.create(Stack);
 const MotionHeading = motion.create(Heading);
 const MotionText = motion.create(Text);
 
-// Linear-style animated graphic component
-const LinearGraphic = () => {
+const VIMEO_PARAMS = "title=0&byline=0&portrait=0";
+
+export interface HeroVideoProp {
+  vimeoId: string;
+}
+
+export function Hero({ video }: { video?: HeroVideoProp | null }) {
   return (
-    <Box position="relative" w="full" h="full" overflow="hidden">
-      {/* Main geometric shape */}
-      <MotionBox
-        position="absolute"
-        top="50%"
-        left="50%"
-        w="120px"
-        h="80px"
-        bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-        borderRadius="lg"
-        initial={{ scale: 0, rotate: -10 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ duration: 1, delay: 0.5, type: "spring", stiffness: 200 }}
-        style={{ transform: "translate(-50%, -50%)" }}
-        _before={{
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          bg: "linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3))",
-          borderRadius: "lg",
-          filter: "blur(20px)"
-        }}
-      >
-        {/* Inner code lines */}
-        <VStack gap="2" p="4" align="start">
-          <MotionBox
-            w="60%"
-            h="2px"
-            bg="rgba(255, 255, 255, 0.8)"
-            borderRadius="full"
-            initial={{ width: 0 }}
-            animate={{ width: "60%" }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          />
-          <MotionBox
-            w="40%"
-            h="2px"
-            bg="rgba(255, 255, 255, 0.6)"
-            borderRadius="full"
-            initial={{ width: 0 }}
-            animate={{ width: "40%" }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-          />
-          <MotionBox
-            w="70%"
-            h="2px"
-            bg="rgba(255, 255, 255, 0.8)"
-            borderRadius="full"
-            initial={{ width: 0 }}
-            animate={{ width: "70%" }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-          />
-        </VStack>
-      </MotionBox>
-
-      {/* Floating elements */}
-      <MotionBox
-        position="absolute"
-        top="20%"
-        right="20%"
-        w="12px"
-        h="12px"
-        bg="blue.400"
-        borderRadius="full"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.7, y: [-10, 10, -10] }}
-        transition={{
-          scale: { duration: 0.6, delay: 1.8 },
-          opacity: { duration: 0.6, delay: 1.8 },
-          y: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-        }}
-      />
-      
-      <MotionBox
-        position="absolute"
-        bottom="25%"
-        left="15%"
-        w="8px"
-        h="8px"
-        bg="purple.400"
-        borderRadius="sm"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.6, rotate: [0, 360] }}
-        transition={{
-          scale: { duration: 0.6, delay: 2 },
-          opacity: { duration: 0.6, delay: 2 },
-          rotate: { duration: 4, repeat: Infinity, ease: "linear" },
-        }}
-      />
-
-      {/* Orbiting icon */}
-      <MotionBox
-        position="absolute"
-        top="30%"
-        left="70%"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.8 }}
-        transition={{ duration: 0.6, delay: 2.2 }}
-      >
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        >
-          <Code size={20} color="#60A5FA" />
-        </motion.div>
-      </MotionBox>
-
-      {/* Background particles */}
-      {[...Array(6)].map((_, i) => (
-        <MotionBox
-          key={i}
-          position="absolute"
-          w="2px"
-          h="2px"
-          bg="gray.400"
-          borderRadius="full"
-          top={`${20 + i * 10}%`}
-          left={`${10 + i * 15}%`}
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.3, y: [-5, 5, -5] }}
-          transition={{
-            scale: { duration: 0.4, delay: 0.8 + i * 0.1 },
-            opacity: { duration: 0.4, delay: 0.8 + i * 0.1 },
-            y: {
-              duration: 2 + i * 0.3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.2,
-            },
-          }}
-        />
-      ))}
-    </Box>
-  );
-};
-
-export function Hero() {
-  return (
-    <Section
-      header
-      size="lg"
-      bg="bg.subtle"
-      borderBottom="1px solid"
-      borderColor="border"
-    >
+    <Section header size="lg" py={{ base: "0", md: "0" }}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.6 }}
       >
         <Stack
-          direction={{ base: "column", md: "row" }}
-          gap={{ base: "10", md: "16" }}
-          align={{ md: "center" }}
+          direction={{ base: "column", lg: "row" }}
+          gap={{ base: "8", md: "12", lg: "20" }}
+          align="center"
           justify="space-between"
+          w="full"
+          minW="0"
         >
-          {/* Enhanced Video/Graphic Section */}
-          <MotionBox
-            flex="1"
-            order={{ base: 2, md: 1 }}
-            aspectRatio={16 / 9}
-            bg="gray.900"
-            borderRadius="l3"
-            minH={{ base: "200px", md: "280px" }}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            position="relative"
-            overflow="hidden"
-            border="1px solid"
-            borderColor="gray.700"
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            whileHover={{ 
-              scale: 1.02,
-              boxShadow: "0 25px 50px -12px rgba(102, 126, 234, 0.2)"
-            }}
-          >
-            <LinearGraphic />
-            
-            {/* Overlay text */}
-            <MotionBox
-              position="absolute"
-              bottom="4"
-              left="4"
-              bg="rgba(0, 0, 0, 0.8)"
-              borderRadius="md"
-              px="3"
-              py="2"
-              backdropFilter="blur(10px)"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 2.5 }}
-            >
-              <Text color="white" fontSize="sm" fontWeight="500">
-                Skalierung visualisiert
-              </Text>
-            </MotionBox>
-          </MotionBox>
-
-          {/* Enhanced Text Section */}
+          {/* Clean Text Section */}
           <MotionVStack
             flex="1"
-            align={{ base: "center", md: "flex-start" }}
-            textAlign={{ base: "center", md: "left" }}
-            gap="6"
-            order={{ base: 1, md: 2 }}
-            initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            minW="0"
+            w="full"
+            align={{ base: "center", lg: "flex-start" }}
+            textAlign={{ base: "center", lg: "left" }}
+            gap={{ base: "5", md: "6", lg: "8" }}
+            maxW={{ lg: "xl" }}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <MotionStack 
-              gap="4"
+            <MotionHeading
+              as="h1"
+              fontSize={{ base: "2xl", sm: "3xl", md: "5xl", lg: "6xl", xl: "7xl" }}
+              fontWeight="700"
+              lineHeight="1.1"
+              letterSpacing="-0.02em"
+              color="white"
+              wordBreak="break-word"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Dein Business läuft auf{" "}
+              <Text as="span" color="white">
+                Chaos
+              </Text>
+              {" "}statt auf einem{" "}
+              <Text as="span" color="white">
+                System
+              </Text>
+            </MotionHeading>
+
+            <MotionText
+              as="h2"
+              fontSize={{ base: "md", sm: "lg", md: "xl" }}
+              color="white"
+              lineHeight="relaxed"
+              maxW="2xl"
+              fontWeight="400"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <MotionHeading
-                as="h1"
-                textStyle={{ base: "2xl", md: "5xl" }}
-                maxW={{ md: "lg" }}
-                lineHeight="tighter"
-                fontWeight="700"
-                bgGradient="linear(to-r, gray.900, gray.700)"
-                bgClip="text"
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                Dein Wissen ist wertvoll.{" "}
-                <Text as="span" color="blue.600">
-                  Deine Zeit ist gedeckelt.
-                </Text>
-              </MotionHeading>
-              
-              <MotionText
-                color="fg.muted"
-                textStyle="lg"
-                maxW={{ md: "md" }}
-                fontWeight="400"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1 }}
-              >
-                Wir bauen dir das{" "}
-                <Text as="span" fontWeight="600" color="gray.800">
-                  Betriebssystem
-                </Text>
-                , das deine Expertise endlich skaliert.
-              </MotionText>
-            </MotionStack>
-            
-            {/* Enhanced CTA Button */}
+              Wir bauen dir das Betriebssystem, das Akquise, Verkauf und 
+              Delivery nahtlos automatisiert – unter deinem Branding.
+            </MotionText>
+
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Link href="#clear-path">
-                <Button
-                  size="xl"
-                  gap="2"
-                  bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-                  color="white"
-                  _hover={{
-                    bg: "linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%)",
-                    transform: "translateY(-2px)",
-                    boxShadow: "0 20px 25px -5px rgba(102, 126, 234, 0.3)",
-                    "&::before": { left: "100%" },
-                  }}
-                  transition="all 0.3s ease"
-                  position="relative"
-                  overflow="hidden"
-                  _before={{
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: "-100%",
-                    width: "100%",
-                    height: "100%",
-                    background:
-                      "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)",
-                    transition: "left 0.5s",
-                  }}
-                >
-                  <motion.div
-                    style={{ display: "flex", alignItems: "center", gap: "8px" }}
+              <VStack gap={{ base: "3", md: "4" }} align={{ base: "center", lg: "flex-start" }} w="full" maxW={{ base: "full", sm: "md" }}>
+                <Link href="#os-architektur-gespraech" w={{ base: "full", sm: "auto" }}>
+                  <Button
+                    w={{ base: "full", sm: "auto" }}
+                    size={{ base: "md", md: "lg" }}
+                    gap="2"
+                    bg="#01ADD5"
+                    color="white"
+                    px={{ base: "5", md: "8" }}
+                    py={{ base: "3", md: "4" }}
+                    fontSize={{ base: "xs", md: "sm" }}
+                    fontWeight="600"
+                    borderRadius="lg"
+                    whiteSpace="normal"
+                    _hover={{
+                      boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                      transform: "translateY(-1px)",
+                    }}
+                    transition="all 0.2s ease"
                   >
-                    <Text>Starte deine Skalierung</Text>
-                    <motion.div
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ 
-                        duration: 1.5, 
-                        repeat: Infinity, 
-                        ease: "easeInOut" 
-                      }}
-                    >
-                      <ArrowRight />
-                    </motion.div>
-                  </motion.div>
-                </Button>
-              </Link>
+                    OS-Architektur-Gespräch buchen
+                    <ArrowRight size={16} />
+                  </Button>
+                </Link>
+                <Text as="p" fontSize={{ base: "2xs", sm: "xs" }} color="gray.500" fontWeight="600" textAlign="center">
+                  Kostenlose Analyse • Keine Verkaufsshow
+                </Text>
+              </VStack>
             </motion.div>
           </MotionVStack>
+
+          {/* Clean Video Section */}
+          <MotionBox
+            flex="1"
+            minW="0"
+            maxW={{ lg: "2xl" }}
+            w="full"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Box
+              aspectRatio={16 / 9}
+              bg="gray.50"
+              borderRadius="xl"
+              border="1px solid"
+              borderColor="gray.200"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              position="relative"
+              overflow="hidden"
+              _hover={{
+                borderColor: "gray.300"
+              }}
+              transition="border-color 0.2s ease"
+            >
+              {video?.vimeoId ? (
+                <Box
+                  position="absolute"
+                  inset="0"
+                  w="100%"
+                  h="100%"
+                  borderRadius="xl"
+                  overflow="hidden"
+                >
+                  <iframe
+                    src={`https://player.vimeo.com/video/${video.vimeoId}?${VIMEO_PARAMS}`}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                      borderRadius: "var(--chakra-radii-xl)",
+                    }}
+                    title="Erklärvideo"
+                  />
+                </Box>
+              ) : (
+                <>
+                  <VStack gap="4" color="gray.400">
+                    <Box
+                      w="16"
+                      h="16"
+                      bg="gray.200"
+                      borderRadius="full"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </Box>
+                    <VStack gap="2" textAlign="center" px="2">
+                      <Text fontWeight="600" fontSize={{ base: "md", md: "lg" }} color="gray.600">
+                        Erklärvideo
+                      </Text>
+                      <Text fontSize={{ base: "xs", md: "sm" }} color="gray.500">
+                        Sieh, wie ein Business-OS funktioniert
+                      </Text>
+                    </VStack>
+                  </VStack>
+                  <Box
+                    position="absolute"
+                    inset="0"
+                    bg="linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.02) 100%)"
+                    pointerEvents="none"
+                  />
+                </>
+              )}
+            </Box>
+          </MotionBox>
         </Stack>
       </motion.div>
     </Section>

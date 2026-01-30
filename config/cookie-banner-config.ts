@@ -45,7 +45,7 @@ export const cookieBannerConfig = {
       de: {
         consentModal: {
           description:
-            "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Website-Verkehr zu verstehen. Lesen Sie unsere <a href='/legal/cookie-policy'>Cookie-Richtlinie</a> oder <a data-cc='show-preferencesModal'>verwalten Sie Ihre Einstellungen</a>.",
+            "Wir verwenden Cookies, um deine Erfahrung zu verbessern und den Website-Verkehr zu verstehen. Lies unsere <a href='/legal/cookie-policy'>Cookie-Richtlinie</a> oder <a data-cc='show-preferencesModal'>verwalte deine Einstellungen</a>.",
           acceptAllBtn: "Alle akzeptieren",
           acceptNecessaryBtn: "Alle ablehnen",
         },
@@ -60,7 +60,7 @@ export const cookieBannerConfig = {
             {
               title: "Cookie-Verwendung",
               description:
-                "Wir verwenden verschiedene Arten von Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Sie können Ihre Präferenzen für jede Kategorie verwalten.",
+                "Wir verwenden verschiedene Arten von Cookies, um dir die bestmögliche Erfahrung auf unserer Website zu bieten. Du kannst deine Präferenzen für jede Kategorie verwalten.",
             },
             {
               title:
@@ -90,7 +90,7 @@ export const cookieBannerConfig = {
             {
               title: "Weitere Informationen",
               description:
-                'Bei Fragen zu unserer Cookie-Richtlinie und Ihren Wahlmöglichkeiten kontaktieren Sie uns bitte <a class="cc__link" href="/contact">hier</a>.',
+                'Bei Fragen zu unserer Cookie-Richtlinie und deinen Wahlmöglichkeiten kontaktiere uns bitte <a class="cc__link" href="/contact">hier</a>.',
             },
           ],
         },

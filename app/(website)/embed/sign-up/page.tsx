@@ -33,7 +33,25 @@ export default function SignUpEmbedPage() {
         <VStack gap={8}>
           <Heading size="3xl">Popup</Heading>
           <SignUp popup>
-            <Button size="lg">Registrierungs-Popup öffnen</Button>
+            <Button
+              size={{ base: "md", md: "lg" }}
+              gap="2"
+              bg="blue"
+              color="white"
+              px={{ base: "5", md: "8" }}
+              py={{ base: "3", md: "4" }}
+              fontSize={{ base: "xs", md: "sm" }}
+              fontWeight="600"
+              borderRadius="lg"
+              whiteSpace="normal"
+              _hover={{
+                boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                transform: "translateY(-1px)",
+              }}
+              transition="all 0.2s ease"
+            >
+              Registrierungs-Popup öffnen
+            </Button>
           </SignUp>
           <Heading size="3xl">Auf der Seite</Heading>
           <Box w="full" p={6} borderWidth="1px" borderRadius="lg" bg="bg.muted">

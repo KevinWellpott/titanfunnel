@@ -1,5 +1,6 @@
 import { generateMetadata } from "@/utils/metadata";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { getLandingVideos } from "@/utils/supabase";
 import {
   Hero,
   ScalingGap,
@@ -7,6 +8,7 @@ import {
   ProofRoi,
   RiskReversal,
   ClearPath,
+  RoiCalculator,
 } from "@/components/landing";
 
 export const metadata = generateMetadata({
@@ -16,18 +18,19 @@ export const metadata = generateMetadata({
 });
 
 export default async function Page() {
+  const videos = await getLandingVideos();
+
   return (
     <>
-      <Hero />
+      <Hero video={videos.hero} />
       <ScrollReveal>
         <ScalingGap />
       </ScrollReveal>
+      
       <ScrollReveal>
-        <ValueStack />
+        <ProofRoi video={videos.proof_roi} />
       </ScrollReveal>
-      <ScrollReveal>
-        <ProofRoi />
-      </ScrollReveal>
+      <RoiCalculator />
       <ScrollReveal>
         <RiskReversal />
       </ScrollReveal>

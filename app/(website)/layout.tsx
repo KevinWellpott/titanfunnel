@@ -8,10 +8,10 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <Box as="div" minW="0" maxW="100vw" overflowX="hidden">
       <Navbar type="website" />
-      <Box as="main">{children}</Box>
+      <Box as="main" minW="0" maxW="100%">{children}</Box>
       <Footer />
-    </>
+    </Box>
   );
 }
