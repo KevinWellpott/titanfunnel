@@ -1,5 +1,4 @@
 import { generateMetadata } from "@/utils/metadata";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { getLandingVideos } from "@/utils/supabase";
 import {
   Hero,
@@ -23,20 +22,20 @@ export default async function Page() {
   return (
     <>
       <Hero video={videos.hero} />
-      <ScrollReveal>
-        <ScalingGap />
-      </ScrollReveal>
-      
-      <ScrollReveal>
-        <ProofRoi video={videos.proof_roi} />
-      </ScrollReveal>
+      <div
+        style={{
+          width: "100%",
+          height: "1px",
+          backgroundColor: "white",
+          opacity: 0.2,
+        }}
+        aria-hidden
+      />
+      <ScalingGap />
+      <ProofRoi video={videos.proof_roi} />
       <RoiCalculator />
-      <ScrollReveal>
-        <RiskReversal />
-      </ScrollReveal>
-      <ScrollReveal>
-        <ClearPath />
-      </ScrollReveal>
+      <RiskReversal />
+      <ClearPath />
     </>
   );
 }
