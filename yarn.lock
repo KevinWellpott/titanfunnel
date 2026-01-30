@@ -724,6 +724,14 @@
   dependencies:
     "@use-gesture/core" "10.3.1"
 
+"@vimeo/player@^2.30.2":
+  version "2.30.2"
+  resolved "https://registry.npmjs.org/@vimeo/player/-/player-2.30.2.tgz"
+  integrity sha512-pZx/quHHn0dx7V7qt2n3wcKYFbIvkLvLGsxzBLe4CzTrWTrw+/4KHrlzeB7EiyCrGRTktWmcvEqlqbDbaZ/liw==
+  dependencies:
+    native-promise-only "0.8.1"
+    weakmap-polyfill "2.0.4"
+
 "@visulima/boxen@^1.0.23":
   version "1.0.28"
   resolved "https://registry.npmjs.org/@visulima/boxen/-/boxen-1.0.28.tgz"
@@ -2515,6 +2523,11 @@ nanoid@^3.3.6:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.8.tgz"
   integrity sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==
 
+native-promise-only@0.8.1:
+  version "0.8.1"
+  resolved "https://registry.npmjs.org/native-promise-only/-/native-promise-only-0.8.1.tgz"
+  integrity sha512-zkVhZUA3y8mbz652WrL5x0fB0ehrBkulWT3TomAQ9iDtyXZvzKeEA6GPxAItBYeNYl5yngKRX612qHOhvMkDeg==
+
 next-themes@^0.4.4:
   version "0.4.4"
   resolved "https://registry.npmjs.org/next-themes/-/next-themes-0.4.4.tgz"
@@ -3241,6 +3254,11 @@ vfile@^6.0.0:
   dependencies:
     "@types/unist" "^3.0.0"
     vfile-message "^4.0.0"
+
+weakmap-polyfill@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npmjs.org/weakmap-polyfill/-/weakmap-polyfill-2.0.4.tgz"
+  integrity sha512-ZzxBf288iALJseijWelmECm/1x7ZwQn3sMYIkDr2VvZp7r6SEKuT8D0O9Wiq6L9Nl5mazrOMcmiZE/2NCenaxw==
 
 web-streams-polyfill@^3.0.3:
   version "3.3.3"

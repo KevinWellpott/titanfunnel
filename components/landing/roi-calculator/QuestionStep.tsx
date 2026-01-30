@@ -345,7 +345,7 @@ export function QuestionStep({
           </Button>
           {onReset && (
             <Button
-              variant="link"
+              variant="ghost"
               size={{ base: "md", md: "lg" }}
               gap="2"
               px={{ base: "5", md: "8" }}

@@ -7,7 +7,6 @@ import {
   type TextProps,
 } from "@chakra-ui/react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import { Logo } from "./logo";
 import { projectConfig } from "@/config";
 import { Link } from "../ui/link";
 
@@ -38,8 +37,16 @@ export const Footer = () => (
         align={{ base: "flex-start", sm: "center" }}
         gap="6"
       >
-        <Link href="/" _hover={{ opacity: 0.9 }}>
-          <Logo height="32" />
+        <Link href="/" display="flex" alignItems="center" flexShrink={0} _hover={{ opacity: 0.9 }}>
+          <Text
+            fontFamily="heading"
+            fontWeight="500"
+            fontSize={{ base: "lg", md: "xl" }}
+            letterSpacing="-0.02em"
+            color="fg"
+          >
+            titan.
+          </Text>
         </Link>
         <HStack gap="6" flexWrap="wrap">
           {legalLinks.map(({ href, label }) => (

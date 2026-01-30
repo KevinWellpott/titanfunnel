@@ -14,7 +14,7 @@ import { motion } from "motion/react";
 const MotionBox = motion.create(Box);
 const MotionVStack = motion.create(VStack);
 
-const VIMEO_PARAMS = "title=0&byline=0&portrait=0";
+import { BrandedVideoPlayer } from "./branded-video-player";
 
 export interface ProofRoiVideoProp {
   vimeoId: string;
@@ -133,17 +133,10 @@ export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
                       borderRadius="2xl"
                       overflow="hidden"
                     >
-                      <iframe
-                        src={`https://player.vimeo.com/video/${video.vimeoId}?${VIMEO_PARAMS}`}
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          width: "100%",
-                          height: "100%",
-                          border: "none",
-                          borderRadius: "var(--chakra-radii-2xl)",
-                        }}
+                      <BrandedVideoPlayer
+                        vimeoId={video.vimeoId}
                         title="Case Study Video"
+                        variant="proofRoi"
                       />
                     </Box>
                   ) : (

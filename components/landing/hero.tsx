@@ -12,7 +12,7 @@ const MotionVStack = motion.create(VStack);
 const MotionHeading = motion.create(Heading);
 const MotionText = motion.create(Text);
 
-const VIMEO_PARAMS = "title=0&byline=0&portrait=0";
+import { BrandedVideoPlayer } from "./branded-video-player";
 
 export interface HeroVideoProp {
   vimeoId: string;
@@ -160,17 +160,10 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
                   borderRadius="xl"
                   overflow="hidden"
                 >
-                  <iframe
-                    src={`https://player.vimeo.com/video/${video.vimeoId}?${VIMEO_PARAMS}`}
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      width: "100%",
-                      height: "100%",
-                      border: "none",
-                      borderRadius: "var(--chakra-radii-xl)",
-                    }}
+                  <BrandedVideoPlayer
+                    vimeoId={video.vimeoId}
                     title="Erklärvideo"
+                    variant="hero"
                   />
                 </Box>
               ) : (
