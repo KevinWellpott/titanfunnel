@@ -103,10 +103,22 @@ export const PricingCard = (props: PricingCardProps) => {
           <Card.Description color="fg">{data.description}</Card.Description>
           <Stack gap="2">
             <Button
-              size="xl"
+              size={{ base: "md", md: "lg" }}
+              gap="2"
               variant={data.recommended ? "solid" : "outline"}
               colorPalette={!data.recommended ? "gray" : undefined}
               bg={!data.recommended ? "bg.panel" : undefined}
+              px={{ base: "5", md: "8" }}
+              py={{ base: "3", md: "4" }}
+              fontSize={{ base: "xs", md: "sm" }}
+              fontWeight="600"
+              borderRadius="lg"
+              whiteSpace="normal"
+              _hover={{
+                boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                transform: "translateY(-1px)",
+              }}
+              transition="all 0.2s ease"
               data-o-auth="1"
               data-mode="popup"
               data-widget-mode={isFree ? "login" : "register"}

@@ -15,7 +15,19 @@ export const FeedbackButton = () => {
       <MenuTrigger asChild>
         <Button
           variant="outline"
-          size="xs"
+          size={{ base: "md", md: "lg" }}
+          gap="2"
+          px={{ base: "5", md: "8" }}
+          py={{ base: "3", md: "4" }}
+          fontSize={{ base: "xs", md: "sm" }}
+          fontWeight="600"
+          borderRadius="lg"
+          whiteSpace="normal"
+          _hover={{
+            boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+            transform: "translateY(-1px)",
+          }}
+          transition="all 0.2s ease"
           data-o-account-activity="Open Feedback Form"
         >
           Feedback?
@@ -35,8 +47,22 @@ export const FeedbackButton = () => {
           <HStack w="full">
             <Button
               variant="solid"
-              size="xs"
               w="full"
+              size={{ base: "md", md: "lg" }}
+              gap="2"
+              bg="blue"
+              color="white"
+              px={{ base: "5", md: "8" }}
+              py={{ base: "3", md: "4" }}
+              fontSize={{ base: "xs", md: "sm" }}
+              fontWeight="600"
+              borderRadius="lg"
+              whiteSpace="normal"
+              _hover={{
+                boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                transform: "translateY(-1px)",
+              }}
+              transition="all 0.2s ease"
               onClick={() => handleSubmit}
             >
               Send

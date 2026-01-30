@@ -6,147 +6,35 @@ import {
   CollapsibleRoot,
   Container,
   HStack,
-  VStack,
-  StackProps,
   Box,
+  Text,
 } from "@chakra-ui/react";
-import { Logo } from "./logo";
-import { Button } from "@/components/ui/button";
 import { CollapsibleTrigger } from "@/components/ui/collapsible-trigger";
-import { UserMenu } from "../ui/user-menu";
 import { Link } from "@/components/ui/link";
-import { SignedIn, SignedOut } from "../auth/protect-content";
-import { Login, SignUp } from "../auth/embed";
-import {
-  MenuContent,
-  MenuItem,
-  MenuItemGroup,
-  MenuRoot,
-  MenuSeparator,
-  MenuTrigger,
-} from "../ui/menu";
+import { Button } from "@/components/ui/button";
 
-export const MenuLink = (props) => {
+export function NavbarLinkMenu() {
   return (
-    <Link href={props.href} w="full">
-      <Button
-        colorPalette="gray"
-        variant={{ base: "ghost", md: "plain" }}
-        width={{ base: "full", md: "auto" }}
-        justifyContent={{ base: "flex-start", md: "center" }}
-      >
-        {props.children}
-      </Button>
-    </Link>
+    <HStack gap="1">
+      <Link href="/contact">
+        <Button
+          color="white"
+          bg="#01ADD5"
+          size="sm"
+          _hover={{
+            boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+            transform: "translateY(-1px)",
+          }}
+          transition="all 0.2s ease"
+        >
+          Kontakt
+        </Button>
+      </Link>
+    </HStack>
   );
-};
+}
 
-// TODO: Improve nav links
-export const NavbarLinkMenu = (props: StackProps) => {
-  return (
-    <>
-      <MenuLink href="/docs">Docs</MenuLink>
-      <MenuRoot>
-        <MenuTrigger asChild>
-          <Button
-            colorPalette="gray"
-            width={{ base: "full", md: "auto" }}
-            variant={{ base: "ghost", md: "plain" }}
-            justifyContent={{ base: "flex-start", md: "center" }}
-          >
-            Demo
-          </Button>
-        </MenuTrigger>
-        <MenuContent>
-          <MenuItemGroup title="Seiten">
-            <Link href="/pricing">
-              <MenuItem value="pricing">Preise</MenuItem>
-            </Link>
-            <Link href="/contact">
-              <MenuItem value="contact">Kontakt</MenuItem>
-            </Link>
-            <Link href="/support">
-              <MenuItem value="support">Support</MenuItem>
-            </Link>
-          </MenuItemGroup>
-          <MenuSeparator />
-          <MenuItemGroup title="Utility">
-            <Link href="/thank-you">
-              <MenuItem value="thank-you">Vielen Dank</MenuItem>
-            </Link>
-            <Link href="/not-found">
-              <MenuItem value="not-found">Nicht gefunden</MenuItem>
-            </Link>
-            <Link href="/javascript">
-              <MenuItem value="javascript">JavaScript</MenuItem>
-            </Link>
-            <Link href="/legal/terms-and-conditions">
-              <MenuItem value="terms-and-conditions">
-                AGB
-              </MenuItem>
-            </Link>
-          </MenuItemGroup>
-          <MenuSeparator />
-          <MenuItemGroup title="Authentifizierung">
-            <Link href="/app/free">
-              <MenuItem value="free">Geschützte Seite (Free Plan)</MenuItem>
-            </Link>
-            <Link href="/app/basic">
-              <MenuItem value="basic">Geschützte Seite (Basis Plan)</MenuItem>
-            </Link>
-            <Link href="/app/pro">
-              <MenuItem value="pro">Geschützte Seite (Pro Plan)</MenuItem>
-            </Link>
-          </MenuItemGroup>
-          <MenuSeparator />
-          <MenuItemGroup title="Embeds">
-            <Link href="/embed/login">
-              <MenuItem value="login">Login</MenuItem>
-            </Link>
-            <Link href="/embed/sign-up">
-              <MenuItem value="login">Sign up</MenuItem>
-            </Link>
-            <Link href="/embed/lead-capture">
-              <MenuItem value="lead-capture">Lead Capture</MenuItem>
-            </Link>
-            <Link href="/embed/email-list">
-              <MenuItem value="email-list">Email List</MenuItem>
-            </Link>
-          </MenuItemGroup>
-        </MenuContent>
-      </MenuRoot>
-    </>
-  );
-};
-
-export const NavbarActionMenu = ({ type }: { type: "website" | "app" }) => {
-  return (
-    <>
-      <SignedOut>
-        <Login popup>
-          <Button size="sm" variant="outline" colorPalette="gray">
-            Login
-          </Button>
-        </Login>
-        <SignUp popup>
-          <Button size="sm">Registrieren</Button>
-        </SignUp>
-      </SignedOut>
-      <SignedIn>
-        {type == "app" ? (
-          <UserMenu />
-        ) : (
-          <>
-            <Button size="sm">Zur Plattform</Button>
-          </>
-        )}
-      </SignedIn>
-    </>
-  );
-};
-
-export const Navbar = ({ type }: { type: "website" | "app" }) => {
-  console.log(type);
+export function Navbar({ type }: { type: "website" | "app" }) {
   return (
     <Center
       as="header"
@@ -154,31 +42,47 @@ export const Navbar = ({ type }: { type: "website" | "app" }) => {
       zIndex="docked"
       top={{ base: "4", md: "6" }}
       w="full"
+      maxW="100vw"
+      overflowX="hidden"
     >
-      <Container maxW={{ base: "full", md: "3xl" }}>
+      <Container maxW={{ base: "full", md: "3xl" }} w="full" px={{ base: "4", md: "6" }}>
         <Box
           w="full"
+          minW="0"
+          maxW="100%"
           px="4"
           py="3"
-          boxShadow="xs"
-          background="bg.panel"
           borderRadius="l3"
+          background="white/10"
+          backdropFilter="blur(12px)"
+          borderWidth="1px"
+          borderColor="white/20"
+          boxShadow="0 4px 24px rgba(0,0,0,0.08)"
+          _dark={{
+            background: "black/20",
+            borderColor: "white/10",
+            boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+          }}
         >
           <CollapsibleRoot>
             <HStack gap={{ base: "3", md: "8" }} justify="space-between">
               <CollapsibleTrigger />
-              <Link href="/">
-                <Logo />
+              <Link href="/" display="flex" alignItems="center" flexShrink={0}>
+                <Text
+                  fontFamily="heading"
+                  fontWeight="500"
+                  fontSize={{ base: "lg", md: "xl" }}
+                  letterSpacing="-0.02em"
+                  color="fg"
+                >
+                  titan.
+                </Text>
               </Link>
-              <HStack justify="flex-end" w="full" hideFrom="md">
-                <NavbarActionMenu type="app" />
-              </HStack>
-              <HStack gap="2" hideBelow="md">
+              <HStack justify="flex-end" w="full" hideBelow="md">
                 <NavbarLinkMenu />
-                <NavbarActionMenu type="app" />
               </HStack>
             </HStack>
-            <CollapsibleContent hideFrom="md" mt={4}>
+            <CollapsibleContent hideFrom="md" mt="4" pt="2" borderTopWidth="1px" borderColor="white/10" _dark={{ borderColor: "white/10" }}>
               <NavbarLinkMenu />
             </CollapsibleContent>
           </CollapsibleRoot>
@@ -186,4 +90,4 @@ export const Navbar = ({ type }: { type: "website" | "app" }) => {
       </Container>
     </Center>
   );
-};
+}

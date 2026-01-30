@@ -29,11 +29,8 @@ export function MetaPixel() {
     return null;
   }
 
-  // Prüfe Cookie Consent
-  const hasConsent = () => {
-    const consent = CookieConsent.getConsent();
-    return consent?.categories?.[config.cookieCategory] === true;
-  };
+  // Prüfe Cookie Consent (vanilla-cookieconsent API: acceptedCategory)
+  const hasConsent = () => CookieConsent.acceptedCategory(config.cookieCategory);
 
   const fbq = (...args: any[]) => {
     if (typeof window !== "undefined" && (window as any).fbq) {

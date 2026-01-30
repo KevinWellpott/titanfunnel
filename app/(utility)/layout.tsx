@@ -21,7 +21,23 @@ export default function WebsiteLayout({
         w="full"
       >
         <Link href="/">
-          <Button colorPalette="gray" variant="outline">
+          <Button
+            colorPalette="gray"
+            variant="outline"
+            size={{ base: "md", md: "lg" }}
+            gap="2"
+            px={{ base: "5", md: "8" }}
+            py={{ base: "3", md: "4" }}
+            fontSize={{ base: "xs", md: "sm" }}
+            fontWeight="600"
+            borderRadius="lg"
+            whiteSpace="normal"
+            _hover={{
+              boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+              transform: "translateY(-1px)",
+            }}
+            transition="all 0.2s ease"
+          >
             <ArrowLeft />
             Back home
           </Button>

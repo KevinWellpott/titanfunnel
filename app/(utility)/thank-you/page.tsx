@@ -27,7 +27,23 @@ export default function ThankYouPage() {
             >
               <Box pt="4">
                 <Link href="https://mail.google.com">
-                  <Button size="sm">
+                  <Button
+                    size={{ base: "md", md: "lg" }}
+                    gap="2"
+                    bg="blue"
+                    color="white"
+                    px={{ base: "5", md: "8" }}
+                    py={{ base: "3", md: "4" }}
+                    fontSize={{ base: "xs", md: "sm" }}
+                    fontWeight="600"
+                    borderRadius="lg"
+                    whiteSpace="normal"
+                    _hover={{
+                      boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                      transform: "translateY(-1px)",
+                    }}
+                    transition="all 0.2s ease"
+                  >
                     <ArrowSquareOut weight="duotone" />
                     Gmail öffnen
                   </Button>
