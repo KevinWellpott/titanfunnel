@@ -811,7 +811,7 @@ export function BusinessOSModules() {
 
   return (
     <>
-      <Box as="section" bg="gray.900" color="white" py={{ base: "12", md: "16" }} w="full" minW="0" maxW="100%" overflowX="hidden">
+      <Box as="section"  color="white" py={{ base: "12", md: "16" }} w="full" minW="0" maxW="100%" overflowX="hidden">
         {/* Header – bleibt im Container, links/zentriert wie bisher */}
         <Container maxW="8xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
           <VStack gap={{ base: "12", md: "18", lg: "24" }} w="full" minW="0">
@@ -822,9 +822,9 @@ export function BusinessOSModules() {
               px={{ base: "2", md: "0" }}
               w="full"
               minW="0"
-              initial={{ y: 30, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
             >
     
@@ -858,9 +858,9 @@ export function BusinessOSModules() {
           marginRight="-50vw"
           pl={{ base: "4", md: "6" }}
           pr="0"
-          sx={{
+          css={{
             "@media (min-width: 80em)": {
-              pl: "calc((100vw - 80rem) / 2 + 1.5rem)",
+              paddingLeft: "calc((100vw - 80rem) / 2 + 1.5rem)",
             },
           }}
         >
@@ -883,9 +883,9 @@ export function BusinessOSModules() {
                       w="320px"
                       h="420px"
                       flexShrink="0"
-                      initial={{ y: 30, opacity: 0 }}
+                      initial={{ y: 20, opacity: 0 }}
                       whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.6, delay: index * 0.05 }}
+                      transition={{ duration: 0.6, delay: index * 0.05, ease: "easeOut" }}
                       viewport={{ once: true }}
                     >
                       <Box
@@ -899,10 +899,11 @@ export function BusinessOSModules() {
                         flexDirection="column"
                         _hover={{
                           borderColor: `${module.color}.500`,
-                          boxShadow: `0 25px 50px -12px rgba(0, 0, 0, 0.4)`,
-                          transform: "translateY(-8px)"
+                          boxShadow: "0 12px 28px rgba(0, 0, 0, 0.15)",
+                          transform: "translateY(-2px)",
                         }}
-                        transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+                        transition="transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+                        style={{ willChange: "transform" }}
                         cursor="default"
                         position="relative"
                       >

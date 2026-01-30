@@ -46,7 +46,7 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
       </Heading>
 
       <Box
-        bg="gray.800"
+     
         borderRadius="xl"
         borderWidth="1px"
         borderColor="gray.700"

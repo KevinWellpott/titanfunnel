@@ -22,9 +22,10 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
   return (
     <Section header size="lg" py={{ base: "0", md: "0" }}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
       >
         <Stack
           direction={{ base: "column", lg: "row" }}
@@ -44,8 +45,9 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
             gap={{ base: "5", md: "6", lg: "8" }}
             maxW={{ lg: "xl" }}
             initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
           >
             <MotionHeading
               as="h1"
@@ -55,9 +57,10 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               letterSpacing="-0.02em"
               color="white"
               wordBreak="break-word"
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
               Dein Business läuft auf{" "}
               <Text as="span" color="white">
@@ -77,17 +80,19 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               maxW="2xl"
               fontWeight="400"
               initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
               Wir bauen dir das Betriebssystem, das Akquise, Verkauf und 
               Delivery nahtlos automatisiert – unter deinem Branding.
             </MotionText>
 
             <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true }}
             >
               <VStack gap={{ base: "3", md: "4" }} align={{ base: "center", lg: "flex-start" }} w="full" maxW={{ base: "full", sm: "md" }}>
                 <Link href="#os-architektur-gespraech" w={{ base: "full", sm: "auto" }}>

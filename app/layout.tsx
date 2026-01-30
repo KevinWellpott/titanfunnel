@@ -9,6 +9,7 @@ import { Analytics } from "@/components/analytics";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import "@/styles/cookie-banner-styles.css";
 import "@/styles/outseta-styles.css";
+import "@/styles/premium-3d.css";
 import * as CookieConsent from "vanilla-cookieconsent";
 import { useEffect } from "react";
 import Script from "next/script";

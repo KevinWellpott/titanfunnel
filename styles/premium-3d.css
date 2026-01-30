@@ -1,0 +1,27 @@
+/* Premium 3D – räumliche Design-Tokens (Linear/Apple-Feel) */
+
+:root {
+  /* Sanfter Hintergrund-Gradient in Primärfarbtönen für Tiefe */
+  --background-gradient: linear-gradient(
+    165deg,
+    rgba(1, 173, 213, 0.03) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(1, 173, 213, 0.02) 100%
+  );
+}
+
+/* Fokus-Ring: box-shadow statt Browser-Outline, zur Farbpalette passend */
+[data-focus-visible]:focus-visible,
+.focus-ring-visible:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(1, 173, 213, 0.4);
+}
+
+/* Reduzierte Bewegung respektieren */
+@media (prefers-reduced-motion: reduce) {
+  .premium-3d-animate {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

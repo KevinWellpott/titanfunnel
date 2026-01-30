@@ -23,7 +23,7 @@ export function RoiCalculator() {
   const isResultsStep = state.step === 6;
 
   return (
-    <Section size="lg" bg="gray.900" color="white" py="10" id="roi-rechner">
+    <Section size="lg"  color="white" py="10" id="roi-rechner">
       <Container maxW="4xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
         <VStack gap={{ base: "6", md: "8" }} align="stretch" w="full" minW="0">
           <MotionBox

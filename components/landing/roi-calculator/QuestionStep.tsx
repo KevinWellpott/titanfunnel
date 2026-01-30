@@ -77,7 +77,7 @@ export function QuestionStep({
               whiteSpace="normal"
               borderWidth="1px"
               borderColor={answers.umsatz === opt.value ? "#01ADD5" : "gray.700"}
-              bg="gray.800"
+             
               color="white"
               _hover={{ borderColor: "gray.600", boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)", transform: "translateY(-1px)" }}
               transition="all 0.2s ease"

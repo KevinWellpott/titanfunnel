@@ -67,7 +67,7 @@ const steps = [
 
 function RiskReversal() {
   return (
-    <Section size="lg" bg="gray.900" color="white" py="0">
+    <Section size="lg" color="white" py="0">
       <Container maxW="6xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
         <VStack gap={{ base: "10", md: "16" }} w="full" minW="0">
           <VStack

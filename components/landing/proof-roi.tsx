@@ -34,7 +34,7 @@ const quote = {
 
 export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
   return (
-    <Section size="lg" bg="gray.900" color="white" py="2">
+    <Section size="lg"  color="white" py="2">
       <Container maxW="6xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
         <VStack gap={{ base: "8", md: "12" }} w="full" minW="0">
           {/* Compact Header */}

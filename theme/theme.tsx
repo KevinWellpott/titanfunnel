@@ -42,6 +42,10 @@ const customConfig = defineConfig({
         "8xl": { value: "6rem" },
         "9xl": { value: "8rem" },
       },
+      zIndex: {
+        background: { value: -1 },
+        floating: { value: 10 },
+      },
     },
     semanticTokens: {
       colors: {
@@ -234,6 +238,12 @@ const customConfig = defineConfig({
         },
       },
       shadows: {
+        "2xs": {
+          value: {
+            _light: "0px 1px 2px rgba(0, 0, 0, 0.05)",
+            _dark: "0px 1px 2px rgba(0, 0, 0, 0.2)",
+          },
+        },
         xs: {
           value: {
             _light:
@@ -280,6 +290,20 @@ const customConfig = defineConfig({
               "0px 24px 40px {colors.neutral.900/16}, 0px 0px 1px {colors.neutral.900/30}",
             _dark:
               "0px 24px 40px {black/64}, 0px 0px 1px inset {colors.neutral.300/30}",
+          },
+        },
+        hover: {
+          value: {
+            _light:
+              "0px 12px 28px {colors.neutral.900/12}, 0px 0px 1px {colors.neutral.900/25}",
+            _dark:
+              "0px 12px 28px {black/48}, 0px 0px 1px inset {colors.neutral.300/25}",
+          },
+        },
+        focusRing: {
+          value: {
+            _light: "0 0 0 3px {colors.primary.500/40}",
+            _dark: "0 0 0 3px {colors.primary.400/40}",
           },
         },
         inner: {
