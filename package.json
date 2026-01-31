@@ -21,6 +21,7 @@
     "@types/node": "^22.7.4",
     "@types/react": "19.0.1",
     "@types/react-dom": "19.0.1",
+    "@vercel/analytics": "^1.6.1",
     "@vimeo/player": "^2.30.2",
     "jose": "^5.9.6",
     "jwt-decode": "^4.0.0",
