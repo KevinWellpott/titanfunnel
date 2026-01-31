@@ -29,7 +29,6 @@ export function GoogleAnalytics() {
     return null;
   }
 
-  // Prüfe Cookie Consent (vanilla-cookieconsent API: acceptedCategory)
   const hasConsent = () => CookieConsent.acceptedCategory(config.cookieCategory);
 
   const gtag = (...args: any[]) => {
@@ -39,10 +38,7 @@ export function GoogleAnalytics() {
   };
 
   useEffect(() => {
-    if (!hasConsent()) {
-      return;
-    }
-
+    if (!hasConsent()) return;
     // Page View Tracking
     if (config.advanced.pageViewTracking) {
       gtag("config", config.measurementId, {
