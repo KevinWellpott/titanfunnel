@@ -138,7 +138,8 @@ export function BrandedVideoPlayer({
       overflow="hidden"
       bg="gray.800"
     >
-      {/* Vimeo iframe – allow nötig damit Browser Audio im iframe erlaubt */}
+      {/* Vimeo iframe – allow nötig damit Browser Audio im iframe erlaubt.
+          referrerPolicy: Referrer an Vimeo senden, damit Domain-Whitelist greift (sonst "Melde dich bei Vimeo an" im Deploy). */}
       <iframe
         ref={iframeRef}
         src={`https://player.vimeo.com/video/${vimeoId}?${VIMEO_PARAMS}`}
@@ -147,6 +148,7 @@ export function BrandedVideoPlayer({
         onLoad={() => setIframeLoaded(true)}
         allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
         allowFullScreen
+        referrerPolicy="strict-origin-when-cross-origin"
         style={{
           position: "absolute",
           inset: 0,

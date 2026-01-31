@@ -182,6 +182,16 @@ export const socialConfig = {
 - Footer-Social-Links
 - Open Graph Meta-Tags
 
+## Vimeo-Videos (Einbettung)
+
+Damit eingebettete Vimeo-Videos im **Deployment** abspielen (nicht nur lokal), muss die **Produktions-Domain** in Vimeo freigegeben sein:
+
+1. Vimeo → Video öffnen → **Share** → **Embed**
+2. Unter **„Where can this be embedded?“** entweder **„Any website“** wählen oder unter **„Specific domains“** die Domain(s) eintragen (z. B. `deine-app.vercel.app`, `www.deine-domain.de`).
+3. Ohne Eintrag zeigt Vimeo im Deploy „Melde dich bei Vimeo an“.
+
+Der Player sendet die Einbettungs-Origin per `referrerPolicy="strict-origin-when-cross-origin"`, damit Vimeo die Domain prüfen kann.
+
 ## Best Practices
 
 1. **Zentrale Konfiguration**: Alle Konfigurationen über `projectConfig` importieren
