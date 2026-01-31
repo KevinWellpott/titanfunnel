@@ -8,6 +8,7 @@ import {
   Box,
   Progress,
   Button,
+  Link,
 } from "@chakra-ui/react";
 import { glassCardStyles } from "../glass-card-styles";
 
@@ -158,13 +159,13 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
 
       <VStack gap="4" pt="4" w="full" minW="0" align="center">
         <VStack gap="2" align="center" w="full" maxW="md">
-          <Box
-            as="a"
+          <Link
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             w="full"
             display="block"
+            _hover={{ textDecoration: "none" }}
           >
             <Button
               w="full"
@@ -187,7 +188,7 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
               Jetzt ROI zur Wirklichkeit machen
               <ArrowRight size={16} />
             </Button>
-          </Box>
+          </Link>
           {onReset && (
             <Button
               variant="ghost"

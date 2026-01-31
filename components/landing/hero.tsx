@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Link, Stack, Text, VStack } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/layout/section";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -96,13 +96,13 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               viewport={{ once: true }}
             >
               <VStack gap={{ base: "3", md: "4" }} align={{ base: "center", lg: "flex-start" }} w="full" maxW={{ base: "full", sm: "md" }}>
-                <Box
-                  as="a"
+                <Link
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   w={{ base: "full", sm: "auto" }}
                   display="block"
+                  _hover={{ textDecoration: "none" }}
                 >
                   <Button
                     w={{ base: "full", sm: "auto" }}
@@ -122,10 +122,10 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
                     }}
                     transition="all 0.2s ease"
                   >
-                    Analysecall buchen
+                    OS-Architektur-Gespräch buchen
                     <ArrowRight size={16} />
                   </Button>
-                </Box>
+                </Link>
                 <Text as="p" fontSize={{ base: "2xs", sm: "xs" }} color="gray.500" fontWeight="600" textAlign="center">
                   Kostenlose Analyse • Keine Verkaufsshow
                 </Text>

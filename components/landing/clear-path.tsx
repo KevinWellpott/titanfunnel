@@ -8,6 +8,7 @@ import {
   HStack,
   Container,
   SimpleGrid,
+  Link,
 } from "@chakra-ui/react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
@@ -316,14 +317,14 @@ export function ClearPath() {
                   </Text>
                 </VStack>
 
-                <Box
-                  as="a"
+                <Link
                   href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   w="full"
                   maxW="md"
                   display="block"
+                  _hover={{ textDecoration: "none" }}
                 >
                   <Button
                     w="full"
@@ -346,7 +347,7 @@ export function ClearPath() {
                     Architektur-Gespräch buchen
                     <ArrowRight size={16} />
                   </Button>
-                </Box>
+                </Link>
 
                 <Text fontSize={{ base: "2xs", md: "xs" }} color="gray.500">
                   Keine Verkaufsshow. Kein Druck. Nur Klarheit.
