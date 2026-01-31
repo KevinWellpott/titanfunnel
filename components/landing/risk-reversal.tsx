@@ -10,6 +10,7 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { Section } from "@/components/layout/section";
+import { glassCardStyles } from "./glass-card-styles";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -107,11 +108,9 @@ function RiskReversal() {
             {steps.map((step) => (
                 <Box
                   key={step.id}
-                  bg="gray.800"
-                  border="1px solid"
-                  borderColor="gray.700"
                   borderRadius="xl"
                   p={{ base: "4", md: "6" }}
+                  {...glassCardStyles}
                 >
                   <VStack align="start" gap="4">
                     <HStack gap="3">

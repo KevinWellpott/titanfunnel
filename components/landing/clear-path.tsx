@@ -11,7 +11,9 @@ import {
 } from "@chakra-ui/react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/components/ui/link";
+import { glassCardStyles } from "./glass-card-styles";
+
+const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
 import { ArrowRight, ShieldCheck, Clock, ChartLineUp } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 
@@ -44,7 +46,7 @@ const guarantees = [
 
 export function ClearPath() {
   return (
-    <Section size="lg"  color="white" py="0" id="clear-path">
+    <Section size="lg" color="white" py="0" id="clear-path">
       <Container maxW="6xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
         <VStack gap={{ base: "10", md: "16" }} w="full" minW="0">
           {/* Clean Header */}
@@ -96,9 +98,6 @@ export function ClearPath() {
                   viewport={{ once: true }}
                 >
                   <Box
-                    bg="gray.800"
-                    border="1px solid"
-                    borderColor="gray.700"
                     borderRadius="xl"
                     p={{ base: "4", md: "6" }}
                     h="full"
@@ -106,11 +105,11 @@ export function ClearPath() {
                     display="flex"
                     flexDirection="column"
                     _hover={{
-                      borderColor: "gray.600",
                       transform: "translateY(-2px)",
                       boxShadow: "0 12px 28px rgba(0, 0, 0, 0.12)",
                     }}
                     transition="transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+                    {...glassCardStyles}
                   >
                     <VStack align="start" gap="4" flex="1">
                       {/* Icon & Number */}
@@ -192,13 +191,11 @@ export function ClearPath() {
               <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: "4", md: "6" }} w="full" minW="0">
                 {/* With Us */}
                 <Box
-                  bg="gray.800"
-                  border="2px solid"
-                  borderColor="blue.500/30"
                   borderRadius="xl"
                   p={{ base: "4", md: "6" }}
                   position="relative"
                   minW="0"
+                  {...glassCardStyles}
                 >
                   <Box
                     position="absolute"
@@ -238,13 +235,11 @@ export function ClearPath() {
 
                 {/* Without Us */}
                 <Box
-                  bg="gray.850"
-                  border="1px solid"
-                  borderColor="gray.700"
                   borderRadius="xl"
                   p={{ base: "4", md: "6" }}
                   position="relative"
                   minW="0"
+                  {...glassCardStyles}
                 >
                   <Box
                     position="absolute"
@@ -306,12 +301,10 @@ export function ClearPath() {
             viewport={{ once: true }}
           >
             <Box
-              bg="gray.800"
-              border="1px solid"
-              borderColor="gray.700"
               borderRadius="xl"
               p={{ base: "5", md: "8" }}
               textAlign="center"
+              {...glassCardStyles}
             >
               <VStack gap={{ base: "4", md: "6" }}>
                 <VStack gap={{ base: "2", md: "3" }} px={{ base: "2", md: "0" }}>
@@ -323,7 +316,15 @@ export function ClearPath() {
                   </Text>
                 </VStack>
 
-                <Link href="#os-architektur-gespraech" w="full" maxW="md">
+                <Box
+                  as="a"
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  w="full"
+                  maxW="md"
+                  display="block"
+                >
                   <Button
                     w="full"
                     size={{ base: "md", md: "lg" }}
@@ -345,7 +346,7 @@ export function ClearPath() {
                     Architektur-Gespräch buchen
                     <ArrowRight size={16} />
                   </Button>
-                </Link>
+                </Box>
 
                 <Text fontSize={{ base: "2xs", md: "xs" }} color="gray.500">
                   Keine Verkaufsshow. Kein Druck. Nur Klarheit.

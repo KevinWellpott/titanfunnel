@@ -9,7 +9,9 @@ import {
   Progress,
   Button,
 } from "@chakra-ui/react";
-import { Link } from "@/components/ui/link";
+import { glassCardStyles } from "../glass-card-styles";
+
+const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
 import { ArrowRight } from "@phosphor-icons/react";
 import type { RoiResult } from "./types";
 import { getMaxMonthlyROIForDisplay } from "./lib/roi-calculations";
@@ -46,14 +48,12 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
       </Heading>
 
       <Box
-     
         borderRadius="xl"
-        borderWidth="1px"
-        borderColor="gray.700"
         p={{ base: "4", md: "6" }}
         textAlign="center"
         w="full"
         minW="0"
+        {...glassCardStyles}
       >
         <Text
           fontSize="xs"
@@ -85,12 +85,10 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
         </Heading>
 
         <Box
-          bg="gray.800"
           borderRadius="xl"
-          borderWidth="1px"
-          borderColor="gray.700"
           p={{ base: "4", md: "5" }}
           minW="0"
+          {...glassCardStyles}
         >
           <VStack align="stretch" gap={{ base: "4", md: "5" }}>
             <Box>
@@ -145,12 +143,10 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
       </VStack>
 
       <Box
-        bg="gray.800"
         borderRadius="xl"
-        borderWidth="1px"
-        borderColor="gray.700"
         p={{ base: "4", md: "5" }}
         minW="0"
+        {...glassCardStyles}
       >
         <Text fontSize="xs" color="gray.500" fontWeight="600" textTransform="uppercase" letterSpacing="0.05em" mb="1">
           Empfohlene Investitionsstufe
@@ -162,7 +158,14 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
 
       <VStack gap="4" pt="4" w="full" minW="0" align="center">
         <VStack gap="2" align="center" w="full" maxW="md">
-          <Link href="/contact" w="full">
+          <Box
+            as="a"
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            w="full"
+            display="block"
+          >
             <Button
               w="full"
               size={{ base: "md", md: "lg" }}
@@ -184,7 +187,7 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
               Jetzt ROI zur Wirklichkeit machen
               <ArrowRight size={16} />
             </Button>
-          </Link>
+          </Box>
           {onReset && (
             <Button
               variant="ghost"

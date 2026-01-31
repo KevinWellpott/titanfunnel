@@ -23,9 +23,22 @@ export function RoiCalculator() {
   const isResultsStep = state.step === 6;
 
   return (
-    <Section size="lg"  color="white" py="10" id="roi-rechner">
-      <Container maxW="4xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
-        <VStack gap={{ base: "6", md: "8" }} align="stretch" w="full" minW="0">
+    <Box as="section" position="relative" id="roi-rechner" w="full" minW="0">
+      {/* Weißer Glow von unten nach oben */}
+      <Box
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        h="160px"
+        pointerEvents="none"
+        bg="linear-gradient(to top, rgba(255,255,255,0.06) 0%, transparent 70%)"
+        zIndex="0"
+        aria-hidden
+      />
+      <Section size="lg" color="white" py="10" position="relative" zIndex="1">
+        <Container maxW="4xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
+          <VStack gap={{ base: "6", md: "8" }} align="stretch" w="full" minW="0">
           <MotionBox
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -94,8 +107,9 @@ export function RoiCalculator() {
               <ROIResults result={result} onReset={reset} />
             </MotionBox>
           )}
-        </VStack>
-      </Container>
-    </Section>
+          </VStack>
+        </Container>
+      </Section>
+    </Box>
   );
 }

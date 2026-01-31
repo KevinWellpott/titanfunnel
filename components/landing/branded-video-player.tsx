@@ -15,12 +15,15 @@ export interface BrandedVideoPlayerProps {
   title?: string;
   /** "hero" = xl radius, "proofRoi" = 2xl radius */
   variant?: "hero" | "proofRoi";
+  /** Thumbnail-URL (z. B. /thumbnail-hero.webp). Vor dem ersten Abspielen sichtbar. */
+  thumbnailSrc?: string;
 }
 
 export function BrandedVideoPlayer({
   vimeoId,
   title = "Video",
   variant = "hero",
+  thumbnailSrc,
 }: BrandedVideoPlayerProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const playButtonRef = useRef<HTMLButtonElement>(null);
@@ -193,7 +196,7 @@ export function BrandedVideoPlayer({
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/thumbnail.webp"
+                src={thumbnailSrc ?? "/thumbnail.webp"}
                 alt=""
                 style={{
                   position: "absolute",
@@ -215,25 +218,24 @@ export function BrandedVideoPlayer({
                 width: "var(--chakra-sizes-20, 5rem)",
                 height: "var(--chakra-sizes-20, 5rem)",
                 borderRadius: "9999px",
-                backgroundColor: BRAND_COLOR,
+                backgroundColor: "transparent",
                 color: "white",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                border: "2px solid rgba(255, 255, 255, 0.9)",
                 cursor: "pointer",
-                border: "none",
-                boxShadow: "0 4px 24px rgba(1, 173, 213, 0.5)",
                 transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#0199b8";
+                e.currentTarget.style.borderColor = "white";
                 e.currentTarget.style.transform = "scale(1.05)";
-                e.currentTarget.style.boxShadow = "0 6px 28px rgba(1, 173, 213, 0.6)";
+                e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = BRAND_COLOR;
+                e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.9)";
                 e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow = "0 4px 24px rgba(1, 173, 213, 0.5)";
+                e.currentTarget.style.backgroundColor = "transparent";
               }}
             >
               <svg

@@ -11,18 +11,21 @@ import {
   Container,
   Badge,
   SimpleGrid,
+  Link,
 } from "@chakra-ui/react";
 import { Section } from "@/components/layout/section";
+import { glassCardStyles } from "./glass-card-styles";
 import { 
   ArrowRight,
-  Target,
+  Funnel,
   Users,
-  CreditCard,
-  Play,
+  Handshake,
+  Package,
   TrendUp,
   ChartLine,
+  Robot,
+  PuzzlePiece,
   Gear,
-  Database,
   Plus,
   X
 } from "@phosphor-icons/react";
@@ -33,6 +36,8 @@ import { createPortal } from "react-dom";
 const MotionBox = motion.create(Box);
 const MotionVStack = motion.create(VStack);
 
+const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
+
 // Detailed Modal Content for each module - RICH & INDIVIDUAL
 const getModalContent = (module) => {
   const content = {
@@ -40,7 +45,7 @@ const getModalContent = (module) => {
       title: "Automatische Lead-Generierung",
       subtitle: "Nie wieder kalte Akquise – dein System arbeitet für dich",
       description: "Wir bauen intelligente Funnel, die rund um die Uhr qualifizierte Interessenten anziehen und vorqualifizieren – ohne dass du aktiv werden musst.",
-      icon: Target,
+      icon: Funnel,
       features: [
         {
           title: "Individuelle Lead-Magneten",
@@ -86,7 +91,7 @@ const getModalContent = (module) => {
       title: "Nahtloser Verkaufsprozess",
       subtitle: "Vom Interesse zur Zahlung – komplett automatisiert",
       description: "Ein integrierter Sales-Flow, der Vertragsunterzeichnung, Zahlungsabwicklung und Kunden-Onboarding in einem automatischen Prozess vereint.",
-      icon: CreditCard,
+      icon: Handshake,
       features: [
         {
           title: "Digitale Vertragsunterzeichnung",
@@ -155,7 +160,7 @@ const getModalContent = (module) => {
       title: "Komplette Prozessautomatisierung",
       subtitle: "Schluss mit manueller Kleinarbeit",
       description: "Individuell auf dich zugeschnittene Workflows, die repetitive Aufgaben vollständig automatisieren – von Terminbuchung bis Zahlungserinnerung.",
-      icon: Gear,
+      icon: Robot,
       features: [
         {
           title: "Intelligente Terminbuchung",
@@ -178,7 +183,7 @@ const getModalContent = (module) => {
       title: "Premium Delivery Platform",
       subtitle: "Dein Wissen, perfekt verpackt und ausgeliefert",
       description: "Ein vollständig auf deine Marke zugeschnittenes Kundenportal, in dem du Kurse, Dokumente und Communitys bereitstellst – ohne technischen Aufwand.",
-      icon: Play,
+      icon: Package,
       features: [
         {
           title: "White-Label Kundenportal",
@@ -201,7 +206,7 @@ const getModalContent = (module) => {
       title: "Unified Business Platform",
       subtitle: "Ein System, das alles kann – genau wie du es brauchst",
       description: "Schluss mit dem Flickenteppich aus verschiedenen Tools: Eine integrierte Plattform, die alle Funktionen vereint und perfekt aufeinander abgestimmt ist.",
-      icon: Database,
+      icon: PuzzlePiece,
       features: [
         {
           title: "Konsolidierung aller Business-Tools",
@@ -671,7 +676,7 @@ const PremiumVisual = ({ type, color }) => {
 const coreModules = [
   {
     id: "leads",
-    icon: Target,
+    icon: Funnel,
     title: "Automatische Lead-Generierung",
     description: "Generiert 24/7 qualifizierte Interessenten ohne dein Zutun",
     benefits: [
@@ -697,7 +702,7 @@ const coreModules = [
   },
   {
     id: "verkauf",
-    icon: CreditCard,
+    icon: Handshake,
     title: "Nahtloser Verkaufsprozess",
     description: "Von Interesse bis Zahlung in einem professionellen Flow",
     benefits: [
@@ -710,7 +715,7 @@ const coreModules = [
   },
   {
     id: "lieferung",
-    icon: Play,
+    icon: Package,
     title: "HighEnd Fullfillment",
     description: "Liefere deine Expertise in einem branded Portal",
     benefits: [
@@ -749,7 +754,7 @@ const coreModules = [
   },
   {
     id: "automatisierung",
-    icon: Gear,
+    icon: Robot,
     title: "Prozessautomatisierung",
     description: "Eliminiert Routinearbeit und spart dir Stunden täglich",
     benefits: [
@@ -762,7 +767,7 @@ const coreModules = [
   },
   {
     id: "einheit",
-    icon: Database,
+    icon: PuzzlePiece,
     title: "Ein System für alles",
     description: "Schluss mit 8 verschiedenen Tools die nicht sprechen",
     benefits: [
@@ -811,7 +816,7 @@ export function BusinessOSModules() {
 
   return (
     <>
-      <Box as="section"  color="white" py={{ base: "12", md: "16" }} w="full" minW="0" maxW="100%" overflowX="hidden">
+      <Box as="section" color="white" py={{ base: "12", md: "16" }} w="full" minW="0" maxW="100%" overflowX="hidden">
         {/* Header – bleibt im Container, links/zentriert wie bisher */}
         <Container maxW="8xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
           <VStack gap={{ base: "12", md: "18", lg: "24" }} w="full" minW="0">
@@ -889,16 +894,12 @@ export function BusinessOSModules() {
                       viewport={{ once: true }}
                     >
                       <Box
-                        bg="gray.800"
-                        border="1px solid"
-                        borderColor="gray.700"
                         borderRadius="xl"
                         overflow="hidden"
                         h="full"
                         display="flex"
                         flexDirection="column"
                         _hover={{
-                          borderColor: `${module.color}.500`,
                           boxShadow: "0 12px 28px rgba(0, 0, 0, 0.15)",
                           transform: "translateY(-2px)",
                         }}
@@ -906,6 +907,7 @@ export function BusinessOSModules() {
                         style={{ willChange: "transform" }}
                         cursor="default"
                         position="relative"
+                        {...glassCardStyles}
                       >
                         {/* Premium Visual Area */}
                         <Box
@@ -1012,9 +1014,6 @@ export function BusinessOSModules() {
               viewport={{ once: true }}
             >
               <Box
-                bg="gray.800"
-                border="1px solid"
-                borderColor="gray.700"
                 borderRadius="xl"
                 p={{ base: "5", md: "8" }}
                 textAlign="center"
@@ -1030,6 +1029,7 @@ export function BusinessOSModules() {
                   height: "1px",
                   bg: "linear-gradient(90deg, transparent, rgba(1, 173, 213, 0.5), transparent)"
                 }}
+                {...glassCardStyles}
               >
                   <VStack gap={{ base: "4", md: "6" }}>
                   <VStack gap={{ base: "2", md: "3" }} px={{ base: "2", md: "0" }}>
@@ -1041,27 +1041,36 @@ export function BusinessOSModules() {
                     </Text>
                   </VStack>
 
-                  <Button
-                    size={{ base: "md", md: "lg" }}
-                    gap="2"
-                    bg="#01ADD5"
-                    color="white"
-                    px={{ base: "5", md: "8" }}
-                    py={{ base: "3", md: "4" }}
-                    fontSize={{ base: "xs", md: "sm" }}
-                    fontWeight="600"
-                    borderRadius="lg"
+                  <Link
+                    href={CALENDLY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     w={{ base: "full", sm: "auto" }}
-                    whiteSpace="normal"
-                    _hover={{
-                      boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
-                      transform: "translateY(-1px)",
-                    }}
-                    transition="all 0.2s ease"
+                    display="block"
+                    _hover={{ textDecoration: "none" }}
                   >
-                    Individuelle Lösung besprechen
-                    <ArrowRight size={16} />
-                  </Button>
+                    <Button
+                      size={{ base: "md", md: "lg" }}
+                      gap="2"
+                      bg="#01ADD5"
+                      color="white"
+                      px={{ base: "5", md: "8" }}
+                      py={{ base: "3", md: "4" }}
+                      fontSize={{ base: "xs", md: "sm" }}
+                      fontWeight="600"
+                      borderRadius="lg"
+                      w={{ base: "full", sm: "auto" }}
+                      whiteSpace="normal"
+                      _hover={{
+                        boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+                        transform: "translateY(-1px)",
+                      }}
+                      transition="all 0.2s ease"
+                    >
+                      Individuelle Lösung besprechen
+                      <ArrowRight size={16} />
+                    </Button>
+                  </Link>
                 </VStack>
               </Box>
             </MotionBox>
@@ -1269,48 +1278,9 @@ export function BusinessOSModules() {
                     ))}
                   </VStack>
 
-                  {/* Success Stories */}
-                  <VStack gap={{ base: "3", md: "4" }} align="start" w="full" minW="0">
-                    <HStack gap="2" align="center">
-                      <Box w="3" h="3" bg={`${coreModules.find(m => m.id === activeModal)?.color}.400`} borderRadius="sm" flexShrink={0} />
-                      <Text fontSize={{ base: "xs", md: "sm" }} color="gray.500" fontWeight="700" textTransform="uppercase" letterSpacing="wide">
-                        Success Stories
-                      </Text>
-                    </HStack>
-                    <Box w="full" p={{ base: "3", md: "4" }} bg="gray.800/30" borderRadius="lg" border="1px solid" borderColor="gray.700" minW="0">
-                      <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300" lineHeight="1.6" wordBreak="break-word">
-                        "Seit wir dieses Modul implementiert haben, hat sich unser Business komplett transformiert.
-                        Die Automatisierung spart uns täglich 5+ Stunden und der ROI ist messbar gestiegen."
-                      </Text>
-                      <Text fontSize={{ base: "2xs", md: "xs" }} color="gray.500" mt="2" fontWeight="600">
-                        - TitanDevelopment Kunde
-                      </Text>
-                    </Box>
-                  </VStack>
+                
 
-                  {/* CTA */}
-                  <Box w="full" pt={{ base: "3", md: "4" }} borderTop="1px solid" borderColor="gray.700" minW="0">
-                    <Button
-                      w="full"
-                      size={{ base: "md", md: "lg" }}
-                      gap="2"
-                      bg="#01ADD5"
-                      color="white"
-                      px={{ base: "5", md: "8" }}
-                      py={{ base: "3", md: "4" }}
-                      fontSize={{ base: "xs", md: "sm" }}
-                      fontWeight="600"
-                      borderRadius="lg"
-                      whiteSpace="normal"
-                      _hover={{
-                        boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
-                        transform: "translateY(-1px)",
-                      }}
-                      transition="all 0.2s ease"
-                    >
-                      Jetzt implementieren lassen
-                    </Button>
-                  </Box>
+                 
                 </VStack>
               </Box>
               </Box>

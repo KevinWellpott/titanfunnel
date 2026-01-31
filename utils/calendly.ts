@@ -36,9 +36,11 @@ export function buildCalendlyUrl(
   return url.toString();
 }
 
+const CALENDLY_DEFAULT_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
+
 export function getCalendlyBaseUrl(): string {
-  if (typeof process === "undefined") return "";
-  return process.env.NEXT_PUBLIC_CALENDLY_LINK ?? "";
+  if (typeof process === "undefined") return CALENDLY_DEFAULT_URL;
+  return (process.env.NEXT_PUBLIC_CALENDLY_LINK ?? CALENDLY_DEFAULT_URL).trim() || CALENDLY_DEFAULT_URL;
 }
 
 /** Erzeugt die Embed-URL für Calendly Inline-Widget (calendly.com/embed/event/...) */

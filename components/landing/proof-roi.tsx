@@ -15,6 +15,7 @@ const MotionBox = motion.create(Box);
 const MotionVStack = motion.create(VStack);
 
 import { BrandedVideoPlayer } from "./branded-video-player";
+import { glassCardStyles } from "./glass-card-styles";
 
 export interface ProofRoiVideoProp {
   vimeoId: string;
@@ -34,7 +35,7 @@ const quote = {
 
 export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
   return (
-    <Section size="lg"  color="white" py="2">
+    <Section size="lg" color="white" py="2">
       <Container maxW="6xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
         <VStack gap={{ base: "8", md: "12" }} w="full" minW="0">
           {/* Compact Header */}
@@ -137,6 +138,7 @@ export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
                         vimeoId={video.vimeoId}
                         title="Case Study Video"
                         variant="proofRoi"
+                        thumbnailSrc="/thumbnail-proof-roi.webp"
                       />
                     </Box>
                   ) : (
@@ -203,42 +205,51 @@ export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {/* Clean Stats - No Boxes */}
+              {/* Kennzahlen leicht hervorgehoben */}
               <VStack gap="4" align={{ base: "center", lg: "start" }} w="full">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ 
-                      duration: 0.5, 
-                      delay: 0.5 + i * 0.1 
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.5 + i * 0.1,
                     }}
                     viewport={{ once: true }}
                     style={{ width: "100%" }}
                   >
-                    <VStack 
-                      align={{ base: "center", lg: "start" }} 
-                      gap="1"
+                    <Box
+                      w="full"
+                      maxW={{ base: "full", sm: "xs" }}
+                      px="4"
+                      py="3"
+                      borderRadius="lg"
+                      {...glassCardStyles}
                     >
-                      <Text
-                        fontSize={{ base: "xl", md: "2xl" }}
-                        fontWeight="800"
-                        lineHeight="tight"
-                        color="white"
+                      <VStack
+                        align={{ base: "center", lg: "start" }}
+                        gap="1"
                       >
-                        {stat.value}
-                      </Text>
-                      <Text 
-                        fontSize={{ base: "2xs", md: "xs" }} 
-                        color="gray.500" 
-                        fontWeight="600"
-                        textTransform="uppercase"
-                        letterSpacing="wide"
-                      >
-                        {stat.label}
-                      </Text>
-                    </VStack>
+                        <Text
+                          fontSize={{ base: "xl", md: "2xl" }}
+                          fontWeight="800"
+                          lineHeight="tight"
+                          color="white"
+                        >
+                          {stat.value}
+                        </Text>
+                        <Text
+                          fontSize={{ base: "2xs", md: "xs" }}
+                          color="gray.400"
+                          fontWeight="600"
+                          textTransform="uppercase"
+                          letterSpacing="wide"
+                        >
+                          {stat.label}
+                        </Text>
+                      </VStack>
+                    </Box>
                   </motion.div>
                 ))}
               </VStack>

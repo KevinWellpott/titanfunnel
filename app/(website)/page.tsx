@@ -34,6 +34,15 @@ export default async function Page() {
       <ScalingGap />
       <ProofRoi video={videos.proof_roi} />
       <RoiCalculator />
+      <div
+        style={{
+          width: "100%",
+          height: "1px",
+          backgroundColor: "white",
+          opacity: 0.2,
+        }}
+        aria-hidden
+      />
       <RiskReversal />
       <ClearPath />
     </>

@@ -2,12 +2,11 @@
 
 import { Box, VStack } from "@chakra-ui/react";
 
-// Calendly: Entweder in .env.local setzen: NEXT_PUBLIC_CALENDLY_LINK=https://calendly.com/dein-name/dein-event
-// Oder hier direkt eintragen (ohne .env):
-const CALENDLY_LINK_FALLBACK = ""; // z.B. "https://calendly.com/mein-name/15min"
+// Calendly: Optional in .env.local überschreiben: NEXT_PUBLIC_CALENDLY_LINK=...
+const CALENDLY_LINK_FALLBACK = "https://calendly.com/vertrieb-titandevelopment/30min";
 
 function getCalendlyUrl(): string {
-  return (process.env.NEXT_PUBLIC_CALENDLY_LINK ?? CALENDLY_LINK_FALLBACK).trim();
+  return (process.env.NEXT_PUBLIC_CALENDLY_LINK ?? CALENDLY_LINK_FALLBACK).trim() || CALENDLY_LINK_FALLBACK;
 }
 
 /** Embed-URL für Calendly (calendly.com/... → calendly.com/embed/event/...) */
