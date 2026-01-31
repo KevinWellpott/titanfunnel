@@ -16,6 +16,9 @@ export const metadata = generateMetadata({
     "Wir bauen dir kein Standard-Tool, sondern dein maßgeschneidertes Betriebssystem – dein Wissen und deine Prozesse als profitables, automatisiertes Asset.",
 });
 
+/** Landing-Videos aus der DB werden alle 60 Sekunden neu geladen (ISR). */
+export const revalidate = 60;
+
 export default async function Page() {
   const videos = await getLandingVideos();
 
