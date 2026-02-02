@@ -69,7 +69,7 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               </Text>
               {" "}statt auf einem{" "}
               <Text as="span" color="white">
-                System
+                System?
               </Text>
             </MotionHeading>
 
@@ -85,8 +85,7 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              Wir bauen dir das Betriebssystem, das Akquise, Verkauf und 
-              Delivery nahtlos automatisiert – unter deinem Branding.
+             Wir bauen dir ein automatisiertes System, das Kunden gewinnt, verkauft und abwickelt – komplett unter deinem Branding.
             </MotionText>
 
             <motion.div
@@ -122,7 +121,7 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
                     }}
                     transition="all 0.2s ease"
                   >
-                    OS-Architektur-Gespräch buchen
+                    Analysegespräch buchen
                     <ArrowRight size={16} />
                   </Button>
                 </Link>

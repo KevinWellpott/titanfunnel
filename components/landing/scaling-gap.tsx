@@ -42,190 +42,198 @@ const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
 const getModalContent = (module) => {
   const content = {
     leads: {
-      title: "Automatische Lead-Generierung",
-      subtitle: "Nie wieder kalte Akquise – dein System arbeitet für dich",
-      description: "Wir bauen intelligente Funnel, die rund um die Uhr qualifizierte Interessenten anziehen und vorqualifizieren – ohne dass du aktiv werden musst.",
+      title: "Planbar neue Kundenanfragen",
+      subtitle: "Jeden Tag qualifizierte Anfragen – ganz automatisch",
+      description: "Wir bauen Systeme, die dir rund um die Uhr neue Interessenten bringen und diese direkt vorqualifizieren – ohne Kaltakquise oder manuelle Arbeit.",
       icon: Funnel,
       features: [
         {
-          title: "Individuelle Lead-Magneten",
-          description: "Auf dein Angebot zugeschnittene Free-Kurse, Quizze oder Assessments, die automatisch Interessenten anziehen und vorqualifizieren.",
-          result: "Signifikant höhere Lead-Qualität und weniger Zeitaufwand für Vorab-Gespräche"
+          title: "Anfragen statt kalter Kontakte",
+          description: "Individuelle Funnels, die Interessenten anziehen und direkt filtern.",
+          result: "Nur noch Gespräche mit passenden Leads"
         },
         {
-          title: "Automatisierte Follow-up-Sequenzen",
-          description: "Intelligente E-Mail- und Messenger-Kampagnen, die Leads automatisch weiter betreuen und wärmen.",
-          result: "Keine Leads, die durchs Raster fallen – konstante Lead-Nurturing ohne dein Zutun"
+          title: "Automatische Nachverfolgung",
+          description: "Leads werden automatisch erinnert und weitergeführt.",
+          result: "Mehr Abschlüsse ohne Hinterherlaufen"
         }
       ],
       stats: [
-        { label: "Typische Lead-Steigerung", value: "40-80%" },
-        { label: "Zeitersparnis in der Akquise", value: "bis zu 10h/Woche" },
-        { label: "Steigerung der Leadqualität", value: "Deutlich höher" }
+        { label: "Mehr Anfragen", value: "40-80%" },
+        { label: "Weniger Akquisezeit", value: "bis zu 10h/Woche" },
+        { label: "Höhere Abschlusschancen", value: "Deutlich besser" }
       ]
     },
+  
     crm: {
-      title: "Intelligentes Kundenmanagement",
-      subtitle: "Alle Kunden und Leads an einem Ort – mit voller Historie",
-      description: "Ein zentrales System, das jeden Kontakt, jedes Gespräch und jeden Kauf speichert und dir so eine 360°-Sicht auf jeden Kunden gibt.",
+      title: "Kein Kundenchaos mehr",
+      subtitle: "Alle Leads & Kunden übersichtlich an einem Ort",
+      description: "Ein zentrales System, das alle Kontakte, Gespräche und Umsätze automatisch organisiert.",
       icon: Users,
       features: [
         {
-          title: "Vollständige Kundenhistorie",
-          description: "Du siehst auf einen Blick alle Interaktionen, gekauften Produkte und den aktuellen Status jedes Kunden.",
-          result: "Nie wieder Informationen suchen – alles ist sofort da"
+          title: "Alles auf einen Blick",
+          description: "Jeder Kunde mit kompletter Historie im System.",
+          result: "Keine Infos gehen mehr verloren"
         },
         {
-          title: "Automatische Segmentierung & Tagging",
-          description: "Das System kategorisiert und taggt Kontakte automatisch basierend auf ihrem Verhalten und gekauften Produkten.",
-          result: "Präzise Ansprache für gezieltere Kommunikation und bessere Ergebnisse"
+          title: "Automatische Struktur",
+          description: "Kontakte sortieren sich selbst nach Status & Verhalten.",
+          result: "Klarheit statt Chaos"
         }
       ],
       stats: [
-        { label: "Zeitersparnis in der Verwaltung", value: "bis zu 5h/Woche" },
-        { label: "Steigerung der Kundenbetreuungsqualität", value: "Spürbar höher" },
-        { label: "Reduzierung von Informationsverlust", value: "Nahezu 100%" }
+        { label: "Weniger Verwaltungsaufwand", value: "bis zu 5h/Woche" },
+        { label: "Bessere Kundenbetreuung", value: "Spürbar höher" },
+        { label: "Verlorene Leads", value: "Nahezu 0%" }
       ]
     },
+  
     verkauf: {
-      title: "Nahtloser Verkaufsprozess",
-      subtitle: "Vom Interesse zur Zahlung – komplett automatisiert",
-      description: "Ein integrierter Sales-Flow, der Vertragsunterzeichnung, Zahlungsabwicklung und Kunden-Onboarding in einem automatischen Prozess vereint.",
+      title: "Automatisch mehr Abschlüsse",
+      subtitle: "Von Anfrage bis Zahlung ohne manuelle Schritte",
+      description: "Ein Verkaufsprozess, der Kunden automatisch durch Buchung, Vertrag und Zahlung führt.",
       icon: Handshake,
       features: [
         {
-          title: "Digitale Vertragsunterzeichnung",
-          description: "Rechtssichere E-Signature-Lösung, die direkt in den Bestellprozess integriert ist.",
-          result: "Unterschriften in Minuten, nicht Tagen – schnellere Deal-Abschlüsse"
+          title: "Digitale Abschlüsse",
+          description: "Kunden unterschreiben direkt im Prozess.",
+          result: "Schnellere Deals"
         },
         {
-          title: "Automatisierte Zahlungsabwicklung",
-          description: "Integration mit Stripe, PayPal & Co. – Zahlungseingang wird automatisch erkannt und der nächste Schritt ausgelöst.",
-          result: "Kein manuelles Rechnungen schreiben und Zahlungen prüfen – alles automatisch"
+          title: "Automatische Zahlungen",
+          description: "Zahlungen werden direkt abgewickelt.",
+          result: "Kein Rechnungschaos mehr"
         }
       ],
       stats: [
-        { label: "Beschleunigung des Sales Cycle", value: "50-70%" },
-        { label: "Reduzierung manueller Arbeit", value: "bis zu 8h/Woche" },
-        { label: "Fehlerquote bei Zahlungen", value: "Nahezu 0%" }
+        { label: "Schnellerer Abschluss", value: "50-70%" },
+        { label: "Weniger manuelle Arbeit", value: "bis zu 8h/Woche" },
+        { label: "Zahlungsfehler", value: "Nahezu 0%" }
       ]
     },
+  
     wachstum: {
-      title: "Automatisches Umsatzwachstum",
-      subtitle: "Systematische Steigerung des Kundenwerts",
-      description: "Intelligente Automatismen erkennen Upsell- und Cross-Sell-Potenziale und schlagen dem Kunden zum perfekten Zeitpunkt das passende Zusatzangebot vor.",
+      title: "Mehr Umsatz pro Kunde",
+      subtitle: "Zusatzverkäufe laufen automatisch",
+      description: "Das System erkennt Chancen für Upgrades und Zusatzangebote und verkauft sie automatisch.",
       icon: TrendUp,
       features: [
         {
-          title: "Kontextsensitive Upsell-Engine",
-          description: "Das System erkennt, wann ein Kunde bereit für ein Upgrade oder Zusatzprodukt ist und bietet dieses automatisch an.",
-          result: "Mehr Umsatz pro Kunde, ohne zusätzlichen Vertriebsaufwand"
+          title: "Automatische Zusatzangebote",
+          description: "Passende Upsells zur richtigen Zeit.",
+          result: "Mehr Umsatz ohne Mehraufwand"
         },
         {
-          title: "Kunden-Lebenszyklus-Management",
-          description: "Automatisierte Pfade für verschiedene Kundentypen, um langfristige Bindung und Wertsteigerung zu sichern.",
-          result: "Höhere Kundenbindung und planbare Revenue-Streams"
+          title: "Langfristige Kundenbindung",
+          description: "Kunden bleiben länger und kaufen öfter.",
+          result: "Planbares Wachstum"
         }
       ],
       stats: [
-        { label: "Steigerung des Customer Lifetime Value", value: "30-60%" },
-        { label: "Upsell-Rate", value: "15-25%" },
-        { label: "Reduzierung der Churn-Rate", value: "Bis zu 40%" }
+        { label: "Mehr Umsatz pro Kunde", value: "30-60%" },
+        { label: "Upsell-Quote", value: "15-25%" },
+        { label: "Weniger Absprünge", value: "Bis zu 40%" }
       ]
     },
+  
     tracking: {
-      title: "Vollständige Erfolgsmessung",
-      subtitle: "Wissen, was wirklich funktioniert",
-      description: "DSGVO-konformes Tracking über alle Kanäle hinweg, das dir genau zeigt, welche Maßnahmen zu Umsatz führen und welche nicht.",
+      title: "Volle Zahlenkontrolle",
+      subtitle: "Sieh genau, was Geld bringt",
+      description: "Du erkennst sofort, welche Kanäle und Prozesse profitabel sind.",
       icon: ChartLine,
       features: [
         {
-          title: "Multi-Channel-Attribution",
-          description: "Verfolge den gesamten Kundenweg über Website, Social Media, E-Mails und mehr – ohne Cookie-Probleme.",
-          result: "Klarheit, welche Kanäle wirklich profitabel sind – keine Budgetverschwendung mehr"
+          title: "Klare Umsatzzuordnung",
+          description: "Jeder Kunde wird der richtigen Quelle zugeordnet.",
+          result: "Kein Budget verschwenden"
         },
         {
-          title: "Echtzeit-ROI-Dashboard",
-          description: "Live-Einblick in alle wichtigen KPIs: Umsatz, Kosten, Conversion-Raten und mehr.",
-          result: "Sofortige Entscheidungsgrundlage für optimale Investitionen"
+          title: "Live-Übersicht",
+          description: "Alle wichtigen Zahlen in einem Dashboard.",
+          result: "Schnell bessere Entscheidungen"
         }
       ],
       stats: [
-        { label: "Genauigkeit der Datenerfassung", value: ">95%" },
-        { label: "Zeitersparnis im Reporting", value: "bis zu 6h/Woche" },
-        { label: "Reduzierung von Marketing-Kosten", value: "Durch optimierte Budgetverteilung" }
+        { label: "Datengenauigkeit", value: ">95%" },
+        { label: "Weniger Reportingzeit", value: "bis zu 6h/Woche" },
+        { label: "Bessere Budgetnutzung", value: "Deutlich optimiert" }
       ]
     },
+  
     automatisierung: {
-      title: "Komplette Prozessautomatisierung",
-      subtitle: "Schluss mit manueller Kleinarbeit",
-      description: "Individuell auf dich zugeschnittene Workflows, die repetitive Aufgaben vollständig automatisieren – von Terminbuchung bis Zahlungserinnerung.",
+      title: "Weniger Arbeit täglich",
+      subtitle: "Routine läuft komplett automatisch",
+      description: "Wiederkehrende Aufgaben erledigen sich selbst – von Terminen bis Erinnerungen.",
       icon: Robot,
       features: [
         {
-          title: "Intelligente Terminbuchung",
-          description: "Integration in deinen Kalender – Kunden buchen selbst passende Slots, ohne Hin und Her per E-Mail.",
-          result: "Keine manuelle Terminkoordination mehr – Stunden an Zeit gespart"
+          title: "Automatische Terminbuchung",
+          description: "Kunden buchen selbstständig Termine.",
+          result: "Keine Koordination mehr nötig"
         },
         {
-          title: "Automatische Erinnerungen & Follow-ups",
-          description: "Das System erinnert Kunden an anstehende Termine, offene Zahlungen oder nächste Schritte – vollautomatisch.",
-          result: "Nie wieder vergessene Follow-ups – professioneller und zuverlässiger"
+          title: "Selbstlaufende Follow-ups",
+          description: "Erinnerungen und nächste Schritte laufen automatisch.",
+          result: "Mehr Zuverlässigkeit"
         }
       ],
       stats: [
-        { label: "Reduzierung manueller Tasks", value: "60-80%" },
+        { label: "Weniger manuelle Arbeit", value: "60-80%" },
         { label: "Zeitersparnis", value: "10-15h/Woche" },
-        { label: "Steigerung der Prozesszuverlässigkeit", value: "Nahezu 100%" }
+        { label: "Fehlerquote", value: "Nahezu 0%" }
       ]
     },
+  
     lieferung: {
-      title: "Premium Delivery Platform",
-      subtitle: "Dein Wissen, perfekt verpackt und ausgeliefert",
-      description: "Ein vollständig auf deine Marke zugeschnittenes Kundenportal, in dem du Kurse, Dokumente und Communitys bereitstellst – ohne technischen Aufwand.",
+      title: "Professionelle Abwicklung",
+      subtitle: "Dein Service in einem eigenen System",
+      description: "Ein gebrandetes Kundenportal für Inhalte, Prozesse und Kommunikation.",
       icon: Package,
       features: [
         {
-          title: "White-Label Kundenportal",
-          description: "Eine komplett auf deine Corporate Identity angepasste Plattform, auf der deine Kunden alle Inhalte und Services finden.",
-          result: "Professioneller Auftritt, der Vertrauen schafft und deine Preise rechtfertigt"
+          title: "Eigenes Kundenportal",
+          description: "Alles unter deinem Branding.",
+          result: "Hochwertiger Eindruck"
         },
         {
-          title: "Integrierte Kurs- & Content-Plattform",
-          description: "Einfache Verwaltung und Auslieferung von Videos, PDFs, Aufgaben und Community-Inhalten.",
-          result: "Alles an einem Ort – keine Zersplitterung auf verschiedene Tools"
+          title: "Alles an einem Ort",
+          description: "Kurse, Inhalte & Kommunikation zentral.",
+          result: "Kein Tool-Chaos mehr"
         }
       ],
       stats: [
-        { label: "Steigerung der Kundenzufriedenheit", value: "Deutlich messbar" },
-        { label: "Completion-Rate von Kursen", value: "Bis zu 90%" },
-        { label: "Reduzierung von Support-Anfragen", value: "30-50%" }
+        { label: "Höhere Kundenzufriedenheit", value: "Deutlich" },
+        { label: "Bessere Nutzung der Inhalte", value: "Bis zu 90%" },
+        { label: "Weniger Supportaufwand", value: "30-50%" }
       ]
     },
+  
     einheit: {
-      title: "Unified Business Platform",
-      subtitle: "Ein System, das alles kann – genau wie du es brauchst",
-      description: "Schluss mit dem Flickenteppich aus verschiedenen Tools: Eine integrierte Plattform, die alle Funktionen vereint und perfekt aufeinander abgestimmt ist.",
+      title: "Alles in einem System",
+      subtitle: "Statt 8 Tools nur noch eine Plattform",
+      description: "Ein zentrales System ersetzt alle einzelnen Programme.",
       icon: PuzzlePiece,
       features: [
         {
-          title: "Konsolidierung aller Business-Tools",
-          description: "Ersetzt CRM, Buchungstool, Zahlungsabwicklung, Kursplattform, Community-Software und mehr.",
-          result: "Weniger Kosten, weniger Aufwand, keine Sync-Probleme"
+          title: "Weniger Tools",
+          description: "Alles läuft an einem Ort zusammen.",
+          result: "Weniger Kosten & Stress"
         },
         {
-          title: "Maßgeschneiderte Integrationen",
-          description: "Anbindung an bestehende Systeme (wie Telegram, Discord, E-Mail) und Entwicklung individueller Features nach Bedarf.",
-          result: "Passt sich deinem Business an – nicht umgekehrt"
+          title: "Individuell angepasst",
+          description: "Das System passt sich deinem Business an.",
+          result: "Maximale Effizienz"
         }
       ],
       stats: [
-        { label: "Ersparnis an Tool-Kosten", value: "Individuell, oft €1.000+/Monat" },
-        { label: "Reduzierung der Systemkomplexität", value: "Ein System statt 8+" },
-        { label: "Steigerung der Datennutzung", value: "Vollständige Integration" }
+        { label: "Tool-Kosten gespart", value: "Oft €1.000+/Monat" },
+        { label: "Komplexität", value: "Ein System statt viele" },
+        { label: "Datenübersicht", value: "100% integriert" }
       ]
     }
   };
+  
 
 
 
@@ -677,12 +685,12 @@ const coreModules = [
   {
     id: "leads",
     icon: Funnel,
-    title: "Automatische Lead-Generierung",
-    description: "Generiert 24/7 qualifizierte Interessenten ohne dein Zutun",
+    title: "Planbar neue Kundenanfragen",
+    description: "Bringt dir automatisch qualifizierte Anfragen – jeden Tag, ohne Kaltakquise",
     benefits: [
-      "Nie wieder kalte Akquise",
-      "Vorqualifizierte Leads",
-      "100% Lead-Transparenz"
+      "Kein Outreach mehr nötig",
+      "Nur relevante Interessenten",
+      "Volle Übersicht über alle Anfragen"
     ],
     color: "blue",
     visual: "leads"
@@ -690,12 +698,12 @@ const coreModules = [
   {
     id: "crm",
     icon: Users,
-    title: "Intelligentes Kundenmanagement",
-    description: "Behalte den Überblick über alle Kunden automatisch",
+    title: "Kein Kundenchaos mehr",
+    description: "Alle Kontakte und Prozesse laufen strukturiert in einem System",
     benefits: [
-      "Keine verlorenen Kunden",
-      "Automatische Follow-ups",
-      "Vollständige Kundenhistorie"
+      "Kein Lead geht verloren",
+      "Automatische Nachverfolgung",
+      "Jeder Kunde jederzeit im Blick"
     ],
     color: "green",
     visual: "crm"
@@ -703,12 +711,12 @@ const coreModules = [
   {
     id: "verkauf",
     icon: Handshake,
-    title: "Nahtloser Verkaufsprozess",
-    description: "Von Interesse bis Zahlung in einem professionellen Flow",
+    title: "Automatisch mehr Abschlüsse",
+    description: "Leads werden automatisch durch einen professionellen Kaufprozess geführt",
     benefits: [
-      "Kunden kaufen ohne Chaos",
-      "Automatische Vertragsabwicklung", 
-      "Sofortige Zahlungsabwicklung"
+      "Kein manuelles Hinterherlaufen",
+      "Verträge laufen automatisch",
+      "Zahlungen kommen sofort rein"
     ],
     color: "purple",
     visual: "payment"
@@ -716,12 +724,12 @@ const coreModules = [
   {
     id: "lieferung",
     icon: Package,
-    title: "HighEnd Fullfillment",
-    description: "Liefere deine Expertise in einem branded Portal",
+    title: "Professionelle Abwicklung",
+    description: "Deine Kunden arbeiten in einem eigenen, gebrandeten System mit dir",
     benefits: [
-      "Professioneller als Konkurrenz",
-      "Kunden arbeiten gern im System",
-      "Alles unter deiner Kontrolle"
+      "Wirkt hochwertig & vertrauenswürdig",
+      "Kunden sind strukturierter",
+      "Du hast alles zentral"
     ],
     color: "orange",
     visual: "delivery"
@@ -729,12 +737,12 @@ const coreModules = [
   {
     id: "wachstum",
     icon: TrendUp,
-    title: "Automatisches Umsatzwachstum",
-    description: "Das System verkauft zusätzliche Services automatisch",
+    title: "Mehr Umsatz pro Kunde",
+    description: "Zusatzangebote werden automatisch ausgespielt und verkauft",
     benefits: [
-      "Mehr Umsatz ohne mehr Arbeit",
-      "Automatische Zusatzleistungen",
-      "Du siehst ROI von jeder Aktion"
+      "Höherer Umsatz pro Kunde",
+      "Kein Extra-Aufwand",
+      "Skalierbares Wachstum"
     ],
     color: "red",
     visual: "growth"
@@ -742,12 +750,12 @@ const coreModules = [
   {
     id: "tracking",
     icon: ChartLine,
-    title: "Vollständige Erfolgsmessung",
-    description: "Weißt du genau, wo dein Geld herkommt und hingeht",
+    title: "Volle Zahlenkontrolle",
+    description: "Du siehst genau, welche Prozesse Geld bringen – und welche nicht",
     benefits: [
-      "Kein Geld in unwirksame Werbung",
-      "Du siehst wertvollste Kunden",
-      "Datenschutz-konform ohne Cookies"
+      "Kein Blindflug mehr",
+      "Fokus auf profitable Kanäle",
+      "Sauberes Tracking ohne Cookies"
     ],
     color: "cyan",
     visual: "analytics"
@@ -755,12 +763,12 @@ const coreModules = [
   {
     id: "automatisierung",
     icon: Robot,
-    title: "Prozessautomatisierung",
-    description: "Eliminiert Routinearbeit und spart dir Stunden täglich",
+    title: "Weniger Arbeit täglich",
+    description: "Wiederkehrende Aufgaben laufen komplett automatisch",
     benefits: [
-      "Keine Erinnerungen mehr senden",
-      "Terminbuchung läuft automatisch",
-      "Du arbeitest nur am Business"
+      "Keine manuellen Follow-ups",
+      "Termine organisieren sich selbst",
+      "Mehr Zeit fürs Wesentliche"
     ],
     color: "purple",
     visual: "automation"
@@ -768,17 +776,19 @@ const coreModules = [
   {
     id: "einheit",
     icon: PuzzlePiece,
-    title: "Ein System für alles",
-    description: "Schluss mit 8 verschiedenen Tools die nicht sprechen",
+    title: "Alles in einem System",
+    description: "Statt Tool-Chaos läuft alles zentral an einem Ort",
     benefits: [
-      "Keine teuren Tool-Abos nötig",
-      "Alles funktioniert zusammen",
-      "Eine Anmeldung für alles"
+      "Keine unnötigen Software-Kosten",
+      "Alles greift ineinander",
+      "Ein Login für alles"
     ],
     color: "teal",
     visual: "platform"
   },
 ];
+
+
 
 export function BusinessOSModules() {
   const containerRef = useRef(null);
