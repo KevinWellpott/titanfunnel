@@ -8,6 +8,7 @@ export default async function sitemap() {
     "",
     "/about",
     "/contact",
+    "/erklaervideo",
     "/legal/privacy-policy",
     "/legal/terms-and-conditions",
   ].map((route) => ({
