@@ -4,69 +4,93 @@ import { generateMetadata } from "@/utils/metadata";
 import Markdown from "react-markdown";
 
 export const metadata = generateMetadata({
-  title: "Cookie-Richtlinie",
+  title: "Datenschutz & Cookies",
   description:
-    "Erfahre, wie wir Cookies und ähnliche Technologien verwenden, um deine Erfahrung zu verbessern",
+    "Cookie-Richtlinie und Datenschutz – Kevin Wellpott & Simon Paweletz GbR (titan.)",
 });
+
+const COOKIE_POLICY_MARKDOWN = `
+## Übersicht
+
+Diese Website verwendet ausschließlich **Google Analytics** zur anonymen Analyse des Nutzerverhaltens. Cookies werden nur nach Ihrer ausdrücklichen Zustimmung gesetzt. Sie können Ihre Einstellungen jederzeit ändern.
+
+---
+
+## Verantwortlicher
+
+**Kevin Wellpott & Simon Paweletz GbR**  
+Wilhelmstraße 8, 32602 Vlotho  
+
+- **E-Mail:** [info@titanagency.de](mailto:info@titanagency.de)
+
+---
+
+## Welche Cookies verwenden wir?
+
+### Notwendige Cookies (immer aktiv)
+
+- **Cookie:** \`titan-cookie-consent\` (bzw. das von unserem Cookie-Banner verwendete Cookie)
+- **Zweck:** Speichert Ihre Cookie-Einstellungen
+- **Speicherdauer:** Unbegrenzt (bis Sie sie löschen)
+- **Rechtsgrundlage:** Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO)
+
+### Google Analytics Cookies (mit Zustimmung)
+
+- **Cookies:** \`_ga\`, \`_ga_*\`, \`_gid\`
+- **Zweck:** Anonyme Analyse des Nutzerverhaltens, Besucherstatistiken
+- **Speicherdauer:** 2 Jahre (_ga), 24 Stunden (_gid)
+- **Rechtsgrundlage:** Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)
+- **Datenverarbeitung:** Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland
+
+---
+
+## Zweck der Datenverarbeitung
+
+Wir verwenden Google Analytics ausschließlich zur **anonymen Analyse** des Nutzerverhaltens auf unserer Website. Dies hilft uns dabei:
+
+- Die Benutzerfreundlichkeit unserer Website zu verbessern
+- Beliebte Inhalte zu identifizieren
+- Technische Probleme zu erkennen
+- Die Ladezeiten zu optimieren
+
+**Wichtig:** Ihre IP-Adresse wird anonymisiert, keine personenbezogenen Daten werden gespeichert.
+
+---
+
+## Ihre Rechte nach der DSGVO
+
+- **Widerruf der Einwilligung:** Sie können Ihre Zustimmung jederzeit widerrufen
+- **Auskunft:** Informationen über gespeicherte Daten
+- **Löschung:** Entfernung Ihrer Daten bei uns und Google
+- **Beschwerde:** Bei der zuständigen Datenschutzbehörde
+
+---
+
+## Cookie-Einstellungen verwalten
+
+Sie können Ihre Cookie-Einstellungen jederzeit ändern: Über den Cookie-Hinweis auf unserer Website (z. B. über den Link „Cookie-Einstellungen“ im Footer) oder direkt in den Einstellungen Ihres Browsers. Beachten Sie, dass das Deaktivieren von Cookies die Funktionalität unserer Website beeinträchtigen kann.
+
+**Browser-Einstellungen:** Sie können Cookies auch direkt in Ihrem Browser verwalten oder blockieren. Weitere Informationen finden Sie z. B. auf [www.allaboutcookies.org](https://www.allaboutcookies.org/) oder [www.youronlinechoices.eu](https://www.youronlinechoices.eu/).
+
+---
+
+## Fragen zum Datenschutz?
+
+Bei Fragen zu unseren Datenschutzpraktiken wenden Sie sich gerne an uns:
+
+- **E-Mail:** [info@titanagency.de](mailto:info@titanagency.de)
+- **Telefon:** [+49 160 7760350](tel:+491607760350)
+
+---
+
+**Zuletzt aktualisiert:** 18.11.25
+`;
 
 export default function CookiePolicy() {
   return (
     <Section>
       <Prose mx="auto" size="lg" mt="28">
-        <Markdown>
-          {`
-# Cookie Policy
-
-**Effective Date:** [Insert Date]
-
-At [Your Company Name], we use cookies and similar tracking technologies to enhance your experience on our website and services. This Cookie Policy explains what cookies are, how we use them, how third-parties we may partner with may use cookies on the service, your choices regarding cookies, and further information about cookies.
-
-## 1. What Are Cookies?
-
-Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyze what works and where it needs improvement.
-
-## 2. How [Your Company Name] Uses Cookies
-
-When you use and access the Service, we may place a number of cookies files in your web browser. We use cookies for the following purposes:
-
--  **Essential Cookies:** We use cookies to remember information that changes the way the Service behaves or looks, such as a user's language preference on the Service.
--  **Account-Related Cookies:** We use cookies to manage the signup process and general administration. These cookies will usually be deleted when you log out; however, in some cases, they may remain afterward to remember your site preferences when logged out.
--  **Analytics Cookies:** We use cookies to help us analyze how our visitors use the Service and to monitor website performance. This helps us provide a high-quality experience by customizing our offering and quickly identifying and fixing any issues that arise.
--  **Advertising Cookies:** We may use cookies to serve you with advertisements that are relevant to you and your interests. 
-
-## 3. Third-Party Cookies
-
-In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Service and deliver advertisements on and through the Service. These third-party cookies are governed by the respective privacy policies of these third parties.
-
-## 4. Your Choices Regarding Cookies
-
-If you prefer to avoid the use of cookies on the website, you must first disable the use of cookies in your browser and then delete the cookies saved in your browser associated with this website. You may use this option for preventing the use of cookies at any time.
-
--  **Browser Settings:** Most web browsers allow you to control cookies through their settings preferences. To find out more about cookies, including how to see what cookies have been set, visit [www.allaboutcookies.org](http://www.allaboutcookies.org/) or [www.youronlinechoices.eu](http://www.youronlinechoices.eu/).
-
--  **Opting Out:** You can opt out of targeted advertising by visiting the following links:
-  - [Network Advertising Initiative](http://www.networkadvertising.org/)
-  - [Digital Advertising Alliance](http://www.aboutads.info/)
-  - [Your Online Choices](http://www.youronlinechoices.eu/)
-
-## 5. Changes to This Cookie Policy
-
-We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page. You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie Policy are effective when they are posted on this page.
-
-## 6. Contact Us
-
-If you have any questions about this Cookie Policy, please contact us at:
-
-[Your Company Name]  
-[Your Address]  
-[Your Email Address]  
-[Your Phone Number]  
-
----
-
-**Last Updated:** [Insert Date]
-          `}
-        </Markdown>
+        <Markdown>{COOKIE_POLICY_MARKDOWN}</Markdown>
       </Prose>
     </Section>
   );

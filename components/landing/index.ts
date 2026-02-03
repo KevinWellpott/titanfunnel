@@ -5,3 +5,4 @@ export { ProofRoi } from "./proof-roi";
 export { RiskReversal } from "./risk-reversal";
 export { ClearPath } from "./clear-path";
 export { RoiCalculator } from "./roi-calculator";
+export { Faq } from "./faq";

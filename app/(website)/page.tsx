@@ -8,6 +8,7 @@ import {
   RiskReversal,
   ClearPath,
   RoiCalculator,
+  Faq,
 } from "@/components/landing";
 
 export const metadata = generateMetadata({
@@ -48,6 +49,16 @@ export default async function Page() {
       />
       <RiskReversal />
       <ClearPath />
+      <div
+        style={{
+          width: "100%",
+          height: "1px",
+          backgroundColor: "white",
+          opacity: 0.2,
+        }}
+        aria-hidden
+      />
+      <Faq />
     </>
   );
 }

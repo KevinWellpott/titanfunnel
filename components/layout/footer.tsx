@@ -11,6 +11,7 @@ import { projectConfig } from "@/config";
 import { Link } from "../ui/link";
 
 const legalLinks = [
+  { href: "/legal/impressum", label: "Impressum" },
   { href: "/legal/privacy-policy", label: "Datenschutz" },
   { href: "/legal/terms-and-conditions", label: "AGB" },
   { href: "/legal/cookie-policy", label: "Cookie-Richtlinie" },
