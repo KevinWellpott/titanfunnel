@@ -188,7 +188,7 @@ export async function POST(request: NextRequest) {
   }
 
   const validated = validateBody(body);
-  if (!validated.ok) {
+  if (validated.ok === false) {
     return NextResponse.json(
       { ok: false, error: validated.error },
       { status: 400 }
