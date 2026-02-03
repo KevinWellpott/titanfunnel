@@ -65,7 +65,7 @@ export function Faq() {
                 >
                   <Button
                     type="button"
-                    variant="unstyled"
+                    variant="ghost"
                     w="full"
                     h="auto"
                     minH="0"
