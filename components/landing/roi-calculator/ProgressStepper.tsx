@@ -5,9 +5,7 @@ import { HStack, Box, Text } from "@chakra-ui/react";
 const STEPS = [
   { num: 1, label: "Umsatz" },
   { num: 2, label: "Kunden" },
-  { num: 3, label: "Deal-Wert" },
-  { num: 4, label: "Effizienz" },
-  { num: 5, label: "Prozess" },
+  { num: 3, label: "Problem" },
 ];
 
 interface ProgressStepperProps {

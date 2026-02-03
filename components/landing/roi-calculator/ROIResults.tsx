@@ -1,21 +1,18 @@
 "use client";
 
+import * as React from "react";
 import {
   Heading,
   Text,
   VStack,
-  HStack,
   Box,
-  Progress,
   Button,
-  Link,
+  Input,
+  Textarea,
+  Field,
 } from "@chakra-ui/react";
 import { glassCardStyles } from "../glass-card-styles";
-
-const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
-import { ArrowRight } from "@phosphor-icons/react";
-import type { RoiResult } from "./types";
-import { getMaxMonthlyROIForDisplay } from "./lib/roi-calculations";
+import type { RoiResult, RoiAnswers } from "./types";
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat("de-DE", {
@@ -25,27 +22,68 @@ function formatCurrency(value: number): string {
   }).format(value);
 }
 
-const TIER_LABEL: Record<string, string> = {
-  foundation: "Foundation (6.900 €)",
-  scale: "Scale (9.000 €)",
-  enterprise: "Enterprise (15.000 €+)",
-};
-
 interface ROIResultsProps {
   result: RoiResult;
+  answers: RoiAnswers;
   onReset?: () => void;
+  onSubmit: (payload: {
+    linkedinName: string;
+    bremsklotz: string;
+  }) => Promise<{ ok: boolean; error?: string }>;
 }
 
-export function ROIResults({ result, onReset }: ROIResultsProps) {
-  const maxMonthly = getMaxMonthlyROIForDisplay();
-  const timePct = Math.min(100, (result.timeValueMonthly / maxMonthly) * 100);
-  const scalePct = Math.min(100, (result.scalingValue / maxMonthly) * 100);
-  const upsellPct = Math.min(100, (result.upsellValue / maxMonthly) * 100);
+const inputStyles = {
+  width: "100%",
+  minHeight: "44px",
+  padding: "10px 14px",
+  backgroundColor: "var(--chakra-colors-gray-800)",
+  border: "1px solid var(--chakra-colors-gray-700)",
+  borderRadius: "8px",
+  color: "white",
+  fontSize: "1rem",
+};
+
+export function ROIResults({
+  result,
+  answers,
+  onReset,
+  onSubmit,
+}: ROIResultsProps) {
+  const [linkedinName, setLinkedinName] = React.useState("");
+  const [bremsklotz, setBremsklotz] = React.useState("");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<
+    "idle" | "success" | "error"
+  >("idle");
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const ln = linkedinName.trim();
+    const br = bremsklotz.trim();
+    if (!ln || !br) return;
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setSubmitError(null);
+    const { ok, error } = await onSubmit({ linkedinName: ln, bremsklotz: br });
+    setIsSubmitting(false);
+    if (ok) {
+      setSubmitStatus("success");
+    } else {
+      setSubmitStatus("error");
+      setSubmitError(error ?? "Fehler beim Senden.");
+    }
+  };
+
+  const canSubmit =
+    linkedinName.trim().length > 0 &&
+    bremsklotz.trim().length > 0 &&
+    !isSubmitting;
 
   return (
     <VStack gap={{ base: "6", md: "8" }} align="stretch" w="full" minW="0">
       <Heading as="h2" fontSize={{ base: "md", md: "lg" }} fontWeight="600" color="white">
-        Dein ROI – 3 Hebel, transparent berechnet
+        Dein Potenzial
       </Heading>
 
       <Box
@@ -57,158 +95,103 @@ export function ROIResults({ result, onReset }: ROIResultsProps) {
         {...glassCardStyles}
       >
         <Text
-          fontSize="xs"
-          color="gray.500"
+          fontSize={{ base: "lg", md: "xl" }}
           fontWeight="600"
-          textTransform="uppercase"
-          letterSpacing="0.05em"
-          mb="2"
-        >
-          Geschätzter ROI pro Jahr
-        </Text>
-        <Heading
-          as="p"
-          fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
-          fontWeight="700"
           color="white"
-          lineHeight="1"
+          lineHeight="1.4"
         >
-          {formatCurrency(result.yearlyROI)}
-        </Heading>
-        <Text fontSize="sm" color="gray.400" mt="2">
-          {formatCurrency(result.monthlyROI)} / Monat
+          Potenzial: Bis zu {formatCurrency(result.yearlyPotential)} mehr
+          Umsatz pro Jahr, wenn du {result.problemLabel} löst.
         </Text>
       </Box>
 
-      <VStack align="stretch" gap="4">
-        <Heading as="h3" size="sm" fontWeight="600" color="white">
-          Aufschlüsselung nach Hebel
-        </Heading>
-
-        <Box
-          borderRadius="xl"
-          p={{ base: "4", md: "5" }}
-          minW="0"
-          {...glassCardStyles}
-        >
-          <VStack align="stretch" gap={{ base: "4", md: "5" }}>
-            <Box>
-              <HStack justify="space-between" mb="2">
-                <Text fontSize="sm" color="gray.400">
-                  1. Zeithebel (Effizienz)
-                </Text>
-                <Text fontSize="sm" fontWeight="600" color="white">
-                  {formatCurrency(result.timeValueMonthly)}/Monat
-                </Text>
-              </HStack>
-              <Progress.Root value={timePct} size="sm" borderRadius="full">
-                <Progress.Track bg="gray.700">
-                  <Progress.Range bg="#01ADD5" />
-                </Progress.Track>
-              </Progress.Root>
-            </Box>
-
-            <Box>
-              <HStack justify="space-between" mb="2">
-                <Text fontSize="sm" color="gray.400">
-                  2. Skalierungshebel (mehr Kapazität)
-                </Text>
-                <Text fontSize="sm" fontWeight="600" color="white">
-                  {formatCurrency(result.scalingValue)}/Monat
-                </Text>
-              </HStack>
-              <Progress.Root value={scalePct} size="sm" borderRadius="full">
-                <Progress.Track bg="gray.700">
-                  <Progress.Range bg="#01ADD5" />
-                </Progress.Track>
-              </Progress.Root>
-            </Box>
-
-            <Box>
-              <HStack justify="space-between" mb="2">
-                <Text fontSize="sm" color="gray.400">
-                  3. Upsell-Hebel (konservativ)
-                </Text>
-                <Text fontSize="sm" fontWeight="600" color="white">
-                  {formatCurrency(result.upsellValue)}/Monat
-                </Text>
-              </HStack>
-              <Progress.Root value={upsellPct} size="sm" borderRadius="full">
-                <Progress.Track bg="gray.700">
-                  <Progress.Range bg="#01ADD5" />
-                </Progress.Track>
-              </Progress.Root>
-            </Box>
-          </VStack>
-        </Box>
-      </VStack>
-
       <Box
+        as="form"
+        onSubmit={handleSubmit}
         borderRadius="xl"
-        p={{ base: "4", md: "5" }}
+        p={{ base: "4", md: "6" }}
+        w="full"
         minW="0"
         {...glassCardStyles}
       >
-        <Text fontSize="xs" color="gray.500" fontWeight="600" textTransform="uppercase" letterSpacing="0.05em" mb="1">
-          Empfohlene Investitionsstufe
-        </Text>
-        <Text fontSize={{ base: "lg", md: "xl" }} fontWeight="700" color="white">
-          {TIER_LABEL[result.investmentTier] ?? result.investmentTier}
-        </Text>
+        <VStack gap="5" align="stretch">
+          <Text fontSize="sm" fontWeight="600" color="white">
+            Beantworte mir noch die beiden Fragen und ich sende dir ein 5 Minütiges Scaling Video auf LinkedIn zu.
+          </Text>
+
+          <Field.Root required>
+            <Field.Label color="gray.300">
+              LinkedIn-Name / Profil
+            </Field.Label>
+            <Input
+              type="text"
+              placeholder="z. B. Max Mustermann oder linkedin.com/in/maxmustermann"
+              value={linkedinName}
+              onChange={(e) => setLinkedinName(e.target.value)}
+              {...inputStyles}
+              maxLength={500}
+            />
+          </Field.Root>
+
+          <Field.Root required>
+            <Field.Label color="gray.300">
+              Was ist der eine größte Bremsklotz in deinem Business und bist du
+              bereit, etwas zu ändern, um das zu lösen?
+            </Field.Label>
+            <Textarea
+              placeholder="Deine Antwort..."
+              value={bremsklotz}
+              onChange={(e) => setBremsklotz(e.target.value)}
+              minHeight="120px"
+              resize="vertical"
+              {...inputStyles}
+              maxLength={2000}
+            />
+          </Field.Root>
+
+          {submitStatus === "success" && (
+            <Text color="green.400" fontSize="sm">
+              Vielen Dank! Wir melden uns bei dir.
+            </Text>
+          )}
+          {submitStatus === "error" && submitError && (
+            <Text color="red.400" fontSize="sm">
+              {submitError}
+            </Text>
+          )}
+
+          <Button
+            type="submit"
+            size={{ base: "md", md: "lg" }}
+            bg="#01ADD5"
+            color="white"
+            fontWeight="600"
+            borderRadius="lg"
+            w="full"
+            _hover={{
+              boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
+              transform: "translateY(-1px)",
+            }}
+            disabled={!canSubmit}
+          >
+            {isSubmitting ? "Wird gesendet…" : "Absenden"}
+          </Button>
+        </VStack>
       </Box>
 
-      <VStack gap="4" pt="4" w="full" minW="0" align="center">
-        <VStack gap="2" align="center" w="full" maxW="md">
-          <Link
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            w="full"
-            display="block"
-            _hover={{ textDecoration: "none" }}
-          >
-            <Button
-              w="full"
-              size={{ base: "md", md: "lg" }}
-              gap="2"
-              bg="#01ADD5"
-              color="white"
-              px={{ base: "5", md: "8" }}
-              py={{ base: "3", md: "4" }}
-              fontSize={{ base: "xs", md: "sm" }}
-              fontWeight="600"
-              borderRadius="lg"
-              whiteSpace="normal"
-              _hover={{
-                boxShadow: "0 4px 20px rgba(1, 173, 213, 0.45)",
-                transform: "translateY(-1px)",
-              }}
-              transition="all 0.2s ease"
-            >
-              Jetzt ROI zur Wirklichkeit machen
-              <ArrowRight size={16} />
-            </Button>
-          </Link>
-          {onReset && (
-            <Button
-              variant="ghost"
-              size={{ base: "md", md: "lg" }}
-              gap="2"
-              px={{ base: "5", md: "8" }}
-              py={{ base: "3", md: "4" }}
-              fontSize={{ base: "xs", md: "sm" }}
-              fontWeight="600"
-              color="gray.500"
-              _hover={{ color: "gray.400" }}
-              onClick={onReset}
-              aria-label="ROI neu berechnen"
-              transition="all 0.2s ease"
-            >
-              neu berechnen
-            </Button>
-          )}
-        </VStack>
-      </VStack>
+      {onReset && (
+        <Button
+          variant="ghost"
+          size={{ base: "md", md: "lg" }}
+          fontWeight="600"
+          color="gray.500"
+          _hover={{ color: "gray.400" }}
+          onClick={onReset}
+          aria-label="ROI neu berechnen"
+        >
+          neu berechnen
+        </Button>
+      )}
     </VStack>
   );
 }

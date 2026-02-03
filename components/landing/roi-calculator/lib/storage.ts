@@ -3,28 +3,23 @@ import type { RoiAnswers, RoiResult } from "../types";
 const SESSION_KEY = "roi-calculator-contact-prefill";
 
 export interface RoiContactPrefill {
-  name?: string;
-  email?: string;
+  linkedinName?: string;
   estimatedROIYearly: number;
-  feelingChange?: "ja" | "nein";
-  investmentTier: string;
+  problemLabel: string;
   timestamp: string;
 }
 
 export function saveRoiPrefill(
   result: RoiResult,
   answers: RoiAnswers,
-  name?: string,
-  email?: string
+  linkedinName?: string
 ): void {
   if (typeof window === "undefined") return;
   try {
     const data: RoiContactPrefill = {
-      name,
-      email,
-      estimatedROIYearly: result.yearlyROI,
-      feelingChange: answers.feelingChange,
-      investmentTier: result.investmentTier,
+      linkedinName,
+      estimatedROIYearly: result.yearlyPotential,
+      problemLabel: result.problemLabel,
       timestamp: new Date().toISOString(),
     };
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(data));

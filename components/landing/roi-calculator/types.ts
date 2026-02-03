@@ -1,42 +1,40 @@
-/** Umsatz-Range: durchschnittlicher Monatsumsatz (€) */
-export type UmsatzRange = "5k-15k" | "15k-30k" | "30k-50k" | "50k+";
-
-/** Ticketpreis-Range: durchschnittlicher Deal-Wert (€) */
-export type TicketpreisRange = "500-2k" | "2k-5k" | "5k-10k" | "10k+";
+/** Frage 3: Was raubt dir am meisten Zeit und Nerven? */
+export type Hauptproblem =
+  | "lead-chaos"
+  | "verkaufs-hickhack"
+  | "admin-hoelle"
+  | "skalierung-unmoeglich";
 
 export interface RoiAnswers {
-  /** Frage 1: Umsatz-Range (Mittelwert der Range für Berechnung) */
-  umsatz: UmsatzRange;
-  /** Frage 2: Anzahl zahlende Kunden/Mandate pro Monat (1–50) */
-  kundenVolumen: number;
-  /** Frage 3: Ticketpreis-Range (Mittelwert für Berechnung) */
-  ticketpreis: TicketpreisRange;
-  /** Frage 4: Admin-Anteil in % (10–60) */
-  effizienzProzent: number;
-  /** Frage 5: Hast du das Gefühl, dass du was ändern solltest? */
-  feelingChange: "ja" | "nein";
+  /** Frage 1: Durchschnittlicher Monatsumsatz (€) */
+  umsatzProMonat: number;
+  /** Frage 2: Anzahl neuer Kunden pro Monat */
+  neueKundenProMonat: number;
+  /** Frage 3: Hauptproblem (Single Choice) */
+  hauptproblem: Hauptproblem;
 }
 
-export type InvestmentTier = "foundation" | "scale" | "enterprise";
-
 export interface RoiResult {
-  /** Hebel 1: Zeitwert pro Monat (€) */
-  timeValueMonthly: number;
-  /** Hebel 2: Skalierungswert pro Monat (€) */
-  scalingValue: number;
-  /** Hebel 3: Upsell-Wert pro Monat (€) */
-  upsellValue: number;
-  /** Gesamt-ROI pro Monat (€) */
-  monthlyROI: number;
-  /** Gesamt-ROI pro Jahr (€) */
-  yearlyROI: number;
-  /** Empfohlene Investitionsstufe */
-  investmentTier: InvestmentTier;
-  /** Investitionsempfehlung in € (zur Anzeige) */
-  investmentAmount: number;
+  /** Geschätztes Umsatzpotenzial pro Jahr (€) */
+  yearlyPotential: number;
+  /** Label des gewählten Problems für Anzeige */
+  problemLabel: string;
 }
 
 export interface RoiCalculatorState {
   step: number;
   answers: Partial<RoiAnswers>;
+}
+
+/** Formulardaten für Submit (LinkedIn + Bremsklotz) */
+export interface RoiSubmitPayload {
+  linkedinName: string;
+  bremsklotz: string;
+  /** Aus ROI-Berechnung */
+  umsatzProMonat: number;
+  neueKundenProMonat: number;
+  hauptproblem: Hauptproblem;
+  problemLabel: string;
+  yearlyPotential: number;
+  csrfToken: string;
 }

@@ -21,11 +21,11 @@ const steps = [
     title: "Architektur-Gespräch",
     duration: "30 Min",
     description:
-      "Kostenlose Analyse deiner Geschäftsprozesse und System-Architektur Planung.",
+      "Am Ende hast du Klarheit: Wie dein System aussehen wird, was es dir bringt und wann es steht.",
     details: [
-      "Geschäftsprozess-Analyse",
-      "System-Architektur Design",
-      "Timeline & Investment Klärung",
+      "Klarer Fahrplan für dein maßgeschneidertes System",
+      "Konkrete Erwartung an Zeitersparnis & ROI",
+      "Transparente Timeline und Investment",
     ],
   },
   {
@@ -33,11 +33,11 @@ const steps = [
     title: "System Development",
     duration: "14-30 Tage",
     description:
-      "Wir entwickeln dein maßgeschneidertes Business Operating System.",
+      "Outcome: Ein lauffähiges System, das deine Prozesse bündelt und dein Team entlastet.",
     details: [
-      "Custom System Development",
-      "Integration aller Module",
-      "Quality Assurance & Testing",
+      "Ein System, das zu deinem Business passt",
+      "Alle relevanten Module integriert und getestet",
+      "Bereit für Go-Live ohne böse Überraschungen",
     ],
   },
   {
@@ -45,11 +45,11 @@ const steps = [
     title: "Go-Live & Setup",
     duration: "3-5 Tage",
     description:
-      "Pünktlicher Launch mit vollständiger Team-Schulung und Datenimport.",
+      "Outcome: Dein System läuft, dein Team kann damit arbeiten, die Migration ist durch.",
     details: [
-      "System Launch & Migration",
-      "Team Training & Onboarding",
-      "Datenimport & Go-Live Support",
+      "System live – pünktlich wie vereinbart",
+      "Team geschult und sicher im Umgang",
+      "Daten übernommen, du bist sofort produktiv",
     ],
   },
   {
@@ -57,11 +57,11 @@ const steps = [
     title: "Growth Optimierung",
     duration: "3 Monate",
     description:
-      "Aktive Optimierung bis zur garantierten ROI-Erreichung.",
+      "Outcome: Mehr Umsatz, weniger Admin-Chaos – wir optimieren so lange, bis dein ROI stimmt.",
     details: [
-      "Performance Monitoring",
-      "Conversion Optimierung",
-      "Growth Support bis ROI erreicht",
+      "Messbare Verbesserung von Conversion & Performance",
+      "Weniger Zeit für Admin, mehr fürs Kerngeschäft",
+      "ROI erreicht – erst dann ist unsere Arbeit getan",
     ],
   },
 ];
@@ -95,7 +95,7 @@ function RiskReversal() {
               lineHeight="relaxed"
               fontWeight="400"
             >
-              4 klare Schritte von der Idee bis zum automatisierten System
+              Von der Klarheit bis zum messbaren Ergebnis – in 4 Schritten zu deinem Outcome
             </Text>
           </VStack>
 

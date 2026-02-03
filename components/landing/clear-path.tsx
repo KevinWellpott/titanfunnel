@@ -25,22 +25,22 @@ const guarantees = [
   {
     number: "01",
     title: "Die Go-Live-Garantie",
-    subtitle: "„Dein System, pünktlich fertig.",
-    body: "Wir liefern dein maßgeschneidertes Skalierungs-System innerhalb der vereinbarten Frist (14 bzw. 30 Werktage). Punkt. Sollten wir zu spät sein, erlassen wir dir automatisch 50% des Gesamtpreises. Keine Diskussion, keine Ausreden. Unsere Planung muss stimmen – sonst zahlen wir dafür.",
+    subtitle: "Dein System, pünktlich fertig.",
+    body: "Wir liefern dein maßgeschneidertes Skalierungs-System innerhalb der vereinbarten Frist (14 bzw. 30 Werktage). Halten wir die Frist nicht ein, erstatten wir dir 100% des Betrags – keine Diskussion, keine Ausreden.",
     icon: ShieldCheck,
   },
   {
     number: "02",
     title: "Die Zeitersparnis-Garantie",
-    subtitle: "„Wir kaufen dir deine Zeit zurück.",
-    body: "Das Kernversprechen ist deine gewonnene Lebenszeit. Wir bleiben so lange an deiner Seite und optimieren, bis das System dir nachweislich mindestens 10 Stunden administrative Arbeit pro Woche einspart. Du trackst deine gesparte Zeit, wir passen an, bis das Ziel erreicht ist. Wir verdienen unseren Erfolg erst mit deinem.",
+    subtitle: "Wir kaufen dir deine Zeit zurück.",
+    body: "Wir bleiben so lange an deiner Seite, bis das System dir nachweislich mindestens 10 Stunden administrative Arbeit pro Woche einspart. Erreichen wir das nicht, erstatten wir dir 100%. Dein Erfolg ist unser Erfolg.",
     icon: Clock,
   },
   {
     number: "03",
     title: "Die ROI-Garantie",
-    subtitle: "„Dein Investment zahlt sich aus – oder wir sind weiter für dich da.",
-    body: "Unser Ziel ist dein finanzieller und zeitlicher Gewinn. In der 3-monatigen Growth-Phase nach dem Launch arbeiten wir aktiv mit dir daran, das System profitabel zu machen. Wir analysieren Daten, optimieren Conversion-Punkte und justieren, bis du den vollen Nutzen ziehst. Erst wenn du zufrieden bist, ist unsere Arbeit wirklich getan. Kein „Liefern und Verschwinden.",
+    subtitle: "Dein Investment zahlt sich aus.",
+    body: "In der 3-monatigen Growth-Phase arbeiten wir aktiv mit dir daran, das System profitabel zu machen. Sind wir nicht in der Lage, den vereinbarten Nutzen zu liefern, erstatten wir dir 100%. Kein Liefern und Verschwinden.",
     icon: ChartLineUp,
   },
 ];
@@ -82,7 +82,7 @@ export function ClearPath() {
               lineHeight="relaxed"
               fontWeight="400"
             >
-              Wir übernehmen 100% des Risikos - du bekommst garantierte Ergebnisse
+              Bei Nichteinhaltung unserer Garantien erstatten wir dir 100% – du trägst kein Risiko
             </Text>
           </MotionVStack>
 
@@ -215,20 +215,20 @@ export function ClearPath() {
                   
                   <VStack align="start" gap={{ base: "3", md: "4" }} mt="2" w="full" minW="0">
                     <Heading as="h4" fontSize={{ base: "md", md: "lg" }} fontWeight="700" color="white">
-                      100% Risikofreier Erfolg
+                      100% Risikofrei für dich
                     </Heading>
                     <VStack align="start" gap="2" w="full">
                       <HStack gap={{ base: "2", md: "3" }} align="start">
                         <Box w="2" h="2" bg="blue.400" borderRadius="full" mt="1.5" flexShrink="0" />
-                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">Pünktlich oder 50% Rückerstattung</Text>
+                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">Pünktlich oder 100% Rückerstattung</Text>
                       </HStack>
                       <HStack gap={{ base: "2", md: "3" }} align="start">
                         <Box w="2" h="2" bg="blue.400" borderRadius="full" mt="1.5" flexShrink="0" />
-                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">10+ Stunden/Woche gespart - garantiert</Text>
+                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">10+ Stunden/Woche gespart – sonst 100% Erstattung</Text>
                       </HStack>
                       <HStack gap={{ base: "2", md: "3" }} align="start">
                         <Box w="2" h="2" bg="blue.400" borderRadius="full" mt="1.5" flexShrink="0" />
-                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">3 Monate aktiver Success Support</Text>
+                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">ROI nicht erreicht? 100% Erstattung</Text>
                       </HStack>
                     </VStack>
                   </VStack>

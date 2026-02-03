@@ -18,13 +18,14 @@ export function RoiCalculator() {
     goToResults,
     result,
     reset,
+    submitRoi,
+    answers,
   } = useROICalculator();
 
-  const isResultsStep = state.step === 6;
+  const isResultsStep = state.step === 4;
 
   return (
     <Box as="section" position="relative" id="roi-rechner" w="full" minW="0">
-      {/* Weißer Glow von unten nach oben */}
       <Box
         position="absolute"
         bottom="0"
@@ -39,74 +40,77 @@ export function RoiCalculator() {
       <Section size="lg" color="white" py="10" position="relative" zIndex="1">
         <Container maxW="4xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
           <VStack gap={{ base: "6", md: "8" }} align="stretch" w="full" minW="0">
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-60px" }}
-            textAlign="center"
-          >
-            <Heading
-              as="h2"
-              fontSize={{ base: "2xl", sm: "3xl", md: "4xl", lg: "5xl" }}
-              fontWeight="600"
-              lineHeight="1.2"
-              letterSpacing="-0.01em"
-              color="white"
-              px={{ base: "2", md: "0" }}
-            >
-              ROI-Rechner
-            </Heading>
-            <Text
-              color="gray.400"
-              fontSize={{ base: "md", md: "lg", lg: "xl" }}
-              maxW="2xl"
-              mx="auto"
-              mt="3"
-              px={{ base: "2", md: "0" }}
+            <MotionBox
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "-60px" }}
               textAlign="center"
             >
-              Transparente, konservative Berechnung deines Return on Investment.
-              Beantworte 5 kurze Fragen – wir berechnen deinen ROI und
-              melden uns bei dir.
-            </Text>
-          </MotionBox>
-
-          {!isResultsStep && (
-            <ProgressStepper currentStep={state.step} />
-          )}
-
-          {state.step >= 1 && state.step <= 5 && (
-            <MotionBox
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              w="full"
-            >
-              <QuestionStep
-                stepNumber={state.step}
-                answers={state.answers}
-                onAnswersChange={setAnswers}
-                onNext={
-                  state.step < 5
-                    ? () => setStep(state.step + 1)
-                    : goToResults
-                }
-                onReset={reset}
-              />
+              <Heading
+                as="h2"
+                fontSize={{ base: "2xl", sm: "3xl", md: "4xl", lg: "5xl" }}
+                fontWeight="600"
+                lineHeight="1.2"
+                letterSpacing="-0.01em"
+                color="white"
+                px={{ base: "2", md: "0" }}
+              >
+                ROI-Rechner
+              </Heading>
+              <Text
+                color="gray.400"
+                fontSize={{ base: "md", md: "lg", lg: "xl" }}
+                maxW="2xl"
+                mx="auto"
+                mt="3"
+                px={{ base: "2", md: "0" }}
+                textAlign="center"
+              >
+                Beantworte 3 kurze Fragen und ich sende dir ein 5 Minütiges Scaling Video auf LinkedIn zu.
+              </Text>
             </MotionBox>
-          )}
 
-          {isResultsStep && result && (
-            <MotionBox
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              w="full"
-            >
-              <ROIResults result={result} onReset={reset} />
-            </MotionBox>
-          )}
+            {!isResultsStep && (
+              <ProgressStepper currentStep={state.step} />
+            )}
+
+            {state.step >= 1 && state.step <= 3 && (
+              <MotionBox
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                w="full"
+              >
+                <QuestionStep
+                  stepNumber={state.step}
+                  answers={state.answers}
+                  onAnswersChange={setAnswers}
+                  onNext={
+                    state.step < 3
+                      ? () => setStep(state.step + 1)
+                      : goToResults
+                  }
+                  onReset={reset}
+                />
+              </MotionBox>
+            )}
+
+            {isResultsStep && result && answers && (
+              <MotionBox
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                w="full"
+              >
+                <ROIResults
+                  result={result}
+                  answers={answers}
+                  onReset={reset}
+                  onSubmit={submitRoi}
+                />
+              </MotionBox>
+            )}
           </VStack>
         </Container>
       </Section>
