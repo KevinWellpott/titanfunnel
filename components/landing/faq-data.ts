@@ -10,7 +10,7 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Sind ihr Coaches oder Berater?",
+    question: "Seid ihr Coaches oder Berater?",
     answer: "Wir sind die Architekten, nicht die Motivationsredner. Während Coaches dir sagen, WAS du tun sollst, bauen wir dir das System, das es FÜR dich tut. Kein Bla-Bla, kein Workbook – nur ein laufendes Business, das auch ohne dich funktioniert."
   },
   {
