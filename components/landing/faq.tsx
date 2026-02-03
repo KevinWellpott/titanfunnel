@@ -63,10 +63,12 @@ export function Faq() {
                   overflow="hidden"
                   {...glassCardStyles}
                 >
-                  <Box
-                    as="button"
+                  <Button
                     type="button"
+                    variant="unstyled"
                     w="full"
+                    h="auto"
+                    minH="0"
                     textAlign="left"
                     px={{ base: "4", md: "5" }}
                     py={{ base: "4", md: "5" }}
@@ -99,7 +101,7 @@ export function Faq() {
                     >
                       <CaretDown size={20} weight="bold" />
                     </Box>
-                  </Box>
+                  </Button>
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
