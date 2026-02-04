@@ -73,6 +73,7 @@ export function Faq() {
                     h="auto"
                     minH="0"
                     textAlign="left"
+                    whiteSpace="normal"
                     px={{ base: "4", md: "5" }}
                     py={{ base: "4", md: "5" }}
                     onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -88,6 +89,8 @@ export function Faq() {
                     id={`faq-question-${index}`}
                   >
                     <Text
+                      as="span"
+                      display="block"
                       fontSize={{ base: "sm", md: "md" }}
                       fontWeight="600"
                       color="white"
@@ -95,6 +98,7 @@ export function Faq() {
                       minW="0"
                       overflowWrap="break-word"
                       wordBreak="break-word"
+                      whiteSpace="normal"
                     >
                       {item.question}
                     </Text>
