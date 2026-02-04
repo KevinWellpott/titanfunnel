@@ -61,12 +61,15 @@ export function Faq() {
                   key={index}
                   borderRadius="xl"
                   overflow="hidden"
+                  minW="0"
+                  w="full"
                   {...glassCardStyles}
                 >
                   <Button
                     type="button"
                     variant="ghost"
                     w="full"
+                    minW="0"
                     h="auto"
                     minH="0"
                     textAlign="left"
@@ -89,6 +92,9 @@ export function Faq() {
                       fontWeight="600"
                       color="white"
                       flex="1"
+                      minW="0"
+                      overflowWrap="break-word"
+                      wordBreak="break-word"
                     >
                       {item.question}
                     </Text>
@@ -117,12 +123,16 @@ export function Faq() {
                           px={{ base: "4", md: "5" }}
                           pb={{ base: "4", md: "5" }}
                           pt="0"
+                          minW="0"
+                          overflow="hidden"
                         >
                           <Text
                             fontSize={{ base: "sm", md: "md" }}
                             color="gray.300"
                             lineHeight="relaxed"
                             pl="0"
+                            overflowWrap="break-word"
+                            wordBreak="break-word"
                           >
                             {item.answer}
                           </Text>
