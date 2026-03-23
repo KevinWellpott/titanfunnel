@@ -1,3 +1,9 @@
+.player a {
+display: none !important;
+
+}
+
+
 /* Utility Classes */
 .o--Widget--widget .o--color-accent {
   color: var(--chakra-colors-primary-solid) !important;
