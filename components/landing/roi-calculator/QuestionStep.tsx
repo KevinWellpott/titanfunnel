@@ -345,7 +345,7 @@ export function QuestionStep({
           </Button>
           {onReset && (
             <Button
-              variant="link"
+              variant="ghost"
               size={{ base: "md", md: "lg" }}
               gap="2"
               px={{ base: "5", md: "8" }}
@@ -353,7 +353,7 @@ export function QuestionStep({
               fontSize={{ base: "xs", md: "sm" }}
               fontWeight="600"
               color="gray.500"
-              _hover={{ color: "gray.400" }}
+              _hover={{ color: "gray.400", bg: "transparent" }}
               onClick={onReset}
               aria-label="ROI neu berechnen"
               transition="all 0.2s ease"
