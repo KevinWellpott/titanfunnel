@@ -18,6 +18,7 @@ import Script from "next/script";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-inter",
 });
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
@@ -32,7 +33,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <html suppressHydrationWarning className="cc--theme light">
+    <html suppressHydrationWarning className={`cc--theme light ${inter.variable}`}>
       <Head>
         <title>Project Starter</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />

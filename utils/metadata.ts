@@ -49,9 +49,7 @@ export function generateMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description: fullDescription,
-      ...(projectConfig.seo.twitterHandle && {
-        creator: projectConfig.seo.twitterHandle,
-      }),
+      creator: projectConfig.seo.twitterHandle,
       images: [projectConfig.seo.ogImage],
     },
   };

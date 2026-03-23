@@ -8,13 +8,10 @@ import {
   HStack,
   Container,
   SimpleGrid,
-  Link,
 } from "@chakra-ui/react";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import { glassCardStyles } from "./glass-card-styles";
-
-const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
+import { Link } from "@/components/ui/link";
 import { ArrowRight, ShieldCheck, Clock, ChartLineUp } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 
@@ -25,29 +22,29 @@ const guarantees = [
   {
     number: "01",
     title: "Die Go-Live-Garantie",
-    subtitle: "Dein System, pünktlich fertig.",
-    body: "Wir liefern dein maßgeschneidertes Skalierungs-System innerhalb der vereinbarten Frist (14 bzw. 30 Werktage). Halten wir die Frist nicht ein, erstatten wir dir 100% des Betrags – keine Diskussion, keine Ausreden.",
+    subtitle: "„Dein System, pünktlich fertig.",
+    body: "Wir liefern dein maßgeschneidertes Skalierungs-System innerhalb der vereinbarten Frist (14 bzw. 30 Werktage). Punkt. Sollten wir zu spät sein, erlassen wir dir automatisch 50% des Gesamtpreises. Keine Diskussion, keine Ausreden. Unsere Planung muss stimmen – sonst zahlen wir dafür.",
     icon: ShieldCheck,
   },
   {
     number: "02",
     title: "Die Zeitersparnis-Garantie",
-    subtitle: "Wir kaufen dir deine Zeit zurück.",
-    body: "Wir bleiben so lange an deiner Seite, bis das System dir nachweislich mindestens 10 Stunden administrative Arbeit pro Woche einspart. Erreichen wir das nicht, erstatten wir dir 100%. Dein Erfolg ist unser Erfolg.",
+    subtitle: "„Wir kaufen dir deine Zeit zurück.",
+    body: "Das Kernversprechen ist deine gewonnene Lebenszeit. Wir bleiben so lange an deiner Seite und optimieren, bis das System dir nachweislich mindestens 10 Stunden administrative Arbeit pro Woche einspart. Du trackst deine gesparte Zeit, wir passen an, bis das Ziel erreicht ist. Wir verdienen unseren Erfolg erst mit deinem.",
     icon: Clock,
   },
   {
     number: "03",
     title: "Die ROI-Garantie",
-    subtitle: "Dein Investment zahlt sich aus.",
-    body: "In der 3-monatigen Growth-Phase arbeiten wir aktiv mit dir daran, das System profitabel zu machen. Sind wir nicht in der Lage, den vereinbarten Nutzen zu liefern, erstatten wir dir 100%. Kein Liefern und Verschwinden.",
+    subtitle: "„Dein Investment zahlt sich aus – oder wir sind weiter für dich da.",
+    body: "Unser Ziel ist dein finanzieller und zeitlicher Gewinn. In der 3-monatigen Growth-Phase nach dem Launch arbeiten wir aktiv mit dir daran, das System profitabel zu machen. Wir analysieren Daten, optimieren Conversion-Punkte und justieren, bis du den vollen Nutzen ziehst. Erst wenn du zufrieden bist, ist unsere Arbeit wirklich getan. Kein „Liefern und Verschwinden.",
     icon: ChartLineUp,
   },
 ];
 
 export function ClearPath() {
   return (
-    <Section size="lg" color="white" py="0" id="clear-path">
+    <Section size="lg"  color="white" py="0" id="clear-path">
       <Container maxW="6xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
         <VStack gap={{ base: "10", md: "16" }} w="full" minW="0">
           {/* Clean Header */}
@@ -82,7 +79,7 @@ export function ClearPath() {
               lineHeight="relaxed"
               fontWeight="400"
             >
-              Bei Nichteinhaltung unserer Garantien erstatten wir dir 100% – du trägst kein Risiko
+              Wir übernehmen 100% des Risikos - du bekommst garantierte Ergebnisse
             </Text>
           </MotionVStack>
 
@@ -99,6 +96,9 @@ export function ClearPath() {
                   viewport={{ once: true }}
                 >
                   <Box
+                    bg="gray.800"
+                    border="1px solid"
+                    borderColor="gray.700"
                     borderRadius="xl"
                     p={{ base: "4", md: "6" }}
                     h="full"
@@ -106,11 +106,11 @@ export function ClearPath() {
                     display="flex"
                     flexDirection="column"
                     _hover={{
+                      borderColor: "gray.600",
                       transform: "translateY(-2px)",
                       boxShadow: "0 12px 28px rgba(0, 0, 0, 0.12)",
                     }}
                     transition="transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)"
-                    {...glassCardStyles}
                   >
                     <VStack align="start" gap="4" flex="1">
                       {/* Icon & Number */}
@@ -192,11 +192,13 @@ export function ClearPath() {
               <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: "4", md: "6" }} w="full" minW="0">
                 {/* With Us */}
                 <Box
+                  bg="gray.800"
+                  border="2px solid"
+                  borderColor="blue.500/30"
                   borderRadius="xl"
                   p={{ base: "4", md: "6" }}
                   position="relative"
                   minW="0"
-                  {...glassCardStyles}
                 >
                   <Box
                     position="absolute"
@@ -215,20 +217,20 @@ export function ClearPath() {
                   
                   <VStack align="start" gap={{ base: "3", md: "4" }} mt="2" w="full" minW="0">
                     <Heading as="h4" fontSize={{ base: "md", md: "lg" }} fontWeight="700" color="white">
-                      100% Risikofrei für dich
+                      100% Risikofreier Erfolg
                     </Heading>
                     <VStack align="start" gap="2" w="full">
                       <HStack gap={{ base: "2", md: "3" }} align="start">
                         <Box w="2" h="2" bg="blue.400" borderRadius="full" mt="1.5" flexShrink="0" />
-                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">Pünktlich oder 100% Rückerstattung</Text>
+                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">Pünktlich oder 50% Rückerstattung</Text>
                       </HStack>
                       <HStack gap={{ base: "2", md: "3" }} align="start">
                         <Box w="2" h="2" bg="blue.400" borderRadius="full" mt="1.5" flexShrink="0" />
-                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">10+ Stunden/Woche gespart – sonst 100% Erstattung</Text>
+                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">10+ Stunden/Woche gespart - garantiert</Text>
                       </HStack>
                       <HStack gap={{ base: "2", md: "3" }} align="start">
                         <Box w="2" h="2" bg="blue.400" borderRadius="full" mt="1.5" flexShrink="0" />
-                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">ROI nicht erreicht? 100% Erstattung</Text>
+                        <Text fontSize={{ base: "xs", md: "sm" }} color="gray.300">3 Monate aktiver Success Support</Text>
                       </HStack>
                     </VStack>
                   </VStack>
@@ -236,11 +238,13 @@ export function ClearPath() {
 
                 {/* Without Us */}
                 <Box
+                  bg="gray.850"
+                  border="1px solid"
+                  borderColor="gray.700"
                   borderRadius="xl"
                   p={{ base: "4", md: "6" }}
                   position="relative"
                   minW="0"
-                  {...glassCardStyles}
                 >
                   <Box
                     position="absolute"
@@ -302,10 +306,12 @@ export function ClearPath() {
             viewport={{ once: true }}
           >
             <Box
+              bg="gray.800"
+              border="1px solid"
+              borderColor="gray.700"
               borderRadius="xl"
               p={{ base: "5", md: "8" }}
               textAlign="center"
-              {...glassCardStyles}
             >
               <VStack gap={{ base: "4", md: "6" }}>
                 <VStack gap={{ base: "2", md: "3" }} px={{ base: "2", md: "0" }}>
@@ -317,15 +323,7 @@ export function ClearPath() {
                   </Text>
                 </VStack>
 
-                <Link
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  w="full"
-                  maxW="md"
-                  display="block"
-                  _hover={{ textDecoration: "none" }}
-                >
+                <Link href="#os-architektur-gespraech" w="full" maxW="md">
                   <Button
                     w="full"
                     size={{ base: "md", md: "lg" }}

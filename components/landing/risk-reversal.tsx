@@ -10,7 +10,6 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import { Section } from "@/components/layout/section";
-import { glassCardStyles } from "./glass-card-styles";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/components/ui/link";
 import { ArrowRight } from "@phosphor-icons/react";
@@ -21,11 +20,11 @@ const steps = [
     title: "Architektur-Gespräch",
     duration: "30 Min",
     description:
-      "Am Ende hast du Klarheit: Wie dein System aussehen wird, was es dir bringt und wann es steht.",
+      "Kostenlose Analyse deiner Geschäftsprozesse und System-Architektur Planung.",
     details: [
-      "Klarer Fahrplan für dein maßgeschneidertes System",
-      "Konkrete Erwartung an Zeitersparnis & ROI",
-      "Transparente Timeline und Investment",
+      "Geschäftsprozess-Analyse",
+      "System-Architektur Design",
+      "Timeline & Investment Klärung",
     ],
   },
   {
@@ -33,11 +32,11 @@ const steps = [
     title: "System Development",
     duration: "14-30 Tage",
     description:
-      "Outcome: Ein lauffähiges System, das deine Prozesse bündelt und dein Team entlastet.",
+      "Wir entwickeln dein maßgeschneidertes Business Operating System.",
     details: [
-      "Ein System, das zu deinem Business passt",
-      "Alle relevanten Module integriert und getestet",
-      "Bereit für Go-Live ohne böse Überraschungen",
+      "Custom System Development",
+      "Integration aller Module",
+      "Quality Assurance & Testing",
     ],
   },
   {
@@ -45,11 +44,11 @@ const steps = [
     title: "Go-Live & Setup",
     duration: "3-5 Tage",
     description:
-      "Outcome: Dein System läuft, dein Team kann damit arbeiten, die Migration ist durch.",
+      "Pünktlicher Launch mit vollständiger Team-Schulung und Datenimport.",
     details: [
-      "System live – pünktlich wie vereinbart",
-      "Team geschult und sicher im Umgang",
-      "Daten übernommen, du bist sofort produktiv",
+      "System Launch & Migration",
+      "Team Training & Onboarding",
+      "Datenimport & Go-Live Support",
     ],
   },
   {
@@ -57,11 +56,11 @@ const steps = [
     title: "Growth Optimierung",
     duration: "3 Monate",
     description:
-      "Outcome: Mehr Umsatz, weniger Admin-Chaos – wir optimieren so lange, bis dein ROI stimmt.",
+      "Aktive Optimierung bis zur garantierten ROI-Erreichung.",
     details: [
-      "Messbare Verbesserung von Conversion & Performance",
-      "Weniger Zeit für Admin, mehr fürs Kerngeschäft",
-      "ROI erreicht – erst dann ist unsere Arbeit getan",
+      "Performance Monitoring",
+      "Conversion Optimierung",
+      "Growth Support bis ROI erreicht",
     ],
   },
 ];
@@ -95,7 +94,7 @@ function RiskReversal() {
               lineHeight="relaxed"
               fontWeight="400"
             >
-              Von der Klarheit bis zum messbaren Ergebnis – in 4 Schritten zu deinem Outcome
+              4 klare Schritte von der Idee bis zum automatisierten System
             </Text>
           </VStack>
 
@@ -108,9 +107,11 @@ function RiskReversal() {
             {steps.map((step) => (
                 <Box
                   key={step.id}
+                  bg="gray.800"
+                  border="1px solid"
+                  borderColor="gray.700"
                   borderRadius="xl"
                   p={{ base: "4", md: "6" }}
-                  {...glassCardStyles}
                 >
                   <VStack align="start" gap="4">
                     <HStack gap="3">

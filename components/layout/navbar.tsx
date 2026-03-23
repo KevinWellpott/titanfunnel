@@ -8,23 +8,15 @@ import {
   HStack,
   Box,
   Text,
-  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { CollapsibleTrigger } from "@/components/ui/collapsible-trigger";
 import { Link } from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 
-const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
-
 export function NavbarLinkMenu() {
   return (
     <HStack gap="1">
-      <ChakraLink
-        href={CALENDLY_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        _hover={{ textDecoration: "none" }}
-      >
+      <Link href="/contact">
         <Button
           color="white"
           bg="#01ADD5"
@@ -37,7 +29,7 @@ export function NavbarLinkMenu() {
         >
           Kontakt
         </Button>
-      </ChakraLink>
+      </Link>
     </HStack>
   );
 }

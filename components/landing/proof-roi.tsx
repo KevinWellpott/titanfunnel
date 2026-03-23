@@ -1,27 +1,20 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
 import {
   Heading,
   Text,
   Stack,
   VStack,
-  HStack,
   Box,
   Container,
-  SimpleGrid,
-  IconButton,
 } from "@chakra-ui/react";
 import { Section } from "@/components/layout/section";
 import { motion } from "motion/react";
-import { DialogRoot, DialogContent, DialogCloseTrigger } from "@/components/ui/dialog";
-import { BrandedVideoPlayer } from "./branded-video-player";
-import { glassCardStyles } from "./glass-card-styles";
-import { proofRoiGalleryCategories } from "./proof-roi-gallery-data";
-import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 
 const MotionBox = motion.create(Box);
 const MotionVStack = motion.create(VStack);
+
+const VIMEO_PARAMS = "title=0&byline=0&portrait=0";
 
 export interface ProofRoiVideoProp {
   vimeoId: string;
@@ -40,45 +33,8 @@ const quote = {
 };
 
 export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
-  const [lightboxCategory, setLightboxCategory] = useState<{
-    label: string;
-    images: string[];
-  } | null>(null);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  const images = lightboxCategory?.images ?? [];
-  const currentImage = images[lightboxIndex] ?? null;
-  const goPrev = useCallback(() => {
-    setLightboxIndex((i) => (i <= 0 ? images.length - 1 : i - 1));
-  }, [images.length]);
-  const goNext = useCallback(() => {
-    setLightboxIndex((i) => (i >= images.length - 1 ? 0 : i + 1));
-  }, [images.length]);
-
-  useEffect(() => {
-    if (!lightboxCategory) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") goPrev();
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "Escape") setLightboxCategory(null);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [lightboxCategory, goPrev, goNext]);
-
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const handleTouchStart = (e: React.TouchEvent) =>
-    setTouchStartX(e.touches[0].clientX);
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX == null) return;
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (dx > 50) goPrev();
-    if (dx < -50) goNext();
-    setTouchStartX(null);
-  };
-
   return (
-    <Section size="lg" color="white" py="2">
+    <Section size="lg"  color="white" py="2">
       <Container maxW="6xl" w="full" minW="0" px={{ base: "4", md: "6" }}>
         <VStack gap={{ base: "8", md: "12" }} w="full" minW="0">
           {/* Compact Header */}
@@ -177,11 +133,17 @@ export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
                       borderRadius="2xl"
                       overflow="hidden"
                     >
-                      <BrandedVideoPlayer
-                        vimeoId={video.vimeoId}
+                      <iframe
+                        src={`https://player.vimeo.com/video/${video.vimeoId}?${VIMEO_PARAMS}`}
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          width: "100%",
+                          height: "100%",
+                          border: "none",
+                          borderRadius: "var(--chakra-radii-2xl)",
+                        }}
                         title="Case Study Video"
-                        variant="proofRoi"
-                        thumbnailSrc="/thumbnail-proof-roi.webp"
                       />
                     </Box>
                   ) : (
@@ -235,52 +197,6 @@ export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
                   )}
                 </Box>
               </motion.div>
-
-              {/* Galerie: 3 Kästchen für Case-Study-Screenshots */}
-              <VStack gap="3" w="full" minW="0" mt="4" align="stretch">
-                <Heading
-                  as="h3"
-                  fontSize={{ base: "sm", md: "md" }}
-                  fontWeight="600"
-                  color="gray.300"
-                  textAlign="center"
-                >
-                  So sieht der Umsatzmagnet von SNT aus
-                </Heading>
-                <SimpleGrid columns={3} gap="3" w="full" minW="0">
-                  {proofRoiGalleryCategories.map((cat) => (
-                    <Box
-                      key={cat.id}
-                      as="button"
-                      onClick={() => {
-                        setLightboxCategory({ label: cat.label, images: cat.images });
-                        setLightboxIndex(0);
-                      }}
-                      borderRadius="lg"
-                      p="3"
-                      textAlign="center"
-                      {...glassCardStyles}
-                      cursor="pointer"
-                      transition="transform 0.2s, box-shadow 0.2s"
-                      _hover={{
-                        transform: "translateY(-2px)",
-                        boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
-                      }}
-                    >
-                      <Text
-                        fontSize={{ base: "xs", md: "sm" }}
-                        fontWeight="600"
-                        color="white"
-                      >
-                        {cat.label}
-                      </Text>
-                      <Text fontSize="2xs" color="gray.500" mt="0.5">
-                        {cat.images.length} Screens
-                      </Text>
-                    </Box>
-                  ))}
-                </SimpleGrid>
-              </VStack>
             </MotionBox>
 
             {/* Compact Stats & Quote */}
@@ -294,51 +210,42 @@ export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              {/* Kennzahlen leicht hervorgehoben */}
+              {/* Clean Stats - No Boxes */}
               <VStack gap="4" align={{ base: "center", lg: "start" }} w="full">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.5 + i * 0.1,
+                    transition={{ 
+                      duration: 0.5, 
+                      delay: 0.5 + i * 0.1 
                     }}
                     viewport={{ once: true }}
                     style={{ width: "100%" }}
                   >
-                    <Box
-                      w="full"
-                      maxW={{ base: "full", sm: "xs" }}
-                      px="4"
-                      py="3"
-                      borderRadius="lg"
-                      {...glassCardStyles}
+                    <VStack 
+                      align={{ base: "center", lg: "start" }} 
+                      gap="1"
                     >
-                      <VStack
-                        align={{ base: "center", lg: "start" }}
-                        gap="1"
+                      <Text
+                        fontSize={{ base: "xl", md: "2xl" }}
+                        fontWeight="800"
+                        lineHeight="tight"
+                        color="white"
                       >
-                        <Text
-                          fontSize={{ base: "xl", md: "2xl" }}
-                          fontWeight="800"
-                          lineHeight="tight"
-                          color="white"
-                        >
-                          {stat.value}
-                        </Text>
-                        <Text
-                          fontSize={{ base: "2xs", md: "xs" }}
-                          color="gray.400"
-                          fontWeight="600"
-                          textTransform="uppercase"
-                          letterSpacing="wide"
-                        >
-                          {stat.label}
-                        </Text>
-                      </VStack>
-                    </Box>
+                        {stat.value}
+                      </Text>
+                      <Text 
+                        fontSize={{ base: "2xs", md: "xs" }} 
+                        color="gray.500" 
+                        fontWeight="600"
+                        textTransform="uppercase"
+                        letterSpacing="wide"
+                      >
+                        {stat.label}
+                      </Text>
+                    </VStack>
                   </motion.div>
                 ))}
               </VStack>
@@ -418,104 +325,6 @@ export function ProofRoi({ video }: { video?: ProofRoiVideoProp | null }) {
               </motion.div>
             </MotionVStack>
           </Stack>
-
-          {/* Lightbox: Screenshots 16:9, Swipe + Pfeile */}
-          <DialogRoot
-            open={!!lightboxCategory}
-            onOpenChange={(e) => {
-              if (!e.open) setLightboxCategory(null);
-            }}
-          >
-            <DialogContent
-              maxW="5xl"
-              w="full"
-              margin={{ base: "4", md: "auto" }}
-              mx="auto"
-              borderRadius="2xl"
-              overflow="hidden"
-              bg="gray.900"
-              p="0"
-            >
-              <DialogCloseTrigger aria-label="Schließen" />
-              {lightboxCategory && currentImage && (
-                <Box
-                  position="relative"
-                  aspectRatio={16 / 9}
-                  w="full"
-                  bg="black"
-                  onTouchStart={handleTouchStart}
-                  onTouchEnd={handleTouchEnd}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={currentImage}
-                    alt={`${lightboxCategory.label} Screenshot ${lightboxIndex + 1}`}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                  {images.length > 1 && (
-                    <>
-                      <IconButton
-                        aria-label="Vorheriges Bild"
-                        position="absolute"
-                        left="2"
-                        top="50%"
-                        transform="translateY(-50%)"
-                        size="md"
-                        borderRadius="full"
-                        bg="black/60"
-                        color="white"
-                        _hover={{ bg: "black/80" }}
-                        onClick={goPrev}
-                      >
-                        <CaretLeft size={24} />
-                      </IconButton>
-                      <IconButton
-                        aria-label="Nächstes Bild"
-                        position="absolute"
-                        right="2"
-                        top="50%"
-                        transform="translateY(-50%)"
-                        size="md"
-                        borderRadius="full"
-                        bg="black/60"
-                        color="white"
-                        _hover={{ bg: "black/80" }}
-                        onClick={goNext}
-                      >
-                        <CaretRight size={24} />
-                      </IconButton>
-                      <Box
-                        position="absolute"
-                        bottom="2"
-                        left="50%"
-                        transform="translateX(-50%)"
-                        px="3"
-                        py="1"
-                        borderRadius="full"
-                        bg="black/60"
-                        color="white"
-                        fontSize="xs"
-                        fontWeight="600"
-                      >
-                        {lightboxIndex + 1} / {images.length}
-                      </Box>
-                    </>
-                  )}
-                </Box>
-              )}
-              {lightboxCategory && (
-                <Box px="4" py="3" borderTopWidth="1px" borderColor="gray.800">
-                  <Text fontSize="sm" fontWeight="600" color="white">
-                    {lightboxCategory.label}
-                  </Text>
-                </Box>
-              )}
-            </DialogContent>
-          </DialogRoot>
         </VStack>
       </Container>
     </Section>

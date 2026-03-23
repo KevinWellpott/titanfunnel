@@ -1,11 +1,10 @@
 "use client";
 
-import { Box, Heading, Link, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Stack, Text, VStack } from "@chakra-ui/react";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/layout/section";
+import { Link } from "@/components/ui/link";
 import { ArrowRight } from "@phosphor-icons/react";
-
-const CALENDLY_URL = "https://calendly.com/vertrieb-titandevelopment/30min";
 import { motion } from "motion/react";
 
 const MotionBox = motion.create(Box);
@@ -13,7 +12,7 @@ const MotionVStack = motion.create(VStack);
 const MotionHeading = motion.create(Heading);
 const MotionText = motion.create(Text);
 
-import { BrandedVideoPlayer } from "./branded-video-player";
+const VIMEO_PARAMS = "title=0&byline=0&portrait=0";
 
 export interface HeroVideoProp {
   vimeoId: string;
@@ -69,7 +68,7 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               </Text>
               {" "}statt auf einem{" "}
               <Text as="span" color="white">
-                System?
+                System
               </Text>
             </MotionHeading>
 
@@ -85,7 +84,8 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-             Wir bauen dir ein automatisiertes System, das Kunden gewinnt, verkauft und abwickelt – komplett unter deinem Branding.
+              Wir bauen dir das Betriebssystem, das Akquise, Verkauf und 
+              Delivery nahtlos automatisiert – unter deinem Branding.
             </MotionText>
 
             <motion.div
@@ -95,14 +95,7 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
               viewport={{ once: true }}
             >
               <VStack gap={{ base: "3", md: "4" }} align={{ base: "center", lg: "flex-start" }} w="full" maxW={{ base: "full", sm: "md" }}>
-                <Link
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  w={{ base: "full", sm: "auto" }}
-                  display="block"
-                  _hover={{ textDecoration: "none" }}
-                >
+                <Link href="#os-architektur-gespraech" w={{ base: "full", sm: "auto" }}>
                   <Button
                     w={{ base: "full", sm: "auto" }}
                     size={{ base: "md", md: "lg" }}
@@ -121,7 +114,7 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
                     }}
                     transition="all 0.2s ease"
                   >
-                    Analysegespräch buchen
+                    OS-Architektur-Gespräch buchen
                     <ArrowRight size={16} />
                   </Button>
                 </Link>
@@ -132,7 +125,7 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
             </motion.div>
           </MotionVStack>
 
-          {/* Video Section – Optik 1:1 wie Proof ROI */}
+          {/* Clean Video Section */}
           <MotionBox
             flex="1"
             minW="0"
@@ -142,97 +135,78 @@ export function Hero({ video }: { video?: HeroVideoProp | null }) {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.3 }}
+            <Box
+              aspectRatio={16 / 9}
+              bg="gray.50"
+              borderRadius="xl"
+              border="1px solid"
+              borderColor="gray.200"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              position="relative"
+              overflow="hidden"
+              _hover={{
+                borderColor: "gray.300"
+              }}
+              transition="border-color 0.2s ease"
             >
-              <Box
-                aspectRatio={16 / 9}
-                bg="gray.800"
-                borderRadius="2xl"
-                border="1px solid"
-                borderColor="gray.700"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                position="relative"
-                overflow="hidden"
-                boxShadow="0 20px 40px -12px rgba(0, 0, 0, 0.3)"
-                _before={{
-                  content: '""',
-                  position: "absolute",
-                  inset: "-1px",
-                  bg: "linear-gradient(135deg, transparent, rgba(1, 173, 213, 0.1), transparent)",
-                  borderRadius: "inherit",
-                  zIndex: "-1"
-                }}
-              >
-                {video?.vimeoId ? (
+              {video?.vimeoId ? (
+                <Box
+                  position="absolute"
+                  inset="0"
+                  w="100%"
+                  h="100%"
+                  borderRadius="xl"
+                  overflow="hidden"
+                >
+                  <iframe
+                    src={`https://player.vimeo.com/video/${video.vimeoId}?${VIMEO_PARAMS}`}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      border: "none",
+                      borderRadius: "var(--chakra-radii-xl)",
+                    }}
+                    title="Erklärvideo"
+                  />
+                </Box>
+              ) : (
+                <>
+                  <VStack gap="4" color="gray.400">
+                    <Box
+                      w="16"
+                      h="16"
+                      bg="gray.200"
+                      borderRadius="full"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </Box>
+                    <VStack gap="2" textAlign="center" px="2">
+                      <Text fontWeight="600" fontSize={{ base: "md", md: "lg" }} color="gray.600">
+                        Erklärvideo
+                      </Text>
+                      <Text fontSize={{ base: "xs", md: "sm" }} color="gray.500">
+                        Sieh, wie ein Business-OS funktioniert
+                      </Text>
+                    </VStack>
+                  </VStack>
                   <Box
                     position="absolute"
                     inset="0"
-                    w="100%"
-                    h="100%"
-                    borderRadius="2xl"
-                    overflow="hidden"
-                  >
-                    <BrandedVideoPlayer
-                      vimeoId={video.vimeoId}
-                      title="Erklärvideo"
-                      variant="proofRoi"
-                      thumbnailSrc="/thumbnail-hero.webp"
-                    />
-                  </Box>
-                ) : (
-                  <>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.98 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Box
-                        w="20"
-                        h="20"
-                        bg="#01ADD5"
-                        borderRadius="full"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        cursor="pointer"
-                        position="relative"
-                        boxShadow="0 0 0 0 rgba(1, 173, 213, 0.4)"
-                        _before={{
-                          content: '""',
-                          position: "absolute",
-                          inset: "-6px",
-                          bg: "#01ADD5",
-                          borderRadius: "50%",
-                          opacity: 0.1,
-                          filter: "blur(12px)"
-                        }}
-                      >
-                        <motion.div
-                          animate={{ scale: [1, 1.1, 1] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        >
-                          <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-                            <path d="M8 5v14l11-7z"/>
-                          </svg>
-                        </motion.div>
-                      </Box>
-                    </motion.div>
-
-                    <Box
-                      position="absolute"
-                      inset="0"
-                      opacity="0.03"
-                      backgroundImage="radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)"
-                      backgroundSize="32px 32px"
-                    />
-                  </>
-                )}
-              </Box>
-            </motion.div>
+                    bg="linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.02) 100%)"
+                    pointerEvents="none"
+                  />
+                </>
+              )}
+            </Box>
           </MotionBox>
         </Stack>
       </motion.div>

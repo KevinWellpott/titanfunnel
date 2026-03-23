@@ -29,6 +29,7 @@ export function MetaPixel() {
     return null;
   }
 
+  // Prüfe Cookie Consent (vanilla-cookieconsent API: acceptedCategory)
   const hasConsent = () => CookieConsent.acceptedCategory(config.cookieCategory);
 
   const fbq = (...args: any[]) => {
@@ -38,7 +39,10 @@ export function MetaPixel() {
   };
 
   useEffect(() => {
-    if (!hasConsent()) return;
+    if (!hasConsent()) {
+      return;
+    }
+
     // PageView Tracking
     if (config.autoTrackEvents.pageView) {
       fbq("track", "PageView");

@@ -1,8 +1,8 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { Navbar } from "@/components/layout/navbar";
+import { WebsiteHeader } from "@/components/layout/website-header";
 import { Footer } from "@/components/layout/footer";
+import { CursorFollower } from "@/components/landing/cursor-follower";
 import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 
@@ -19,17 +19,15 @@ export default function WebsiteLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const showFooter = pathname !== "/erklaervideo";
-
   return (
-    <Box as="div" minW="0" maxW="100vw" overflowX="hidden" position="relative">
+    <Box as="div" minW="0" maxW="100vw" overflowX="hidden" position="relative" bg="white">
       <AnimatedBackground />
-      <Navbar type="website" />
+      <CursorFollower />
+      <WebsiteHeader />
       <Box as="main" minW="0" maxW="100%" position="relative">
         {children}
       </Box>
-      {showFooter && <Footer />}
+      <Footer />
     </Box>
   );
 }
