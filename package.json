@@ -33,6 +33,9 @@
     "typescript": "^5.6.2",
     "vanilla-cookieconsent": "^3.0.1"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "license": "MIT",
   "devDependencies": {
     "@chakra-ui/cli": "^3.2.2"
