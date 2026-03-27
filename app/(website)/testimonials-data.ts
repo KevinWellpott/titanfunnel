@@ -163,4 +163,40 @@ export const testimonialsData: TestimonialEntry[] = [
       website: "https://capitalcircletrading.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnfJy8OJpog3tcm8YyC8DzDJ1I4r8rO5kAgi40ctAsIAFwNHup73tn1OeF8h8_aem_VkiBa125swhsOwGKqCFw3g",
     },
   },
+
+  {
+    layout: "right",
+    vimeoId: "1177787292",
+    fallbackVideoSlot: "proof_roi",
+    // videoPosterSrc: "/case-studies/video-posters/emre.webp",
+    photoSrc: "/hero/trust/customer-03.webp",
+    title: "Geschäftsführer hat jetzt 50% weniger Adminarbeit/Woche, obwohl er so viele Projekte gleichzeitig managed",
+    subtitle: "Zufriedene Kunden",
+    name: "Tom Musa Kruschinski",
+    role: "Geschäftsführer und Vertriebler",
+    beforeText: "Vor der Zusammenarbeit",
+    beforeValue:
+      "Schlaflose Nächte, viel Stress und keine Zeit für sich selbst",
+    results: [
+      {
+        icon: "💰",
+        text: "Weniger Adminarbeit → Mehr Zeit für Sales & für sich selbst",
+      },
+      {
+        icon: "✅",
+        text: "Mehr Umsatz durch individuelle Software-Lösungen → Er kann jetzt zwei Urlaube mehr im Jahr machen",
+      },
+      {
+        icon: "⚡",
+        text: "Er kann ruhiger schlafen und mehr Zeit mit der Familie verbringen",
+      },
+    ],
+    socialLinks: {
+     
+  linkedin: "https://www.linkedin.com/in/tom-kruschinski-787a5228b/",
+     
+      website: "https://meister-wartung.de/",
+     
+    },
+  },
 ];
