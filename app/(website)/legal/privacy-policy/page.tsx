@@ -6,96 +6,123 @@ import Markdown from "react-markdown";
 export const metadata = generateMetadata({
   title: "Datenschutzerklärung",
   description:
-    "Erfahre, wie wir deine persönlichen Informationen sammeln, verwenden und schützen",
+    "Informationen zur Verarbeitung personenbezogener Daten auf dieser Website gemäß DSGVO",
 });
 
 export default function PrivacyPolicy() {
   return (
     <Section>
-      <Prose mx="auto" size="lg" mt="">
+      <Prose mx="auto" size="lg" mt="28">
         <Markdown>
           {`
-# Privacy Policy
+# Datenschutzerklärung
 
-**Effective Date:** [Insert Date]
+## 1. Verantwortlicher
 
-At [Your Company Name], we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website and use our services. By accessing or using our services, you agree to the terms of this Privacy Policy.
+Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
 
-## 1. Information We Collect
+Simon Paweletz  
+Einzelunternehmer, Geschäftsbezeichnung TitanScale  
+Unterm Dörgen 3c  
+32549 Bad Oeynhausen  
+Deutschland  
 
-We may collect the following types of information:
+E-Mail: simon@titandevelopment.de, kevin@titandevelopment.de  
+Website: [https://www.titandevelopment.de](https://www.titandevelopment.de)
 
-### 1.1 Personal Information
-When you register for our services, we may collect personal information that can identify you, such as:
--  Name
--  Email address
--  Phone number
--  Billing address
--  Payment information
+## 2. Allgemeines zur Datenverarbeitung
 
-### 1.2 Non-Personal Information
-We may also collect non-personal information that does not identify you, including:
--  Browser type
--  Device information
--  IP address
--  Pages visited
--  Time spent on pages
+Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen Website, unserer Inhalte und Leistungen erforderlich ist oder Sie eingewilligt haben. Die Verarbeitung erfolgt im Einklang mit der DSGVO und dem Bundesdatenschutzgesetz (BDSG), soweit anwendbar.
 
-## 2. How We Use Your Information
+## 3. Hosting (Vercel)
 
-We may use the information we collect for various purposes, including to:
--  Provide, maintain, and improve our services
--  Process your transactions and manage your account
--  Communicate with you about your account or transactions
--  Send you marketing communications and promotional materials
--  Analyze usage and trends to enhance user experience
--  Comply with legal obligations and enforce our terms
+Diese Website wird bei **Vercel Inc.** (USA / globale Infrastruktur) gehostet. Beim Aufruf der Seite werden durch den Hosting-Dienst technisch erforderliche Informationen verarbeitet (z. B. IP-Adresse, Datum und Uhrzeit des Abrufs, angeforderte Datei, übertragene Datenmenge, HTTP-Status). Die Verarbeitung dient der Auslieferung der Website und der Sicherheit (z. B. Missbrauchserkennung).
 
-## 3. Disclosure of Your Information
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und stabilen Webauftritt).
 
-We may share your information in the following circumstances:
--  **With Service Providers:** We may share your information with third-party vendors who perform services on our behalf, such as payment processing, data analysis, email delivery, hosting services, and customer service.
--  **For Legal Reasons:** We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency).
--  **Business Transfers:** If we are involved in a merger, acquisition, or asset sale, your information may be transferred as part of that transaction.
+Weitere Informationen finden Sie in der Datenschutzerklärung von Vercel: [https://vercel.com/legal/privacy-policy](https://vercel.com/legal/privacy-policy)
 
-## 4. Data Security
+Sofern Daten in ein Drittland (z. B. USA) übermittelt werden, stützen wir uns – soweit erforderlich – auf die vom EU-Kommission festgestellten Angemessenheitsbeschlüsse und/oder die EU-Standardvertragsklauseln im Sinne von Art. 46 DSGVO.
 
-We implement reasonable security measures to protect your information from unauthorized access, use, or disclosure. However, no method of transmission over the Internet or method of electronic storage is 100% secure. Therefore, we cannot guarantee its absolute security.
+## 4. Webanalyse (Vercel Analytics)
 
-## 5. Your Rights
+Wir setzen **Vercel Analytics** ein, um die Nutzung unserer Website in aggregierter Form auszuwerten (z. B. Seitenaufrufe, allgemeine Nutzungsmuster). Ziel ist die Verbesserung unseres Angebots. Nach Angaben von Vercel werden dabei keine personenbezogenen Cookies gesetzt; die Auswertung erfolgt weitgehend anonymisiert bzw. aggregiert.
 
-Depending on your location, you may have the following rights regarding your information:
--  The right to access, correct, or delete your personal information
--  The right to object to or restrict the processing of your personal information
--  The right to data portability
--  The right to withdraw consent at any time where we rely on your consent to process your information
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Reichweitenmessung und Optimierung). Sofern Sie über unseren Cookie-/Einwilligungsbanner nur nach Einwilligung zustimmen, ist Rechtsgrundlage Art. 6 Abs. 1 lit. a DSGVO.
 
-To exercise these rights, please contact us using the contact information provided below.
+Hinweise zu Vercel: [https://vercel.com/docs/analytics/privacy-policy](https://vercel.com/docs/analytics/privacy-policy)
 
-## 6. Third-Party Websites
+## 5. Terminbuchung (Calendly)
 
-Our services may contain links to third-party websites. We do not control and are not responsible for the content or privacy practices of these websites. We encourage you to review the privacy policies of any third-party sites you visit.
+Wenn Sie über unsere Website einen Termin bei uns buchen, nutzen wir den Dienst **Calendly LLC** (USA). Dabei werden die von Ihnen im Buchungsformular eingegebenen Daten (z. B. Name, E-Mail-Adresse, ggf. weitere von Ihnen angegebene Angaben sowie der gewählte Termin) verarbeitet, um den Termin zu vereinbahren und mit Ihnen zu kommunizieren.
 
-## 7. Children’s Privacy
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen bzw. Vertragserfüllung), soweit die Buchung der Anbahnung oder Durchführung eines Vertrags dient; andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an effizienter Terminkoordination).
 
-Our services are not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete such information.
+Datenschutzerklärung Calendly: [https://calendly.com/privacy](https://calendly.com/privacy)
 
-## 8. Changes to This Privacy Policy
+Eine Übermittlung in die USA kann erfolgen. Soweit erforderlich, stützen wir uns auf geeignete Garantien gemäß Art. 46 DSGVO (z. B. Standardvertragsklauseln).
 
-We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website with a new effective date. Your continued use of our services after any changes constitutes your acceptance of the updated Privacy Policy.
+## 6. Backend-Datenbank (Supabase)
 
-## 9. Contact Us
+Soweit unsere Website oder verbundene Anwendungen Daten in einer Datenbank bei **Supabase Inc.** speichern oder abrufen (z. B. zur Bereitstellung von Inhalten wie eingebundenen Videoinformationen oder anderen serverseitig verwalteten Daten), werden die hierfür erforderlichen Daten verarbeitet. Art und Umfang hängen von der konkreten Nutzung der Website ab.
 
-If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an technisch stabilem Betrieb) und/oder Art. 6 Abs. 1 lit. b DSGVO, soweit es um die Erfüllung eines Vertrags mit Ihnen geht.
 
-[Your Company Name]  
-[Your Address]  
-[Your Email Address]  
-[Your Phone Number]  
+Datenschutz bei Supabase: [https://supabase.com/privacy](https://supabase.com/privacy)
+
+## 7. Vimeo (Videoeinbindungen)
+
+Auf unserer Website können Videos der Plattform **Vimeo, LLC** (USA) eingebunden sein. Wenn Sie eine Seite mit Vimeo-Player aufrufen, kann Vimeo technische Daten verarbeiten (z. B. IP-Adresse, Geräteinformationen) und ggf. Cookies setzen. Wir haben keinen vollständigen Einblick in alle Verarbeitungen durch Vimeo.
+
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an ansprechender Darstellung von Inhalten), ggf. ergänzend Art. 6 Abs. 1 lit. a DSGVO, sofern eine Einwilligung über den Cookie-Banner erforderlich ist.
+
+Datenschutz Vimeo: [https://vimeo.com/privacy](https://vimeo.com/privacy)
+
+## 8. Optional: Weitere Analyse- oder Marketing-Tools
+
+In unserem Projekt können zusätzlich **Google Analytics** und/oder **Meta Pixel** technisch angebunden sein. Diese werden **nur** aktiv, wenn dies in den Projekteinstellungen freigeschaltet ist **und** Sie der jeweiligen Kategorie in unserem Cookie-Banner zugestimmt haben. Rechtsgrundlage ist dann Art. 6 Abs. 1 lit. a DSGVO.
+
+## 9. Kontakt per E-Mail
+
+Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir Ihre Angaben (E-Mail-Inhalt, Metadaten wie Absenderadresse und Zeitpunkt), um Ihre Anfrage zu bearbeiten.
+
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (vorvertraglich/vertraglich) bzw. Art. 6 Abs. 1 lit. f DSGVO (allgemeine Anfragen).
+
+## 10. Speicherdauer
+
+Wir speichern personenbezogene Daten nur so lange, wie dies für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen. Danach werden die Daten gelöscht oder anonymisiert, soweit keine Aufbewahrungspflichten entgegenstehen.
+
+## 11. Ihre Rechte
+
+Sie haben – unter den gesetzlichen Voraussetzungen – folgende Rechte:
+
+- Auskunft über die Sie betreffenden gespeicherten Daten (Art. 15 DSGVO)  
+- Berichtigung unrichtiger Daten (Art. 16 DSGVO)  
+- Löschung (Art. 17 DSGVO)  
+- Einschränkung der Verarbeitung (Art. 18 DSGVO)  
+- Datenübertragbarkeit (Art. 20 DSGVO)  
+- Widerspruch gegen die Verarbeitung, die auf Art. 6 Abs. 1 lit. f DSGVO beruht (Art. 21 DSGVO)  
+- Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)
+
+## 12. Beschwerderecht
+
+Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, insbesondere in dem Mitgliedstaat Ihres gewöhnlichen Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
+
+Zuständige Aufsichtsbehörde für Nordrhein-Westfalen (beispielhaft, soweit zutreffend):  
+**Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)**  
+[https://www.ldi.nrw.de](https://www.ldi.nrw.de)
+
+## 13. Pflicht zur Bereitstellung von Daten
+
+Eine gesetzliche Pflicht zur Bereitstellung von Daten besteht in der Regel nicht. Für die Nutzung reiner Informationsseiten sind Sie nicht verpflichtet, Daten anzugeben. Für Terminbuchungen oder Vertragsabschlüsse können bestimmte Angaben erforderlich sein.
+
+## 14. Änderungen
+
+Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder Änderungen unserer Leistungen abbildet. Es gilt die jeweils veröffentlichte Fassung.
 
 ---
 
-**Last Updated:** [Insert Date]
+**Stand:** 6. April 2026
           `}
         </Markdown>
       </Prose>

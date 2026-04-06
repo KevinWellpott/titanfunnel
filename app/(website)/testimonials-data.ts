@@ -199,4 +199,28 @@ export const testimonialsData: TestimonialEntry[] = [
      
     },
   },
+
+  {
+    layout: "left",
+    vimeoId: "1180500460",
+    name: "Felix Mangold",
+    role: "Fitnesscoach und Appfounder",
+    title: "Von unskalierbarem Coachingprogramm zu 100% automatisierter Umsatz",
+    subtitle: "Zufriedene Kunden",
+    beforeText: "Vor der Zusammenarbeit",
+    beforeValue: "Unplanbarer Umsatz durch zu wenig Volumen in der Kundenaquise.",
+    results: [
+      { icon: "💰", text: "Kaum noch Fulfillmentaufwand → Mehr Zeit für sich selbst & für die Kundenaquise" },
+      { icon: "✅", text: "Mehr berechenbarer Umsatz der jeden Monat reinkommt → Handyapp ist teil des Funnels und wärmt die Leads auf" },
+      { icon: "⚡", text: "Felix kann jetzt beruhigt skalieren, weil wir ihm ein System umgesetzt haben, was Geld druckt" },
+    ],
+    socialLinks: {
+     
+      linkedin: "linkedin.com/in/felix-mangold-performance-coaching",
+      instagram: "https://www.instagram.com/felix_mangold/",
+         
+      
+         
+        },
+  },
 ];

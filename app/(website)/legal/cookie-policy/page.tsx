@@ -6,7 +6,7 @@ import Markdown from "react-markdown";
 export const metadata = generateMetadata({
   title: "Cookie-Richtlinie",
   description:
-    "Erfahre, wie wir Cookies und ähnliche Technologien verwenden, um deine Erfahrung zu verbessern",
+    "Informationen zu Cookies und ähnlichen Technologien auf dieser Website",
 });
 
 export default function CookiePolicy() {
@@ -15,56 +15,70 @@ export default function CookiePolicy() {
       <Prose mx="auto" size="lg" mt="28">
         <Markdown>
           {`
-# Cookie Policy
+# Cookie-Richtlinie
 
-**Effective Date:** [Insert Date]
+Diese Cookie-Richtlinie informiert Sie darüber, wie wir auf der Website **titandevelopment.de** (und zugehörige Auftritte) Cookies und ähnliche Technologien einsetzen. Ergänzend gilt unsere [Datenschutzerklärung](/legal/privacy-policy).
 
-At [Your Company Name], we use cookies and similar tracking technologies to enhance your experience on our website and services. This Cookie Policy explains what cookies are, how we use them, how third-parties we may partner with may use cookies on the service, your choices regarding cookies, and further information about cookies.
+## 1. Verantwortlicher
 
-## 1. What Are Cookies?
+Simon Paweletz, TitanScale, Unterm Dörgen 3c, 32549 Bad Oeynhausen, Deutschland  
+E-Mail: simon@titandevelopment.de, kevin@titandevelopment.de
 
-Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyze what works and where it needs improvement.
+## 2. Was sind Cookies?
 
-## 2. How [Your Company Name] Uses Cookies
+Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden, wenn Sie eine Website besuchen. Neben klassischen Cookies können auch vergleichbare Technologien verwendet werden (z. B. Local Storage, Session Storage oder Pixel), sofern sie Informationen auf Ihrem Gerät speichern oder auslesen.
 
-When you use and access the Service, we may place a number of cookies files in your web browser. We use cookies for the following purposes:
+## 3. Welche Cookies / Technologien nutzen wir?
 
--  **Essential Cookies:** We use cookies to remember information that changes the way the Service behaves or looks, such as a user's language preference on the Service.
--  **Account-Related Cookies:** We use cookies to manage the signup process and general administration. These cookies will usually be deleted when you log out; however, in some cases, they may remain afterward to remember your site preferences when logged out.
--  **Analytics Cookies:** We use cookies to help us analyze how our visitors use the Service and to monitor website performance. This helps us provide a high-quality experience by customizing our offering and quickly identifying and fixing any issues that arise.
--  **Advertising Cookies:** We may use cookies to serve you with advertisements that are relevant to you and your interests. 
+### 3.1 Technisch notwendige Cookies und Funktionen
 
-## 3. Third-Party Cookies
+Für den Betrieb der Website können technisch notwendige Cookies oder Speicherungen eingesetzt werden, ohne die die Seite nicht oder nicht zuverlässig funktioniert (z. B. Sitzungssteuerung, Sicherheitsfunktionen, Cookie-Banner-Entscheidung).
 
-In addition to our own cookies, we may also use various third-party cookies to report usage statistics of the Service and deliver advertisements on and through the Service. These third-party cookies are governed by the respective privacy policies of these third parties.
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren und funktionsfähigen Betrieb) bzw. § 25 Abs. 2 TTDSG (soweit „unbedingt erforderlich“ im Sinne des Gesetzgebers).
 
-## 4. Your Choices Regarding Cookies
+### 3.2 Vercel Analytics (Reichweitenmessung)
 
-If you prefer to avoid the use of cookies on the website, you must first disable the use of cookies in your browser and then delete the cookies saved in your browser associated with this website. You may use this option for preventing the use of cookies at any time.
+Wir nutzen **Vercel Analytics** zur anonymisierten bzw. aggregierten Auswertung der Nutzung unserer Website. Nach Herstellerangaben werden hierfür keine herkömmlichen Tracking-Cookies gesetzt; die Messung erfolgt datenschutzfreundlicher als bei vielen klassischen Analyse-Tools. Je nach Konfiguration Ihres Browsers und unseres Einwilligungssystems kann die Aktivierung dennoch über den Cookie-Banner gesteuert werden.
 
--  **Browser Settings:** Most web browsers allow you to control cookies through their settings preferences. To find out more about cookies, including how to see what cookies have been set, visit [www.allaboutcookies.org](http://www.allaboutcookies.org/) or [www.youronlinechoices.eu](http://www.youronlinechoices.eu/).
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung über Banner), soweit erforderlich, sonst Art. 6 Abs. 1 lit. f DSGVO.
 
--  **Opting Out:** You can opt out of targeted advertising by visiting the following links:
-  - [Network Advertising Initiative](http://www.networkadvertising.org/)
-  - [Digital Advertising Alliance](http://www.aboutads.info/)
-  - [Your Online Choices](http://www.youronlinechoices.eu/)
+### 3.3 Calendly (Terminbuchung)
 
-## 5. Changes to This Cookie Policy
+Wenn Sie den Buchungsflow von **Calendly** nutzen, können Cookies oder ähnliche Technologien von Calendly gesetzt werden, um die Buchungsfunktion bereitzustellen (z. B. Sitzung, Sicherheit, Sprache).
 
-We may update our Cookie Policy from time to time. We will notify you of any changes by posting the new Cookie Policy on this page. You are advised to review this Cookie Policy periodically for any changes. Changes to this Cookie Policy are effective when they are posted on this page.
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. b DSGVO (vorvertraglich/vertraglich) bzw. Art. 6 Abs. 1 lit. a DSGVO, soweit eine Einwilligung erforderlich ist.
 
-## 6. Contact Us
+### 3.4 Vimeo (Videoeinbindungen)
 
-If you have any questions about this Cookie Policy, please contact us at:
+Beim Abspielen oder Laden von eingebundenen **Vimeo**-Videos können Vimeo-Cookies oder ähnliche Technologien eingesetzt werden.
 
-[Your Company Name]  
-[Your Address]  
-[Your Email Address]  
-[Your Phone Number]  
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), soweit erforderlich, sonst Art. 6 Abs. 1 lit. f DSGVO.
+
+### 3.5 Supabase
+
+**Supabase** wird primär serverseitig für Datenhaltung genutzt. In Ihrem Browser fallen hierfür in der Regel keine zusätzlichen „Marketing-Cookies“ an; es können jedoch technische Speicherungen im Rahmen der Anwendung erfolgen.
+
+### 3.6 Optionale Tools (Google Analytics / Meta Pixel)
+
+Sofern in den Projekteinstellungen aktiviert und Sie im Cookie-Banner zustimmen, können **Google Analytics** und/oder **Meta Pixel** Cookies oder ähnliche Technologien setzen. Details finden Sie in der Datenschutzerklärung.
+
+## 4. Speicherdauer
+
+Session-Cookies werden nach Ende Ihres Besuchs gelöscht. Andere Cookies können für einen festgelegten Zeitraum auf Ihrem Gerät verbleiben, bis sie ablaufen oder Sie sie löschen. Die Dauer entnehmen Sie bitte – soweit verfügbar – den Einstellungen Ihres Browsers oder den Informationen des jeweiligen Drittanbieters.
+
+## 5. Widerspruch / Einstellungen
+
+Sie können Cookies in Ihren Browser-Einstellungen einschränken oder löschen. Bitte beachten Sie, dass die Website dann ggf. nicht mehr alle Funktionen vollständig bereitstellt.
+
+Sofern wir einen **Cookie-Banner** einsetzen, können Sie dort Ihre Einwilligung erteilen oder widerrufen. Ein einmal erteilte Einwilligung können Sie mit Wirkung für die Zukunft widerrufen.
+
+## 6. Kontakt
+
+Bei Fragen zu dieser Cookie-Richtlinie wenden Sie sich an die oben genannten Kontaktdaten.
 
 ---
 
-**Last Updated:** [Insert Date]
+**Stand:** 6. April 2026
           `}
         </Markdown>
       </Prose>
