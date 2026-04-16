@@ -35,56 +35,41 @@ const processes = [
     num: "01",
     title: "Das Onboarding-System",
     saving: "~3h gespart pro Neukunde",
-    problem:
-      "Kein standardisierter Prozess → jeder Neukunde kostet dich 3+ Stunden in den ersten Tagen. Zugänge manuell verschicken, Briefings nochmal erklären, erste Aufgaben von Hand anlegen.",
-    rootCause:
-      "Du baust jeden Onboarding-Prozess manuell auf, weil du nie die Zeit hattest ihn einmalig sauber zu strukturieren. Das Ergebnis: jeder neue Kunde fühlt sich chaotisch an — und genau in dieser Phase entscheiden die meisten ob sie bleiben.",
-    fix: "Einmal aufgesetzter Onboarding-Flow: neuer Kunde zahlt → Zugang, Willkommensnachricht, erste Aufgaben und Briefing-Fragen erscheinen automatisch. Du öffnest einen neuen Kunden — der Rest passiert ohne dich.",
+    problem: "Jeder Neukunde kostet dich 3+ Stunden: Zugänge verschicken, Briefing erklären, erste Aufgaben anlegen. Manuell. Jedes Mal. Genau dann, wenn der Kunde entscheidet ob er bleibt.",
+    fix: "Neuer Kunde zahlt → Zugang, Willkommensnachricht, Briefing-Fragen und erste Aufgaben laufen automatisch. Du tust nichts.",
     metric: "Bei 4 Neukunden/Monat = 12h/Monat zurück.",
   },
   {
     num: "02",
     title: "Das Client Portal",
     saving: "~5h/Woche weniger reaktive Kommunikation",
-    problem:
-      "Deine Kunden wissen nicht wo was ist — also fragen sie dich. WhatsApp, E-Mail, DMs parallel. Dieselbe Frage fünf Mal beantwortet. Kein System, kein zentraler Ort.",
-    rootCause:
-      "Strategie liegt in Notion, Aufgaben in einem anderen Tool, Kommunikation auf WhatsApp, Unterlagen in Google Drive — für dich irgendwie navigierbar, für deinen Kunden ein Chaos. Status-Fragen sind kein Zeichen fehlenden Engagements, sondern Symptom fehlender Struktur.",
-    fix: "Ein zentrales Client Portal wo alles lebt: Strategie, Fortschritt, Unterlagen, Aufgaben, Kommunikation. Dein Kunde findet alles selbst. Du beantwortest keine Status-Fragen mehr. Wöchentliche Async-Updates ersetzen den Status-Call.",
-    metric: "6 Kunden × 1h Status-Call/Woche = 6h zurück. Plus alle Ad-hoc-Nachrichten.",
+    problem: "Deine Kunden wissen nicht wo was ist — also fragen sie dich. WhatsApp, E-Mail, DMs parallel. Dieselbe Statusfrage fünf Mal pro Woche.",
+    fix: "Ein zentraler Ort für alles: Strategie, Fortschritt, Unterlagen, Kommunikation und alles was für dich relevant ist. Dein Kunde findet alles selbst. Kein Status-Call mehr, außer für die wichtigsten Dinge.",
+    metric: "6 Kunden × 1h Status-Call/Woche eliminiert = 6h zurück.",
   },
   {
     num: "03",
     title: "Das Retention-System",
     saving: "Completion Rate von 5% auf 60–80%",
-    problem:
-      "Unter 10% deiner Kursteilnehmer ziehen durch. Die anderen 90% brechen ab — bestellen Refunds, beschweren sich, empfehlen nicht weiter und kaufen kein nächstes Angebot.",
-    rootCause:
-      "Es gibt kein aktives System das Kunden begleitet wenn die erste Motivation nachlässt. Kein Re-Engagement wenn jemand eine Woche lang nichts tut. Kein Reminder. Kein strukturierter Check-in. Das Programm existiert — aber es wartet passiv auf den Kunden statt ihn aktiv zu führen.",
-    fix: "Automatische Check-in Sequenzen, Milestone-Reminder und Re-Engagement-Flows die Kunden aktiv halten. Kurs-Meilenstein erreicht → automatische Gratulation + nächste Aufgabe. 7 Tage inaktiv → automatische Re-Engagement-Nachricht.",
-    metric: "Coaches die das einbauen sehen Completion Rates von 60–80%: mehr Testimonials, mehr Wiederkäufe, mehr Upsells.",
+    problem: "Unter 10% deiner Teilnehmer ziehen durch. Die anderen 90% brechen ab — keine Testimonials, keine Wiederkäufer, keine Upsells.",
+    fix: "Automatische Check-ins, Milestone-Reminder und Re-Engagement-Flows halten Kunden aktiv, ohne dass du manuell nachfassen musst.",
+    metric: "60–80% Completion Rate: mehr Testimonials, mehr Wiederkäufe, mehr Upsells.",
   },
   {
     num: "04",
     title: "Die Ascending Offer Structure",
     saving: "Systemischer Upsell statt Zufall",
-    problem:
-      "Deine Kunden kaufen einmal — und du pitchst nicht aktiv weiter, weil es sich awkward anfühlt. Das nächste Angebot existiert vielleicht, aber es gibt keinen klaren Weg dorthin.",
-    rootCause:
-      "Statt einer logischen Stufenleiter (Einstieg → Gruppe → Premium 1:1) hast du ein Angebot. Kein System das den Kunden zur nächsten Stufe führt, kein automatischer Übergang, kein definierter Moment wo der Upsell passt.",
-    fix: "Eine Ascending Offer Structure: Einstiegsprodukt wärmt auf → Gruppencoaching qualifiziert ernsthafte Käufer → Premium 1:1 ist für Alumni reserviert und rechtfertigt 3–5x höheren Preis. Jede Stufe führt automatisch auf die nächste.",
-    metric: "1 automatischer Upsell/Monat bei 2.000€ Next-Level-Offer = +24.000€/Jahr.",
+    problem: "Deine Kunden kaufen einmal — danach ist Stille. Kein klarer nächster Schritt, kein System das zur nächsten Stufe führt.",
+    fix: "Wir bauen mit dir eine Offerstruktur die zu dir passt und dir dabei hilft deine Ziele zu erreichen.",
+    metric: "1 automatischer Upsell/Monat bei 2.000€ = +24.000€/Jahr.",
   },
   {
     num: "05",
     title: "Die Upsell Automation",
-    saving: "Kein manuelles Beobachten, kein verpasster Moment",
-    problem:
-      "Du weißt theoretisch wer bereit für das nächste Angebot wäre — aber du hast keine Zeit jeden Kunden manuell zu tracken. Also pitchst du entweder gar nicht oder zum falschen Zeitpunkt.",
-    rootCause:
-      "Kein definiertes Signal wann jemand bereit ist. Kein automatischer Trigger. Kein vorbereiteter Text. Das Ergebnis: du verpasst den besten Moment oder wirkst aufdringlich weil du den Kontext nicht kennst.",
-    fix: "Das System erkennt Signale automatisch — Kurs abgeschlossen, Meilenstein erreicht, Check-in positiv — und spielt die passende Einladungssequenz aus. Keine manuelle Beobachtung, kein awkward Pitch, kein verpasster Umsatz.",
-    metric: "Kombiniert mit Baustein 4: jeder Kunde der durchzieht wird zum potenziellen Upsell — automatisch.",
+    saving: "Kein verpasster Umsatz-Moment",
+    problem: "Du weißt wer bereit für das nächste Angebot wäre — aber du trackst niemanden manuell. Also pitchst du gar nicht oder zum falschen Zeitpunkt.",
+    fix: "Das System erkennt Signale automatisch — Kurs abgeschlossen, Meilenstein erreicht, Check-in positiv — und spielt die Einladungssequenz aus.",
+    metric: "Jeder Kunde der durchzieht wird zum potenziellen Upsell — automatisch.",
   },
 ];
 
@@ -182,7 +167,7 @@ export default async function CoachesPage() {
                 textAlign="center"
                 textShadow="0 2px 48px rgba(132, 132, 255, 0.22)"
               >
-                Warum Coaches mit{" "}
+                Warum Coaches{" "}
                 <Box
                   as="span"
                   fontFamily="mono"
@@ -202,7 +187,7 @@ export default async function CoachesPage() {
                 >
                   Zeit gegen Geld
                 </Box>{" "}
-                tauschen — und die 5 Systeme die das ändern
+                tauschen und die 5 Systeme die das ändern
               </Heading>
 
               {/* Sub */}
@@ -361,7 +346,7 @@ export default async function CoachesPage() {
                     gridTemplateColumns={{ md: "1fr 1fr" }}
                     gap="0"
                   >
-                    {/* Problem + Root Cause */}
+                    {/* Problem */}
                     <Box
                       px={{ base: "6", md: "8" }}
                       py={{ base: "5", md: "6" }}
@@ -379,55 +364,46 @@ export default async function CoachesPage() {
                       >
                         Das Problem
                       </Text>
-                      <Text fontSize={{ base: "sm", md: "md" }} color="gray.700" lineHeight="1.65" mb="4">
+                      <Text fontSize={{ base: "sm", md: "md" }} color="gray.700" lineHeight="1.65">
                         {p.problem}
-                      </Text>
-                      <Text
-                        fontSize="11px"
-                        fontWeight="700"
-                        letterSpacing="0.08em"
-                        textTransform="uppercase"
-                        color="gray.400"
-                        mb="2"
-                      >
-                        Warum das passiert
-                      </Text>
-                      <Text fontSize="sm" color="gray.500" lineHeight="1.65">
-                        {p.rootCause}
                       </Text>
                     </Box>
 
-                    {/* Fix + Metric */}
-                    <Box px={{ base: "6", md: "8" }} py={{ base: "5", md: "6" }}>
-                      <Text
-                        fontSize="11px"
-                        fontWeight="700"
-                        letterSpacing="0.08em"
-                        textTransform="uppercase"
-                        color="purple.500"
-                        mb="2"
-                      >
-                        Die Lösung
-                      </Text>
-                      <Text fontSize={{ base: "sm", md: "md" }} color="gray.700" lineHeight="1.65" mb="5">
-                        {p.fix}
-                      </Text>
+                    {/* Outcome + Fix */}
+                    <Box px={{ base: "6", md: "8" }} py={{ base: "5", md: "6" }} display="flex" flexDirection="column" gap="4">
+                      {/* Metric — prominent first */}
                       <Box
                         px="4"
-                        py="3"
+                        py="3.5"
                         borderRadius="xl"
                         bg="purple.50"
                         border="1px solid"
-                        borderColor="purple.100"
+                        borderColor="purple.200"
                       >
                         <HStack gap="2" align="start">
-                          <Text color="purple.500" fontWeight="800" fontSize="sm" flexShrink={0}>
+                          <Text color="purple.500" fontWeight="800" fontSize="md" flexShrink={0} lineHeight="1.4">
                             →
                           </Text>
-                          <Text fontSize="sm" color="purple.700" lineHeight="1.55" fontWeight="600">
+                          <Text fontSize={{ base: "md", md: "lg" }} color="purple.800" lineHeight="1.4" fontWeight="800">
                             {p.metric}
                           </Text>
                         </HStack>
+                      </Box>
+                      {/* Fix */}
+                      <Box>
+                        <Text
+                          fontSize="11px"
+                          fontWeight="700"
+                          letterSpacing="0.08em"
+                          textTransform="uppercase"
+                          color="purple.500"
+                          mb="2"
+                        >
+                          Die Lösung
+                        </Text>
+                        <Text fontSize="sm" color="gray.600" lineHeight="1.65">
+                          {p.fix}
+                        </Text>
                       </Box>
                     </Box>
                   </Box>
@@ -450,7 +426,7 @@ export default async function CoachesPage() {
               textTransform="uppercase"
               color="gray.500"
             >
-              Was das in Euro bedeutet
+              Beispielrechnung in Euro
             </Text>
             <Heading
               as="h2"

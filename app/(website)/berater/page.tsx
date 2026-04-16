@@ -25,47 +25,47 @@ import {
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata = generateMetadata({
-  title: "Für Agenturen — Die Fulfillment-Falle sprengen",
+  title: "Für Berater & Consultants — 4 Systeme die skalieren",
   description:
-    "4 Prozesse die Agenturen in der Wachstumsphase bremsen — und wie du die Umsatzachterbahn stoppst.",
+    "Wie Berater aufhören Zeit gegen Geld zu tauschen — 4 Systeme für höhere Margen, mehr Renewals und weniger Admin.",
 });
 
 const processes = [
   {
     num: "01",
-    title: "Das Performance Dashboard",
-    saving: "~3h/Woche Reporting eliminiert",
-    problem: "Jeden Monat dieselbe Prozedur: Daten aus 4 Tools zusammensuchen, in Excel aufbereiten, als PDF verschicken. Deine Kunden fragen trotzdem nach, weil sie den Report nicht finden.",
-    fix: "Ein Live-Dashboard pro Kunde verbindet sich automatisch mit deinen Tools: Ad-Spend, ROAS, SEO, Meilensteine und alles was für deine Dienstleistung relevant ist. Dein Kunde sieht alles in Echtzeit, stellt keine nervigen Fragen mehr. Du schreibst keinen Report mehr.",
-    metric: "3h/Woche × 52 Wochen = 156h/Jahr zurück.",
+    title: "Das Proposal-System",
+    saving: "Von 3h auf 30 Min pro Angebot",
+    problem: "Jedes Angebot startet bei null: Struktur, Texte, Preisfindung — 2–4 Stunden Handarbeit. Am Ende sagst du trotzdem öfter als nötig zu schlechten Konditionen zu.",
+    fix: "Templates, Preismodule, automatisches Tracking. Neue Anfrage → 30 Minuten zum fertigen Angebot. Signiert → automatischer Onboarding-Start.",
+    metric: "5 Angebote/Monat × 2h gespart = 10h zurück.",
   },
   {
     num: "02",
-    title: "Das Onboarding-System",
-    saving: "~2h/Neukunde + weniger Churn in Monat 1",
-    problem: "Die ersten 4 Wochen sind jedes Mal chaotisch: Zugänge anfordern, Briefings erklären, Meilensteine im Kopf behalten. Genau dann entscheiden Kunden ob sie bleiben.",
-    fix: "Neuer Vertrag unterschrieben → Zugangsliste, Briefing-Fragen, Checklisten für Woche 1/2/4/8 laufen automatisch. Du öffnest einen neuen Kunden, der Rest passiert ohne dich.",
-    metric: "1 Kunde der 2 Monate länger bleibt = +5.000€ (bei 2.500€/Monat).",
+    title: "Das Client Portal",
+    saving: "~8h/Woche reaktive Kommunikation eliminiert",
+    problem: "Deine Kunden wissen nicht wo ihre Deliverables und Entscheidungen sind — also fragen sie dich. E-Mail, WhatsApp, LinkedIn-DMs. Dieselbe Rückfrage drei Mal in Folge.",
+    fix: "Ein zentraler Ort für alles: Projekt-Status, Deliverables, Entscheidungen, Kommunikation. Dein Kunde findet alles selbst. Kein Status-Call mehr.",
+    metric: "6 Kunden × 1h Status-Call/Woche eliminiert = 6h zurück.",
   },
   {
     num: "03",
-    title: "Das Async-Kommunikations-System",
-    saving: "6–10h/Woche Status-Calls eliminiert",
-    problem: "6 Kunden × 1h Status-Call/Woche = 6h weg. Dazu WhatsApp, Slack, E-Mail parallel. Alles verteilt, nichts dokumentiert — nächste Woche fangen alle wieder von vorne an.",
-    fix: "Zentraler Hub für alles: Strategie, Briefings, Updates, Entscheidungen. Automatische Updates ersetzen den Status Call fast komplett.",
-    metric: "6–10h/Woche zurück = Zeit für 2–3 neue Vertriebsgespräche pro Woche.",
+    title: "Das Renewal-System",
+    saving: "80% Verlängerungsrate automatisch",
+    problem: "Vertragsende kommt — und du merkst es 2 Wochen vorher. Kein Prozess, kein frühzeitiger Touch. Der Kunde hat schon jemanden angefragt.",
+    fix: "Automatische Sequenz: 90 Tage vor Ende → Impact-Summary. 60 Tage → Erweiterungsangebot. 30 Tage → Renewal-Gespräch. Kein manuelles Nachfassen.",
+    metric: "1 Retainer der nicht abspringt (3.000€/Monat) = +36.000€/Jahr.",
   },
   {
     num: "04",
-    title: "Die Fulfillment-Automatisierung",
-    saving: "~4h/Woche recurring Tasks eliminiert",
-    problem: "Jeden Monat dieselben Tasks manuell anlegen, dem Team briefen, nachfragen was noch offen ist. Operativer Overhead der deine beste Arbeitszeit frisst.",
-    fix: "Monatsbeginn → alle Tasks für alle Kunden erscheinen automatisch, richtig zugewiesen, mit Deadline. Kein Briefing-Meeting für Standardaufgaben.",
-    metric: "4h/Woche × 12 Monate = 208h/Jahr. Das stoppt die Umsatzachterbahn.",
+    title: "Die Ascending Offer Structure",
+    saving: "3–5x höherer LTV pro Klient",
+    problem: "Deine Kunden kaufen ein Projekt — danach Stille. Kein klarer nächster Schritt, kein System das zur nächsten Stufe führt.",
+    fix: "Projekt → Retainer → Premium-Advisory. Jede Stufe führt automatisch auf die nächste — durch eingebettete Angebote, nicht durch aktiven Pitch.",
+    metric: "1 Projekt-Klient wird Retainer (2.500€/Monat) = +30.000€/Jahr.",
   },
 ];
 
-export default async function AgenturenPage() {
+export default async function BeraterPage() {
   const [videos, socialProofConfig] = await Promise.all([
     getLandingVideos(),
     getSocialProofGalleryConfig(),
@@ -126,7 +126,7 @@ export default async function AgenturenPage() {
           pb={{ base: "10", md: "14" }}
         >
           <Container maxW="4xl" px={{ base: "4", md: "6" }}>
-            <VStack gap={{ base: "4", md: "5" }} textAlign="center" align="center">
+            <VStack gap={{ base: "5", md: "6" }} textAlign="center" align="center">
 
               {/* Badge */}
               <Box
@@ -144,22 +144,22 @@ export default async function AgenturenPage() {
                 color="gray.300"
                 letterSpacing="0.04em"
               >
-                📘 Gratis-Guide für Agenturen
+                Für Berater &amp; Consultants · 90-Tage-Garantie
               </Box>
 
               {/* Headline */}
               <Heading
                 as="h1"
-                fontSize={{ base: "1.75rem", sm: "2rem", md: "2.5rem", lg: "2.75rem" }}
+                fontSize={{ base: "2.25rem", sm: "2.75rem", md: "3.5rem", lg: "4rem" }}
                 fontWeight="800"
-                lineHeight={{ base: "1.12", md: "1.08" }}
-                letterSpacing="-0.035em"
+                lineHeight={{ base: "1.08", md: "1.05" }}
+                letterSpacing="-0.04em"
                 color="white"
-                maxW="4xl"
+                maxW="3xl"
                 textAlign="center"
                 textShadow="0 2px 48px rgba(132, 132, 255, 0.22)"
               >
-                Die{" "}
+                Mehr Kunden.{" "}
                 <Box
                   as="span"
                   fontFamily="mono"
@@ -177,23 +177,43 @@ export default async function AgenturenPage() {
                   display="inline-block"
                   verticalAlign="middle"
                 >
-                  Fulfillment-Falle
+                  Weniger Stunden.
                 </Box>{" "}
-                — warum Agenturen stagnieren und 4 Systeme die das aufbrechen
+                +10.000€/Monat mehr Umsatz.
               </Heading>
+
+              {/* Outcome stats */}
+              <HStack
+                gap={{ base: "6", md: "12" }}
+                justify="center"
+                flexWrap="wrap"
+                pt="1"
+              >
+                {[
+                  { value: "+10.000€", label: "Mehrwert/Monat" },
+                  { value: "20h", label: "Zurück pro Woche" },
+                  { value: "90 Tage", label: "Garantiert" },
+                ].map((stat) => (
+                  <VStack key={stat.label} gap="0.5" align="center">
+                    <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="800" color="white" lineHeight="1">
+                      {stat.value}
+                    </Text>
+                    <Text fontSize="xs" color="gray.500" fontWeight="500" letterSpacing="0.03em">
+                      {stat.label}
+                    </Text>
+                  </VStack>
+                ))}
+              </HStack>
 
               {/* Sub */}
               <Text
                 fontSize={{ base: "md", md: "lg" }}
                 color="gray.400"
                 lineHeight="1.55"
-                maxW="3xl"
+                maxW="2xl"
                 fontWeight="400"
               >
-                Du gewinnst neue Kunden — aber mit jedem neuen Kunden wächst der
-                operative Druck stärker als der Umsatz. Das ist kein
-                Disziplinproblem. Das ist ein Systemproblem. Hier sind die 4
-                Stellen wo du täglich Zeit und Wachstum verlierst.
+                4 done-for-you Systeme: Proposal-Automation, Client Portal, Renewal-System &amp; Ascending Offer Structure. Wir bauen alles — du fokussierst dich auf die Beratung.
               </Text>
 
               <Text
@@ -201,9 +221,8 @@ export default async function AgenturenPage() {
                 fontWeight="700"
                 color="gray.200"
                 lineHeight="1.55"
-                maxW="3xl"
               >
-                Mit Idiotengarantie: Wir erreichen deine Ziele in 90 Tagen – oder wir arbeiten kostenlos.
+                Idiotengarantie: Wir erreichen deine Ziele in 90 Tagen – oder wir arbeiten kostenlos.
               </Text>
 
               <HeroTrustStrip config={heroTrustConfig} />
@@ -220,7 +239,7 @@ export default async function AgenturenPage() {
         </Box>
       </Box>
 
-      {/* ── FREEBIE CONTENT ─────────────────────────────────────── */}
+      {/* ── SYSTEMS CONTENT ─────────────────────────────────────── */}
       <Box bg={testimonialSectionBackground} color="gray.900">
         <Container maxW="1200px" px={{ base: "5", md: "8", lg: "10" }}>
           <Box py={{ base: "16", md: "24" }}>
@@ -246,7 +265,7 @@ export default async function AgenturenPage() {
                 maxW="2xl"
                 mx="auto"
               >
-                Was Agenturen die skalieren systemisch anders machen
+                Was Berater die skalieren systemisch anders machen
               </Heading>
               <Text
                 fontSize={{ base: "md", md: "lg" }}
@@ -255,8 +274,8 @@ export default async function AgenturenPage() {
                 mx="auto"
                 lineHeight="1.6"
               >
-                Keine Theorie. Nur die 4 konkreten Systeme hinter Agenturen die
-                trotz vollem Fulfillment noch Zeit für Vertrieb haben.
+                Keine Theorie. Nur die 4 konkreten Systeme hinter Beratern die
+                mehr verdienen ohne mehr Stunden reinzustecken.
               </Text>
             </VStack>
 
@@ -418,7 +437,7 @@ export default async function AgenturenPage() {
               textTransform="uppercase"
               color="gray.500"
             >
-              Beispielrechnung in Euro
+              Was das in Euro bedeutet
             </Text>
             <Heading
               as="h2"
@@ -428,7 +447,7 @@ export default async function AgenturenPage() {
               letterSpacing="-0.02em"
               color="white"
             >
-              10h/Woche zurückgewonnen + 1 Kunde der länger bleibt —{" "}
+              20h/Woche zurück + 1 Retainer-Conversion/Monat —{" "}
               <Box as="span" color="purple.300">
                 das Offer zahlt sich im ersten Monat zurück
               </Box>
@@ -445,9 +464,9 @@ export default async function AgenturenPage() {
               overflow="hidden"
             >
               {[
-                { label: "10h/Woche zurückgewonnen × 100€/h × 4 Wochen", value: "+4.000€/Monat" },
-                { label: "1 Kunde bleibt 2 Monate länger (kein Onboarding-Churn)", value: "+5.000€" },
-                { label: "1 neuer Kunde durch zurückgewonnene Vertriebszeit", value: "+2.500€/Monat" },
+                { label: "20h/Woche Admin gespart × 125€/h × 4 Wochen", value: "+10.000€/Monat" },
+                { label: "1 Klient verlängert der sonst abgesprungen wäre", value: "+3.000€" },
+                { label: "1 Projekt-Klient wird Retainer (2.500€/Monat)", value: "+2.500€/Monat" },
               ].map((row, i, arr) => (
                 <HStack
                   key={row.label}
@@ -473,7 +492,7 @@ export default async function AgenturenPage() {
                     Monatlicher Mehrwert
                   </Text>
                   <Text fontSize="xl" fontWeight="800" color="green.400">
-                    +11.500€/Monat
+                    +15.500€/Monat
                   </Text>
                 </HStack>
               </Box>
@@ -543,8 +562,8 @@ export default async function AgenturenPage() {
               bei dir aus?
             </Heading>
             <Text fontSize={{ base: "lg", md: "xl" }} color="gray.200" lineHeight="relaxed" maxW="2xl">
-              Lass uns in 20 Minuten durchgehen wo deine Agentur gerade Zeit
-              verliert — und was das konkret in deinen Zahlen bedeutet.
+              Lass uns in 20 Minuten durchgehen wo du gerade Zeit verlierst —
+              und was das bei deinen Zahlen bedeutet.
             </Text>
             <Link href={generalConfig.primaryCtaHref}>
               <Button {...heroPrimaryCtaButtonProps}>
